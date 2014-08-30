@@ -1,6 +1,6 @@
 Store the current source pos info 
 
-core:\*current-source-path-name\*
+core:\*current-source-file-info\*
 
 core:\*current-lineno\*
 
