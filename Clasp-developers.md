@@ -1,4 +1,4 @@
-1) When defining classes that are exposed to Common Lisp and managed by the garbage collector, multiple inheritance on the C++ side is not allowed.  However, currently we have some examples of this because it is the only way I could figure out to subclass C++ classes in Common Lisp.
+1) When defining classes that are exposed to Common Lisp and managed by the garbage collector, multiple inheritance on the C++ side will not work with the compacting MPS garbage collector (Note: Figure out if this is absolutely true).  However, currently we have some examples of this (of multiple inheritance on the C++ side despite it not being allowed) because it is the only way I could figure out to subclass C++ classes in Common Lisp.  It works with the Boehm garbage collector and we need that to build the MPS interface.
 
 For example:
 class AstVisitor_O : public core::T_O, public clang::RecursiveASTVisitor<AstVisitor_O> {
