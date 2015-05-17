@@ -1,4 +1,4 @@
-Clasp startup has a problem in that when it starts up CLOS in boot.lsp, every class needs to be created and this invokes the compiler via EVAL.
+Clasp startup has a problem in that at load-time of CLOS in boot.lsp, every class needs to be created and this invokes the compiler via EVAL.  I need to figure out how ECL avoids this at load-time.
 
 This is the code that is slow:
 
