@@ -1,11 +1,23 @@
-Define TARGET clasp/build/clasp
-APPRES-LISP
+#The Clasp build system.
 
+It uses a combination of make files "makefile" in each directory: clasp/, clasp/src, clasp/src/gctools, clasp/src/core ...  and boost build jam files.
 
+Important files:
+
+1. clasp/makefile.inc - this is included in other makefiles in other directories
+1. clasp/makefile - top level makefile
+1. clasp/src/makefile - invokes make in source directories
+1. clasp/src/XXX/makefile - where XXX is gctools, core, clbind, asttooling, main etc.
+1. clasp/Jamroot.jam - top level jam file
+1. clasp/src/XXX/Jamfile.jam - source directory jam files
+
+Important targets:
+* make prebuild  - Performs symbol scraping, class scraping, and Google pump file compilation
+* bjam targets
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-# Source directories:
+## Source directories:
 - src/gctools/
 - src/core/
 - src/clbind/
@@ -19,7 +31,7 @@ APPRES-LISP
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-# Google pump
+## Google pump
 
 Google pump.py is a python program that converts .pmp files into header files.
 ".pmp" files contain a description of C++ template code that gets expanded into lots of repetative C++ template code.
@@ -48,10 +60,10 @@ The pump.py code is in clasp/src/common/pump.py
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-Symbol scraping
+##Symbol scraping
 
-In each source directory is a file called: "symbols_scraped_inc.h"
-- it lists the names and packages of Common Lisp SYMBOLs that are accessible to C++ as symbols with the names prefixed with "_sym_" ie: "_sym_list".
+In each source directory XXX is a file called: "XXX/include/symbols_scraped_inc.h"
+it lists the names and packages of Common Lisp SYMBOLs that are accessible to C++ as symbols with the names prefixed with "_sym_" ie: "_sym_list".
 
 Before any files are built and at the beginning of every build the following script is run:
 python src/common/symbolScraper.py *.cc include/*.h
@@ -73,21 +85,18 @@ To summarize:
 1) Symbol scraping scrapes all of the .cc files and may or may not generate a new symbols_scraped_inc.h file
 2) .cc files #include the symbols_scraped_inc.h file
 
-There is one very annoying bug that a user encounters when building Clasp.  The very first time a fresh repo is built with "make", a lot of errors will be reported.  If the user halts the make with Control-C and then types "make" again - the problem disappears, never to return.  We tracked down the problem to a problem with boost build (https://github.com/drmeister/clasp/issues/17) but it is not clear how to resolve it.
-When you add new symbols it forces lots of recompilation because almost every .cc file #include's symbols_scraped_inc.h either directly or indirectly.
-
-
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-Register classes
+##Register classes
 
+This searches through the C++ header and source files for definitions of C++ classes that will be exposed to Common Lisp.
 
-/usr/bin/python /Users/meister/Development/clasp/src/common/registerClasses.py ../../src/core/bin/boehm/clang-darwin-4.2.1/release/link-static/core_initClasses_inc.h ../../src/core/bin/boehm/clang-darwin-4.2.1/release/link-static/${bname}_initScripting_inc.h include/*Package.h include/*.h ../../src/core/bin/boehm/clang-darwin-4.2.1/release/link-static/*.h *.cc ../../src/core/bin/boehm/clang-darwin-4.2.1/release/link-static/*.cc > registerClasses.log
+/usr/bin/python /Users/meister/Development/clasp/src/common/registerClasses.py include/generated/initClasses_inc.h include/*Package.h include/*.h *.h *.cc 2> registerClasses.log
 
 Searches through all header files looking for macros like:
 LISP_CLASS(...)
 
-It populates the file XXX_initClasses_inc.h with code that exposes these C++ classes to Common Lisp
+It populates the file XXX/include/generated/initClasses_inc.h with code that exposes these C++ classes to Common Lisp
 
 
 ----------------------------------------------------------------------
