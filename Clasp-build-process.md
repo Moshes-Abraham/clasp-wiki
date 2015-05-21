@@ -98,27 +98,7 @@ LISP_CLASS(...)
 
 It populates the file XXX/include/generated/initClasses_inc.h with code that exposes these C++ classes to Common Lisp
 
+-----------
+## Boost build
 
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-
-
-
-
-
-See src/lisp/Jamfile.jam
-Copy src/lisp source tree (*.l *.lsp *.lisp *.sh) to $(APPRES-LISP)
-
-src/core/bin/boehm/clang-darwin-4.2.1/release/link-static/core_scrape_flag.h
-src/cffi/bin/boehm/clang-darwin-4.2.1/release/link-static/cffi_scrape_flag.h
-
-Build .cc files in main
-
-scraped ../../src/gctools/bin/boehm/clang-darwin-4.2.1/release/link-static/gctools_scrape_flag.h
-	touch ../../src/gctools/bin/boehm/clang-darwin-4.2.1/release/link-static/gctools_scrape_flag.h
-scraped ../../src/sockets/bin/boehm/clang-darwin-4.2.1/release/link-static/sockets_scrape_flag.h
-	touch ../../src/sockets/bin/boehm/clang-darwin-4.2.1/release/link-static/sockets_scrape_flag.h
-scraped ../../src/serveEvent/bin/boehm/clang-darwin-4.2.1/release/link-static/serveEvent_scrape_flag.h
-	touch ../../src/serveEvent/bin/boehm/clang-darwin-4.2.1/release/link-static/serveEvent_scrape_flag.h
-scraped ../../src/clbind/bin/boehm/clang-darwin-4.2.1/release/link-static/clbind_scrape_flag.h
-	touch ../../src/clbind/bin/boehm/clang-darwin-4.2.1/release/link-static/clbind_scrape_flag.h
+Boost build does the C++ compilation.
