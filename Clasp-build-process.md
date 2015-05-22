@@ -62,11 +62,13 @@ The pump.py code is in clasp/src/common/pump.py
 ----------------------------------------------------------------------
 ##Symbol scraping
 
-In each source directory XXX is a file called: "XXX/include/symbols_scraped_inc.h"
-it lists the names and packages of Common Lisp SYMBOLs that are accessible to C++ as symbols with the names prefixed with "_sym_" ie: "_sym_list".
+In each source directory XXX is a file called: "XXX/include/generated/symbols_scraped_inc.h".
+This file lists the names and packages of Common Lisp SYMBOLs that are accessible to C++ as symbols with the names prefixed with "_sym_" ie: "_sym_list".
 
 Before any files are built and at the beginning of every build the following script is run:
-python src/common/symbolScraper.py *.cc include/*.h
+python src/common/symbolScraper.py include/generated/symbols_scraped_inc.h *.cc include/*.h
+
+The symbolScraper.py script reads a file from each XXX directory called configure_symbol_scrape.h.
 
 In each of the source directories XXX is a include/ symbolic link to a clasp/include/clasp/XXX directory that contains header files for each source directory.
 
