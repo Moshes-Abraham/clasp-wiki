@@ -84,8 +84,8 @@ if there are any differences (symbols added, removed or changed) then it generat
 The symbols_scraped_inc.h file is included by almost every .cc file so that they have access to Common Lisp symbols without having to mess around with strings.
 
 To summarize:
-1) Symbol scraping scrapes all of the .cc files and may or may not generate a new symbols_scraped_inc.h file
-2) .cc files #include the symbols_scraped_inc.h file
+1. Symbol scraping scrapes all of the .cc files and may or may not generate a new symbols_scraped_inc.h file
+1. .cc files #include the symbols_scraped_inc.h file
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
