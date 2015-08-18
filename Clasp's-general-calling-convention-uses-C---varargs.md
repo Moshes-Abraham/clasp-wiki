@@ -1,0 +1,10 @@
+I subverted the C++ varargs mechanism to use as Clasp's general calling convention.
+
+Clasp's function prototypes look like this   foo(int nargs, T_O* arg0, T_O* arg1, T_O* arg2, ...)
+Normally one would use va_list vargs; va_start(vargs,arg2)  to set up the va_list structure so that the first call to va_arg gives you the first argument after arg2 (where the ellipsis is).
+I subverted this.   I spill nargs, arg0, arg1, arg2 into the register save area in the Functoid operator() and I set up the va_list struct so that the first call to va_arg will return arg0.
+That saves nargs and arg0, arg1, arg2 in the stack pointed to by the va_list "reg_save_area[]" for debugging and sets "gp_offset" to where arg0 is stored.  Then functions that have fewer than three arguments never need to look at that part of the stack, they can access the arguments in the registers corresponding to arg0, arg1, arg2.
+But if a callee does need the arguments passed in registers (say for (defun foo (&rest x)...) or (defun foo (x &key y) ...) then the calle can use va_arg and it will have receive all arguments through the va_arg mechanism. The callee could further subvert the varargs mechanism by using arg0, arg1, arg2 and further advancing the "gp_offset" field of va_list but this may or may not result in a time savings.
+
+So what happens is that when calling the Functoid foo operator()(int_nargs,T_O* arg0, T_O* arg1, T_O* arg2, ...)  declares a va_list struct and does this subversion of varargs and then trampolines to foo.invoke_va_list(int nargs, T_O* arg0, T_O* arg1, T_O* arg2, va_list vargs)
+In foo.invoke_va_list vargs is a pointer to the va_list struct declared in foo.operator()'s stack frame.   From there on foo.invoke_va_list can call as many nested functions as it wants, the va_list vargs is always passed as a simple pointer.  va_copy can be used to create copies of the va_list so that the remaining arguments can be obtained without loosing the ability to traverse them more than once.
