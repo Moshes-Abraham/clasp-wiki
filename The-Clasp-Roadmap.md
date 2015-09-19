@@ -6,3 +6,5 @@
 1. Multithreading - Clasp needs threads.
 1. Unicode - Clasp needs Unicode.
 1. Unified Common Lisp code with ECL.
+1. Rewrite the bclasp compiler so that it has an AST stage and a code generation stage - this will make it easy to identify at least some bindings that can go on the stack and should speed building clasp.
+1. Improve the generic function dispatch in clasp.
