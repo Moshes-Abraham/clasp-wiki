@@ -16,8 +16,8 @@ Note: The path `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefau
 # For Xcode 7.0  SDK files were moved
 I changed this line in clasp/Jamroot.jam
 
-&lt;target-os&gt;darwin:&lt;cxxflags&gt;"-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk"
+&lt;target-os&gt;darwin:&lt;cxxflags&gt;"-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk"
 
 to 
 
-&lt;target-os&gt;darwin:&lt;cxxflags&gt;"-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk"
+&lt;target-os&gt;darwin:&lt;cxxflags&gt;"-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk"
