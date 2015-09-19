@@ -20,5 +20,4 @@ I changed this line in clasp/Jamroot.jam
 
 to 
 
-<target-os>darwin:<cxxflags>"-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk"
-
+&lt;target-os&gt;darwin:&lt;cxxflags&gt;"-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk"
