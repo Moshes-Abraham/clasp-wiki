@@ -1,4 +1,6 @@
-# Install the required libraries
+# On OS X
+
+## Install the required libraries
 I use "brew"
 
     brew install gmp
