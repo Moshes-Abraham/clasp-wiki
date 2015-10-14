@@ -1,12 +1,11 @@
-#Packages that are necessary to 
+###Packages that are necessary to install Clasp on LTS Ubuntu 14.04.3
 
-Install Ubuntu 14.04.1
-sudo apt-get update
-sudo apt-get upgrade
+    sudo apt-get update
+    sudo apt-get upgrade
 
-git
+    sudo apt-get git
 
-git clone https://github.com/drmeister/clasp.git
+    git clone https://github.com/drmeister/clasp.git
 
 clang-3.6 clang-3.6-dev llvm-3.6 llvm-3.6-dev
 
