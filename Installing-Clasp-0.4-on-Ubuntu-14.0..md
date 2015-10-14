@@ -15,6 +15,7 @@
     sudo apt-get install -y --no-install-recommends autoconf automake libtool
     # Other dependent libraries
     sudo apt-get install -y --no-install-recommends libexpat-dev libz-dev libncurses-dev libreadline-dev
+    sudo apt-get install -y --no-install-recommends libedit-dev
 
     # Finally, to clone clasp
     git clone https://github.com/drmeister/clasp.git
