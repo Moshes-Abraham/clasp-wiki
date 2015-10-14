@@ -18,3 +18,6 @@
 
     # Finally, to clone clasp
     git clone https://github.com/drmeister/clasp.git
+
+    # For development
+    sudo apt-get install -y --no-install-recommends emacs
