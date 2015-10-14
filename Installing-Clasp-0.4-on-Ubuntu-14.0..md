@@ -8,7 +8,7 @@
     sudo apt-get install clang-3.6 clang-3.6-dev llvm-3.6 llvm-3.6-dev --no-install-recommends -y
 
     # Boost
-    sudo apt-get install --no-install-recommends libboost-dev libboost-filesystem-dev libboost-date-time-dev libboost-serialization-dev libboost-iostreams-dev libboost-program-options-dev libboost-random-dev libboost-regex-dev libboost-system-dev
+    sudo apt-get install libboost-dev libboost-filesystem-dev libboost-date-time-dev libboost-serialization-dev libboost-iostreams-dev libboost-program-options-dev libboost-random-dev libboost-regex-dev libboost-system-dev -y --no-install-recommends
     # Gmp
     sudo apt-get install -y --no-install-recommends libgmp-dev
     # For building Boehm
@@ -18,4 +18,3 @@
 
     # Finally, to clone clasp
     git clone https://github.com/drmeister/clasp.git
-
