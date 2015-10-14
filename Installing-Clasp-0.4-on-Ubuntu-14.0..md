@@ -24,5 +24,9 @@ Then do the following:
     # Finally, to clone clasp
     git clone https://github.com/drmeister/clasp.git
 
+    # To build clasp using 4 processors
+    cd clasp
+    make clean; PJOBS=4 make
+
     # For development
     sudo apt-get install -y --no-install-recommends emacs
