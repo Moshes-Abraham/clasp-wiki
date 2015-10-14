@@ -7,7 +7,7 @@ Then do the following:
     sudo apt-get update
     sudo apt-get upgrade
 
-    sudo apt-get git --no-install-recommends -y
+    sudo apt-get install git --no-install-recommends -y
 
     sudo apt-get install clang-3.6 clang-3.6-dev llvm-3.6 llvm-3.6-dev --no-install-recommends -y
 
