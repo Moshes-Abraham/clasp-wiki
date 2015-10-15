@@ -1,5 +1,7 @@
 sudo apt-get install cmake
 
+Install Clasp and the <A url="https://github.com/clasp-developers/SFML.git">SFML demo</A>
+
 Clang3.6 (required by Clasp) needs to be symlinked
 
     sudo ln -s /usr/bin/clang++-3.6 /usr/bin/clang++
