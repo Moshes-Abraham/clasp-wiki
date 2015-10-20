@@ -14,6 +14,7 @@ Then do the following:
 
     # To build clasp using 4 processors
     cd clasp
+    git checkout testing
     make clean; PJOBS=4 make
 
 # Here they are the dependent libraries broken up into groups.
