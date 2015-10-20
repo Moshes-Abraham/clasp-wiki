@@ -7,8 +7,6 @@ Then do the following:
     sudo apt-get update
     sudo apt-get upgrade
 
-    sudo apt-get install git --no-install-recommends -y
-
     sudo apt-get install --no-install-recommends -y git clang-3.6 clang-3.6-dev llvm-3.6 llvm-3.6-dev libboost-dev libboost-filesystem-dev libboost-date-time-dev libboost-serialization-dev libboost-iostreams-dev libboost-program-options-dev libboost-random-dev libboost-regex-dev libboost-system-dev libgmp-dev autoconf automake libtool libexpat-dev libz-dev libncurses-dev libreadline-dev libedit-dev
 
     # To clone clasp
