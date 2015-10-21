@@ -7,6 +7,7 @@ First build the latest version of clasp:
 
 Build clasp the regular way using:
 
+    clasp$  make devshell
     clasp$  make clean; make
 
 On linux, to build the clasp MPS version, it requires at least 12GB of swap (yes, you read that correctly)
