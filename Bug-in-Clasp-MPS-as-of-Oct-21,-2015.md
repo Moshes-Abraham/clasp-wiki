@@ -17,6 +17,7 @@ See these instructions on how to increase your swap size:
 https://www.linux.com/learn/tutorials/442430-increase-your-available-swap-space-with-a-swap-file
 
 From the top level directory clasp/
+
     clasp$ make mps-build
 
 Then to lower the amount of memory available to MPS use:
