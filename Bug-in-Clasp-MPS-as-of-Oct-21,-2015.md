@@ -16,6 +16,11 @@ See these instructions on how to increase your swap size:
 
 https://www.linux.com/learn/tutorials/442430-increase-your-available-swap-space-with-a-swap-file
 
+Following the above link I used:
+
+    sudo dd if=/dev/zero of=/extraswap bs=1M count=16384
+    sudo mkswap /extraswap
+
 From the top level directory clasp/
 
     clasp$ make mps-build
