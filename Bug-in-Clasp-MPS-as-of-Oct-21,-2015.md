@@ -20,6 +20,7 @@ From the top level directory clasp/
     clasp$ make mps-build
 
 Then to lower the amount of memory available to MPS use:
+
     export CLASP_MPS_CONFIG="32 32 16 80 32 80"
 
 And then to start the release version clasp:
