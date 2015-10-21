@@ -14,7 +14,7 @@ On linux, to build the clasp MPS version, it requires at least 12GB of swap (yes
 
 See these instructions on how to increase your swap size:
 
-    https://www.linux.com/learn/tutorials/442430-increase-your-available-swap-space-with-a-swap-file
+https://www.linux.com/learn/tutorials/442430-increase-your-available-swap-space-with-a-swap-file
 
 From the top level directory clasp/
     clasp$ make mps-build
