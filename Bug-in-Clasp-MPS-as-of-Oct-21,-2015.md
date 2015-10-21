@@ -9,7 +9,7 @@ Build clasp the regular way using:
 
     clasp$  make clean; make
 
-On linux to build the clasp MPS version it requires at least 12GB of swap (yes, you read that correctly)
+On linux, to build the clasp MPS version, it requires at least 12GB of swap (yes, you read that correctly)
 
 See these instructions on how to increase your swap size:
 
