@@ -20,6 +20,7 @@ Following the above link I used:
 
     sudo dd if=/dev/zero of=/extraswap bs=1M count=16384
     sudo mkswap /extraswap
+    sudo swapon /extraswap    # after I did this swapon -s reported my new swap
 
 From the top level directory clasp/
 
