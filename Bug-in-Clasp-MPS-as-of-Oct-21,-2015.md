@@ -22,9 +22,15 @@ Then to lower the amount of memory available to MPS use:
     export CLASP_MPS_CONFIG="32 32 16 80 32 80"
 
 And then to start the release version clasp:
+
     clasp_mps_o -f ecl-min
 
 It should crash
+
+Starting the debug version of clasp - I have not been able to make it crash:
+
+    clasp_mps_d -f ecl-min
+
 
 With the debug version of clasp the problem won't surface:
     clasp_mps_d -f ecl-min
