@@ -1,4 +1,4 @@
-###Packages that are necessary to install Clasp on LTS Ubuntu 14.04.3
+###Packages that are necessary to build Clasp on LTS Ubuntu 14.04.3
 
 Start up VirtualBox 5.0.6 and download Ubuntu 14.04.03 from here:  http://www.ubuntu.com/download/server
 
