@@ -19,7 +19,7 @@ CL_DECLARE();
 CL_DOCSTRING(R"doc(Describe a
 C++ object
 like CL:DESCRIBE)doc");
-CL_NAME(CL:DESCRIBE-C++-OBJECT);
+CL_NAME(CORE:DESCRIBE-C++-OBJECT);
 CL_DEFUN void core__describe_cxx_object(T_sp obj, T_sp stream)
 {
   if (obj.generalp()) {
