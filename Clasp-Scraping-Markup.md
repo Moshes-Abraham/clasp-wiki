@@ -10,7 +10,7 @@ CL_DEFUN Cons_sp cl__cons(T_sp obj1, T_sp obj2) {
   return Cons_O::create(obj1, obj2);
 };
 ```
-Prefixing the function ```cl__cons``` with ```CL_DEFUN``` binds the function to the symbol CL:CONS within Clasp. In this case the package name is obtained from the ```cl__``` prefix of the C++ function name.  The ```cl__``` prefix can be left out and then the package is inferred from the namespace of the C++ function.
+Prefixing the function ```cl__cons``` with ```CL_DEFUN``` binds the C++ function ```cl__cons``` to the symbol CL:CONS within Clasp. In this case the package name is obtained from the ```cl__``` prefix of the C++ function name.  The ```cl__``` prefix can be left out and then the package is inferred from the namespace of the C++ function. All conversions of arguments and return values from CL to C++ and back are done automatically by the binding library within Clasp.
 
 Complex example:
 ```C++
@@ -19,6 +19,7 @@ CL_DECLARE();
 CL_DOCSTRING(R"doc(Describe a
 C++ object
 like CL:DESCRIBE)doc");
+CL_NAME(CL:DESCRIBE-C++-OBJECT);
 CL_DEFUN void core__describe_cxx_object(T_sp obj, T_sp stream)
 {
   if (obj.generalp()) {
@@ -29,6 +30,7 @@ CL_DEFUN void core__describe_cxx_object(T_sp obj, T_sp stream)
   SIMPLE_ERROR(BF("Use the CL facilities to describe this object"));
 };
 ```
+In this example, a lambda-list, docstring and the symbol that the function is fbound to is explicitly provided.
 
 ## Other tags
 ```C++
