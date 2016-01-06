@@ -41,7 +41,7 @@ SYMBOL_SC_(CorePkg,foo);
 SYMBOL_SHADOW_EXPORT_SC_(ExtPkg,bar);
 ```
 The first case exposes the CL:LIST symbol.  The second case exposes the CORE::FOO symbol and the third case exposes a shadowing symbol EXT:BAR.
-The symbol names are run through the demangler before being interned.
+The symbol names are run through the demangler before being interned. The package identifiers ```ClPkg```, ```CorePkg```, and ```ExtPkg``` are global variables declared using the ```NAMESPACE_PACKAGE_ASSOCIATION(...)``` macro below and they indicate what package the symbol is interned within.
 
 
 ## Other tags
