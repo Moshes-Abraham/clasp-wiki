@@ -32,6 +32,18 @@ CL_DEFUN void core__describe_cxx_object(T_sp obj, T_sp stream)
 ```
 In this example, a lambda-list, docstring and the symbol that the function is fbound to are explicitly provided. The macros CL_LAMBDA(...), CL_DOCSTRING(...), CL_NAME(...) modify the CL_DEFUN that immediately follow them as long as they are within a reasonable number of source lines of the CL_DEFUN. The CL_NAME(...) macro overrides the name that would be extracted from the function prototype.
 
+## Symbols
+
+Example:
+```C++
+SYMBOL_EXPORT_SC_(ClPkg,list);
+SYMBOL_SC_(CorePkg,foo);
+SYMBOL_SHADOW_EXPORT_SC_(ExtPkg,bar);
+```
+The first case exposes the CL:LIST symbol.  The second case exposes the CORE::FOO symbol and the third case exposes a shadowing symbol EXT:BAR.
+The symbol names are run through the demangler before being interned.
+
+
 ## Other tags
 ```C++
 #define CL_BEGIN_ENUM(type,symbol,desc)
