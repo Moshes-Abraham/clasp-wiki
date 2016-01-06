@@ -30,7 +30,7 @@ CL_DEFUN void core__describe_cxx_object(T_sp obj, T_sp stream)
   SIMPLE_ERROR(BF("Use the CL facilities to describe this object"));
 };
 ```
-In this example, a lambda-list, docstring and the symbol that the function is fbound to is explicitly provided.
+In this example, a lambda-list, docstring and the symbol that the function is fbound to are explicitly provided. The macros CL_LAMBDA(...), CL_DOCSTRING(...), CL_NAME(...) modify the CL_DEFUN that immediately follow them as long as they are within a reasonable number of source lines of the CL_DEFUN.
 
 ## Other tags
 ```C++
