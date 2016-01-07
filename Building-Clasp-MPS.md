@@ -45,8 +45,8 @@ You can do the following with both clasp_boehm_o and clasp_mps_o and observe how
 
 ```
 clasp_boehm_o -I -f ecl-min
-(clean-system :init)      ; clear out compiled bitcode files
-(compile-min)             ; Compile a minimal Common Lisp system
+(clean-system :init :no-prompt t) ; clear out compiled bitcode files
+(compile-min)                     ; Compile a minimal Common Lisp system
 ```
 
 Try the same thing with ```clasp_mps_o -I -f ecl-min```.  
