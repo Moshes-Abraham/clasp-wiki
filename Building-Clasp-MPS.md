@@ -5,7 +5,7 @@ There is a new dependency for Clasp, so you need to grab this first:
 sudo apt-get install sbcl
 ```
 
-Then pull and build the latest version of clasp using the mps-dev branch:
+Then pull and build the latest Boehm version of clasp using the mps-dev branch (this will take about 3 hours):
 
 ```
 clasp$ git pull origin mps-dev
