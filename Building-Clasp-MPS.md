@@ -13,7 +13,7 @@ clasp$ git checkout mps-dev
 clasp$ make clean; make
 ```
 
-To build the release and debug versions of MPS clasp use:
+To build the release and debug versions of MPS clasp (about 20 min) use:
 
 ```
 clasp$ make mps-build
