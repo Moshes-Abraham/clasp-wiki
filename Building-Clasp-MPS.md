@@ -38,3 +38,15 @@ To start the debug version of clasp - I have not been able to make it crash:
 clasp_mps_d -f ecl-min
 (link-min)
 ```
+
+#More tests of Clasp 
+
+You can do the following with both clasp_boehm_o and clasp_mps_o and observe how clasp_mps_o may crash when clasp_boehm_o does not.
+
+```
+clasp_boehm_o -I -f ecl-min
+(clean-system :init)      ; clear out compiled bitcode files
+(compile-min)             ; Compile a minimal Common Lisp system
+```
+
+Try the same thing with clasp_mps_o -I -f ecl-min.  
