@@ -1,5 +1,3 @@
-To reproduce the bug in Clasp do the following:
-
 There is a new dependency for Clasp, so you need to grab this first:
 ```
 sudo apt-get install sbcl
