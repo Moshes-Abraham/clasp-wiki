@@ -49,4 +49,4 @@ clasp_boehm_o -I -f ecl-min
 (compile-min)             ; Compile a minimal Common Lisp system
 ```
 
-Try the same thing with clasp_mps_o -I -f ecl-min.  
+Try the same thing with ```clasp_mps_o -I -f ecl-min```.  
