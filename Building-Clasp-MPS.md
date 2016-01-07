@@ -1,16 +1,16 @@
 To reproduce the bug in Clasp do the following:
 
-First build the latest version of clasp using the mps-dev branch:
-
+There is a new dependency for Clasp, so you need to grab this first:
 ```
-git pull origin mps-dev
-git checkout mps-dev
+sudo apt-get install sbcl
 ```
 
-Build clasp the regular way using:
+Then pull and build the latest version of clasp using the mps-dev branch:
 
 ```
-clasp$  make clean; make
+clasp$ git pull origin mps-dev
+clasp$ git checkout mps-dev
+clasp$ make clean; make
 ```
 
 To build the release and debug versions of MPS clasp use:
