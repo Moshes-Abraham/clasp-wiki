@@ -1,6 +1,6 @@
 # Building only the clasp_mps_d and clasp_mps_o executables.
 
-You can skip compiling all of the clasp Common Lisp source code for now.
+You can skip compiling all of the clasp Common Lisp source code for now because there are problems with the MPS version that need to be resolved first.
 
 Get the latest version of the mps-dev branch and then build the executables.
 
