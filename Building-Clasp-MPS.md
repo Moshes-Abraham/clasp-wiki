@@ -25,6 +25,10 @@ run
 (link-min)
 ```
 
+If you want to crank up the number of garbage collections to force crashes earlier, set the ```CLASP_MPS_CONFIG``` environment variable before evaluating the code above.
+```
+export CLASP_MPS_CONFIG="32 32 16 80 32 80"
+```
 # Instructions for building the MPS version of Clasp once it is working fully
 
 Pull and build the latest Boehm version of clasp using the mps-dev branch (this will take about 3 hours):
