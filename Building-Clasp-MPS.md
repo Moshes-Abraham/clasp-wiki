@@ -17,7 +17,8 @@ main$ make mps-release-cxx
 
 To run tests that should crash and reveal problems you can use...
 ```
-clasp_mps_d -I -n
+gdb --args clasp_mps_d -I -n
+run
 (load "sys:kernel;init.lsp")
 (clean-system :init :no-prompt t)
 (compile-min)
