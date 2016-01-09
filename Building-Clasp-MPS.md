@@ -1,9 +1,31 @@
-There is a new dependency for Clasp, so you need to grab this first:
+# Building only the clasp_mps_d and clasp_mps_o executables.
+
+You can skip compiling all of the clasp Common Lisp source code for now.
+
+Get the latest version of the mps-dev branch and then build the executables.
+
 ```
-sudo apt-get install sbcl
+clasp$ make mps-build
 ```
 
-Then pull and build the latest Boehm version of clasp using the mps-dev branch (this will take about 3 hours):
+To build just the debug or the release versions use:
+```
+clasp$ cd src/main
+main$ make mps-debug-cxx
+main$ make mps-release-cxx
+```
+
+To run tests that should crash and reveal problems you can use...
+```
+clasp_mps_d -I -f ecl-min
+(clean-system :init :no-prompt t)
+(compile-min)
+(link-min)
+```
+
+# Instructions for building the MPS version of Clasp once it is working fully
+
+Pull and build the latest Boehm version of clasp using the mps-dev branch (this will take about 3 hours):
 
 ```
 clasp$ git pull origin mps-dev
