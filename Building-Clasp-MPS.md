@@ -18,6 +18,7 @@ main$ make mps-release-cxx
 To run tests that should crash and reveal problems you can use...
 ```
 gdb --args build/clasp/bin/clasp_mps_d -I -n
+handle SIGSEGV pass nostop noprint
 run
 (load "sys:kernel;init.lsp")
 (clean-system :init :no-prompt t)
