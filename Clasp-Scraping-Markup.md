@@ -1,6 +1,6 @@
 # Overview
 
-To expose C++ functions, classes, methods, enums to Clasp tags are embedded within the Clasp source code that are scraped from the code using a scraper written in Common Lisp.  The scraping markup consists of a collection of C-preprocessor macros.  The scraper runs the C++ preprocessor on all of the source files which expands the macros to tags and then the scraper extracts the tags from the preprocessor output. Then the scraper generates C++ code that becomes part of the Clasp source code and informs Clasp about all exposed functions, classes, methods and enums as well as source code locations of these objects.
+To expose C++ functions, classes, methods, enums to Clasp, tags are embedded within the Clasp source code that are scraped from the code using a scraper written in Common Lisp.  The scraping markup consists of a collection of C-preprocessor macros.  The scraper runs the C++ preprocessor on all of the source files which expands the macros to tags and then the scraper extracts the tags from the preprocessor output. Then the scraper generates C++ code that becomes part of the Clasp source code and informs Clasp about all exposed functions, classes, methods and enums as well as source code locations of these objects.
 
 # Markup
 ## Exposing a function
