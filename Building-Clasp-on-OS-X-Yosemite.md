@@ -4,7 +4,7 @@ These instructions have not been tested on El Capitan
 1. Clone and build [clasp](http://github.com/drmeister/clasp)
 1. In the top clasp directory copy local.config.template into local.config
 1. Edit the local.config file to uncomment #export EXTERNALS_CLASP_DIR and set it to where you installed externals-clasp
-eg:
+eg:<br>
 `export EXTERNALS_CLASP_DIR=/Users/meister/Development/externals-clasp`
 1. Build clasp with "make clean; make"
 
