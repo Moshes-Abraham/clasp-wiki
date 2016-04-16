@@ -1,3 +1,4 @@
+These instructions have not been tested on El Capitan
 # The steps to building Clasp on OS X
 1. Clone and build [externals-clasp](http://github.com/drmeister/externals-clasp).
 1. Clone and build [clasp](http://github.com/drmeister/clasp)
