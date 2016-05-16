@@ -5,8 +5,10 @@ I used the m4.large with 24Gb Disk space
 
 # Set up a user and log in
 
+```
 useradd -m -G wheel -s /bin/bash meister
 su - meister
+```
 
 # Download packages
 ```
