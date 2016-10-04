@@ -11,7 +11,7 @@ eg:<br>
 
 Clasp uses a lot of bleeding edge features of llvm/clang and llvm/clang is a moving target - so Clasp is tied to a specific release of llvm/clang. To ease building I've created [externals-clasp](http://github.com/drmeister/externals-clasp). It contains the specific release of llvm/clang needed by clasp.
 
-# The following is old set up information that I may or may not need to move up into the instructions
+## The following is old set up information that I may or may not need to move up into the instructions
 The open source clang may need to be informed where the OS X compiler resources (header files) are located.
 
 So the following symbolic link needs to be installed.
