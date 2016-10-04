@@ -1,10 +1,6 @@
 ./bin
 - Not useful
 
-./boost_build_v2
-- This contains a hacked version of boost-build.
-I hacked it to support an option called <make-bundle> on OS X.  Bundles are like shared libraries but if I recall correctly, they use different rules in how they link symbols.
-
 ./build
 - This is where the built version of clasp gets generated.
 
