@@ -1,4 +1,6 @@
-sudo apt-get install cmake
+This was for Clasp 0.4 and the demo possibly no longer works with Clasp 0.5+
+
+    sudo apt-get install cmake
 
 Install Clasp and the <A href="https://github.com/clasp-developers/SFML.git">SFML demo</A>
 
