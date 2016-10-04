@@ -1,5 +1,5 @@
 # Linux
-Adapt paths as necessary. Required prerequisites are: a sane compiler environment for C and C++, boehm, cmake, boost of recent enough versions. Debian stable unfortunately does not yet sport high enough versions of the latter two.
+Adapt paths as necessary. Required prerequisites are: a sane compiler environment for C and C++, boehmgc, cmake, boost of recent enough versions. Debian stable unfortunately does not yet sport high enough versions of the latter two.
 
 1. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
 2. `git clone https://github.com/drmeister/clasp ~/clasp`
