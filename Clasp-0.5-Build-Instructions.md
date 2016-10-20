@@ -4,7 +4,7 @@ Adapt paths as necessary. Required prerequisites are: a sane compiler environmen
 1. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
 2. `git clone https://github.com/drmeister/clasp ~/clasp`
 3. `cd ~/externals-clasp && make`
-4. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > local.config`
+4. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
 5. `./waf configure && ./waf build_cboehm`
 
 # OS X
@@ -14,7 +14,7 @@ You'll need Homebrew for some of the extra packages that are needed to build eve
 2. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
 3. `git clone https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
-5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > local.config`
+5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
 6. `./waf configure && ./waf build_cboehm`
 
 ### The following is old set up information that I may or may not need to move up into the instructions
