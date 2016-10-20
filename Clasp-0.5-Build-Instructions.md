@@ -4,20 +4,17 @@ Adapt paths as necessary. Required prerequisites are: a sane compiler environmen
 1. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
 2. `git clone https://github.com/drmeister/clasp ~/clasp`
 3. `cd ~/externals-clasp && make`
-4. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = $HOME/externals-clasp" > local.config`
+4. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > local.config`
 5. `make`
 
 # OS X
 
-1. Clone and build [externals-clasp](http://github.com/drmeister/externals-clasp).
-1. Clone and build [clasp](http://github.com/drmeister/clasp)  
-1. In the top clasp directory copy local.config.template into local.config
-1. Edit the local.config file to uncomment #export EXTERNALS_CLASP_DIR and set it to where you installed externals-clasp
-eg:<br>
-`export EXTERNALS_CLASP_DIR=/Users/meister/Development/externals-clasp`
-1. Build clasp with "make clean; make"
-
-Clasp uses a lot of bleeding edge features of llvm/clang and llvm/clang is a moving target - so Clasp is tied to a specific release of llvm/clang. To ease building I've created [externals-clasp](http://github.com/drmeister/externals-clasp). It contains the specific release of llvm/clang needed by clasp.
+1. `brew install bdw-gc cmake boost`
+2. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
+3. `git clone https://github.com/drmeister/clasp ~/clasp`
+4. `cd ~/externals-clasp && make`
+5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > local.config`
+6. `make`
 
 ## The following is old set up information that I may or may not need to move up into the instructions
 The open source clang may need to be informed where the OS X compiler resources (header files) are located.
