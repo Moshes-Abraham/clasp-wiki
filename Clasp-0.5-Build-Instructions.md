@@ -20,13 +20,8 @@ You'll need Homebrew for some of the extra packages that are needed to build eve
 ### The following is old set up information that I may or may not need to move up into the instructions
 The open source clang may need to be informed where the OS X compiler resources (header files) are located.
 
-So the following symbolic link needs to be installed.
-
-Let's say the external clang executable is installed at `/Users/meister/Development/externals-clasp/build/release/bin/clang`.
-
-Then use:  
-
-     $ mv /Users/meister/Development/externals-clasp/build/release/include/c++/v1 /Users/meister/Development/externals-clasp/build/release/include/c++/v1-original  
-     $ ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 /Users/meister/Development/externals-clasp/build/release/include/c++/v1
+So the installed Clang must be modified as follows:
+1. `mv ~/externals-clasp/build/release/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1-original`
+2. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
 
 Note: The path `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1` may change from time to time when OS X/Xcode releases are made.
