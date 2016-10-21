@@ -17,11 +17,9 @@ You'll need Homebrew for some of the extra packages that are needed to build eve
 5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
 6. `./waf configure && ./waf build_cboehm`
 
-### The following is old set up information that I may or may not need to move up into the instructions
-The open source clang may need to be informed where the OS X compiler resources (header files) are located.
+If you get compiler errors on the first try, then the open source clang may need to be informed where the OS X compiler resources (header files) are located.
 
-So the installed Clang must be modified as follows:
 1. `mv ~/externals-clasp/build/release/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1-original`
 2. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
 
-Note: The path `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1` may change from time to time when OS X/Xcode releases are made.
+Note: The Xcode path may change from time to time when OS X/Xcode releases are made.
