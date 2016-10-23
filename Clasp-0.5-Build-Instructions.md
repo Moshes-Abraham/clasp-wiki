@@ -6,7 +6,7 @@ Adapt paths as necessary.
 3. `git clone https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
 5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
-6. `./waf configure && ./waf update_submodules && ./waf build_cboehm`
+6. `./waf configure update_submodules build_cboehm`
 
 # OS X
 You'll need XCode and Homebrew for some of the extra packages that are needed to build everything. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
@@ -16,7 +16,7 @@ You'll need XCode and Homebrew for some of the extra packages that are needed to
 3. `git clone https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
 5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
-6. `./waf configure && ./waf update_submodules && ./waf build_cboehm`
+6. `./waf configure update_submodules build_cboehm`
 
 If you get compiler errors on the first try, then the open source clang may need to be informed where the OS X compiler resources (header files) are located.
 
