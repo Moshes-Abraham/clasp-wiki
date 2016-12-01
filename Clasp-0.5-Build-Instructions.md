@@ -2,7 +2,7 @@
 Adapt paths as necessary. 
 
 1. Install `gcc g++ boehmgc cmake boost`
-2. `git clone -b testing https://github.com/drmeister/externals-clasp ~/externals-clasp`
+2. `git clone -b master https://github.com/drmeister/externals-clasp ~/externals-clasp`
 3. `git clone -b testing https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
 5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
