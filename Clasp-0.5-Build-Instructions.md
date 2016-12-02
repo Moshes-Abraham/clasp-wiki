@@ -1,7 +1,7 @@
 # Linux
 Adapt paths as necessary. 
 
-1. Install `gcc g++ boehmgc cmake boost binutils-gold binutils-dev`
+1. Install `gcc g++ llvm clang cmake boost libgc-dev binutils-gold binutils-dev`
 2. `git clone -b master https://github.com/drmeister/externals-clasp ~/externals-clasp`
 3. `git clone -b testing https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
