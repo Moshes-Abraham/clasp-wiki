@@ -12,19 +12,19 @@ Adapt paths as necessary.
 You'll need XCode and Homebrew for some of the extra packages that are needed to build everything. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
 
 ## Install externals-clasp until the builtin Xcode can build clasp (Xcode could not as of Sep 6, 2017)
-### Informing clang about the Xcode resource path
-#### These instructions worked most recently on Sep 6, 2017 (drmeister) 
-#### !!!! Edit the paths to reflect your path to externals-clasp.
+1. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
+2. `cd ~/externals-clasp && make`
 
-1. `mv ~/externals-clasp/build/release/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1-original`
-2. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
+#### Informing the new clang about the Xcode resource path
+#### These instructions worked most recently on Sep 6, 2017 (drmeister) 
+
+3. `mv ~/externals-clasp/build/release/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1-original`
+4. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
 
 Note: The Xcode path may change from time to time when OS X/Xcode releases are made.
 
-3. `brew install gmp bdw-gc cmake boost`
-4. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
-5. `git clone https://github.com/drmeister/clasp ~/clasp`
-6. `cd ~/externals-clasp && make`
+5. `brew install gmp bdw-gc cmake boost`
+6. `git clone https://github.com/drmeister/clasp ~/clasp`
 7. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
 8. `./waf configure update_submodules build_cboehm`
 
