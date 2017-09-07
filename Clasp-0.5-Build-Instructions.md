@@ -21,6 +21,7 @@ You'll need XCode and Homebrew for some of the extra packages that are needed to
 If you get compiler errors on the first try, then the open source clang may need to be informed where the OS X compiler resources (header files) are located.
 
 ### Informing clang about the Xcode resource path
+#### These instructions worked most recently on Sep 6, 2017 (meister) - although we had to edit the paths a little.
 7. `mv ~/externals-clasp/build/release/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1-original`
 8. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
 
