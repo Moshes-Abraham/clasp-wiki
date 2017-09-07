@@ -12,21 +12,21 @@ Adapt paths as necessary.
 You'll need XCode and Homebrew for some of the extra packages that are needed to build everything. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
 
 ### Informing clang about the Xcode resource path
-#### These instructions worked most recently on Sep 6, 2017 (drmeister) - although we had to edit the paths a little.
+#### These instructions worked most recently on Sep 6, 2017 (drmeister) 
+#### !!!! Edit the paths to reflect your path to externals-clasp.
 
-#### We installed gmp using home-brew.
-7. `mv ~/externals-clasp/build/release/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1-original`
-8. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
+1. `mv ~/externals-clasp/build/release/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1-original`
+2. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
 
 Note: The Xcode path may change from time to time when OS X/Xcode releases are made.
 
-1. `brew install gmp bdw-gc cmake boost`
-2. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
-3. `git clone https://github.com/drmeister/clasp ~/clasp`
-4. `cd ~/externals-clasp && make`
-5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
-6. `./waf configure update_submodules build_cboehm`
+3. `brew install gmp bdw-gc cmake boost`
+4. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
+5. `git clone https://github.com/drmeister/clasp ~/clasp`
+6. `cd ~/externals-clasp && make`
+7. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
+8. `./waf configure update_submodules build_cboehm`
 
-If you get compiler errors on the first try, then the open source clang may need to be informed where the OS X compiler resources (header files) are located.
+If there are still problems - try reinstalling Xcode command line tools and start again.
 
-If there are still problems - try reinstalling Xcode command line tools:     `xcode-select --install`
+Use:     `xcode-select --install`
