@@ -26,4 +26,4 @@ If you get compiler errors on the first try, then the open source clang may need
 
 Note: The Xcode path may change from time to time when OS X/Xcode releases are made.
 
-If there are still problems - try reinstalling Xcode command line tools:     xcode-select --install
+If there are still problems - try reinstalling Xcode command line tools:     *xcode-select --install*
