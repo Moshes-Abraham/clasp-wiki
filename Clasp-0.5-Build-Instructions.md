@@ -11,7 +11,7 @@ Adapt paths as necessary.
 # OS X
 You'll need XCode and Homebrew for some of the extra packages that are needed to build everything. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
 
-1. `brew install bdw-gc cmake boost`
+1. `brew install gmp bdw-gc cmake boost`
 2. `git clone https://github.com/drmeister/externals-clasp ~/externals-clasp`
 3. `git clone https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
