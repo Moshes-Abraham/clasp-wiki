@@ -25,3 +25,5 @@ If you get compiler errors on the first try, then the open source clang may need
 8. `ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 ~/externals-clasp/build/release/include/c++/v1`
 
 Note: The Xcode path may change from time to time when OS X/Xcode releases are made.
+
+If there are still problems - try reinstalling Xcode command line tools:     xcode-select --install
