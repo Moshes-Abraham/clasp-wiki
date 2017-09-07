@@ -11,6 +11,7 @@ Adapt paths as necessary.
 # OS X
 You'll need XCode and Homebrew for some of the extra packages that are needed to build everything. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
 
+## Install externals-clasp until the builtin Xcode can build clasp (Xcode could not as of Sep 6, 2017)
 ### Informing clang about the Xcode resource path
 #### These instructions worked most recently on Sep 6, 2017 (drmeister) 
 #### !!!! Edit the paths to reflect your path to externals-clasp.
