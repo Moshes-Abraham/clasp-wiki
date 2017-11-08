@@ -6,7 +6,7 @@ Adapt paths as necessary.
 3. `git clone -b testing https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
 5. `cd ~/clasp && echo "LLVM_CONFIG_BINARY = '$HOME/externals-clasp/build/release/bin/llvm-config'" > wscript.config`
-6. `./waf configure update_submodules build_cboehm`
+6. `./waf update_submodules configure build_cboehm`
 
 # OS X
 You'll need XCode and Homebrew for some of the extra packages that are needed to build everything. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
