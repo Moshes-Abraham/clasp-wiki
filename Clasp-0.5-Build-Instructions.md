@@ -23,7 +23,7 @@ You'll need XCode and Homebrew for some of the extra packages that are needed to
 
 Note: The Xcode path may change from time to time when OS X/Xcode releases are made.
 
-5. `brew install gmp bdw-gc cmake boost`
+5. `brew install gmp bdw-gc cmake boost libunwind-headers`
 6. `git clone https://github.com/drmeister/clasp ~/clasp`
 7. `cd ~/clasp && echo "LLVM_CONFIG_BINARY = '$HOME/externals-clasp/build/release/bin/llvm-config'" > wscript.config`
 8. `./waf configure update_submodules build_cboehm`
