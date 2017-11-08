@@ -5,7 +5,7 @@ Adapt paths as necessary.
 2. `git clone -b master https://github.com/drmeister/externals-clasp ~/externals-clasp`
 3. `git clone -b testing https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
-5. `cd ~/clasp && echo "EXTERNALS_CLASP_DIR = '$HOME/externals-clasp'" > wscript.config`
+5. `cd ~/clasp && echo "LLVM_CONFIG_BINARY = '$HOME/externals-clasp/build/release/bin/llvm-config'" > wscript.config`
 6. `./waf configure update_submodules build_cboehm`
 
 # OS X
