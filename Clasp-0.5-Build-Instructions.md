@@ -26,7 +26,7 @@ Note: The Xcode path may change from time to time when OS X/Xcode releases are m
 5. `brew install gmp bdw-gc cmake boost libunwind-headers`
 6. `git clone https://github.com/drmeister/clasp ~/clasp`
 7. `cd ~/clasp && echo "LLVM_CONFIG_BINARY = '$HOME/externals-clasp/build/release/bin/llvm-config'" > wscript.config`
-8. `./waf configure update_submodules build_cboehm`
+8. `./waf update_submodules configure build_cboehm`
 
 If there are still problems - try reinstalling Xcode command line tools and start again.
 
