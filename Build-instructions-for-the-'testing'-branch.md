@@ -16,9 +16,9 @@ You may need to edit wscript.config at this point.
 
 The build needs a lot of resources, so you may want to build as follows.
 
-Compile in paralel and with low priority:
+Compile in paralel, with low priority, and limit parallelism to the number of actual cores your CPU has (as opposed to hyperthreading that adds little extra performance for a lot of extra memory usage):
 
-1. `nice -n 19 ionice --class 3 ./waf build_fboehm`
+1. `nice -n 19 ionice --class 3 ./waf --jobs 2 build_fboehm`
 
 Then link on a single thread to limit peak memory usage:
 
