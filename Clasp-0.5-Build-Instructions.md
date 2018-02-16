@@ -1,7 +1,7 @@
 # Linux
 Adapt paths as necessary. 
 
-1. Debian/Ubuntu: `apt install gcc g++ llvm clang cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev`
+1. Debian/Ubuntu: `apt install gcc g++ llvm clang cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev`
 2. `git clone -b master https://github.com/drmeister/externals-clasp ~/externals-clasp`
 3. `git clone -b testing https://github.com/drmeister/clasp ~/clasp`
 4. `cd ~/externals-clasp && make`
