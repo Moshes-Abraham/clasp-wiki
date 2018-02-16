@@ -11,3 +11,15 @@ You may want to look at [this Dockerfile](https://github.com/drmeister/clasp/blo
 You may need to edit wscript.config at this point.
 
 5. `./waf update_submodules configure build_cboehm`
+
+## Limit resource usage
+
+The build needs a lot of resources, so you may want to build as follows.
+
+Compile in paralel and with low priority:
+
+1. `nice -n 19 ionice --class 3 ./waf build_fboehm`
+
+Then link on a single thread to limit peak memory usage:
+
+2. `nice -n 19 ionice --class 3 ./waf --jobs 1 build_cboehm`
