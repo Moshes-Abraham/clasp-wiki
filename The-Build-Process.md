@@ -9,3 +9,4 @@
 The build script of extensions must be able to do at least the following:
 * register .cc/.h files for inclusion
 * register .lisp files for inclusion
+* register link artifacts for the linking of the final exe
