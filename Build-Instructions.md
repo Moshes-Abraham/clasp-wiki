@@ -2,13 +2,31 @@
 
 If something fails while building the `dev` branch, then try the `testing` branch. It's lagging behind somewhat, but it should be more stable.
 
+You may want to look at [the Dockerfiles](https://github.com/clasp-developers/clasp/blob/dev/tools/dockerfiles/). They describe how to build in various environments and configurations.
+
 ## Linux
 
-1. Debian/Ubuntu: `apt install gcc g++ llvm-5.0 clang-5.0 cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev`
+1. Debian/Ubuntu: `apt install gcc g++ llvm clang-5.0 libclang-5.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev`
 2. `git clone -b dev https://github.com/clasp-developers/clasp`
 3. `cd clasp`
-4. `echo "LLVM5_ORC_NOTIFIER_PATCH = False" > wscript.config`
+4. `cp --interactive wscript.config.template wscript.config && echo "LLVM5_ORC_NOTIFIER_PATCH = False" >> wscript.config`
 5. `./waf distclean configure build_cboehm`
+
+A more detailed log of the build is available in `build/boehm/build.log`.
+
+### Limit resource usage
+
+The build needs a lot of resources (at least 8G RAM), so you may want to build as follows.
+
+Compile in paralel, with low priority, and limit parallelism to the number of actual cores your CPU has (as opposed to hyperthreading that adds relatively little extra performance but the extra memory load of a full build thread):
+
+1. `nice -n 19 ionice --class 3 ./waf --jobs 2 build_fboehm`
+
+Then link on a single thread to limit peak memory usage:
+
+2. `nice -n 19 ionice --class 3 ./waf --jobs 1 build_cboehm`
+
+If you don't have any swap space, then your machine will very suddenly become unresponsive when the memory gets full. I suggest to do have swap, but configure linux to `vm.swappiness=1`. This way you'll have more time to intervene when it happens.
 
 # Clasp v0.5
 ## Linux
