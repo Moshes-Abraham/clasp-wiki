@@ -28,6 +28,33 @@ Then link on a single thread to limit peak memory usage:
 
 If you don't have any swap space, then your machine will very suddenly become unresponsive when the memory gets full. I suggest to do have swap, but configure linux to `vm.swappiness=1`. This way you'll have more time to intervene when it happens.
 
+## OS X
+You'll need Xcode and Homebrew for some of the extra packages that are needed to build everything. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
+
+### Install externals-clasp
+0. `brew install cmake`
+1. `git clone https://github.com/clasp-developers/externals-clasp ~/externals-clasp`
+2. `cd ~/externals-clasp && make`
+
+### Parallel Boehm
+Clasp can optionally be built in parallel. To do so, you need a garbage collector that deals okay with forking. Boehm's forkable version can be built as follows:
+
+0. `git clone https://github.com/clasp-developers/forkable-boehm`
+1. `cd forkable-boehm && make && make install`
+2. Include line `USE_PARALLEL_BUILD = True` in Clasp's wscript.config file (mentioned below)
+
+Do this instead of installing bdw-gc from brew.
+
+### Clasp itself
+0. `brew install gmp bdw-gc boost libunwind-headers`
+1. `git clone https://github.com/clasp-developers/clasp ~/clasp`
+2. `cd ~/clasp && echo "LLVM_CONFIG_BINARY = '$HOME/externals-clasp/build/release/bin/llvm-config'" > wscript.config`
+3. `./waf configure build_cboehm`
+
+If there are still problems - try reinstalling Xcode command line tools and start again.
+
+Use:     `xcode-select --install`
+
 # Clasp v0.5
 ## Linux
 Adapt paths as necessary. 
