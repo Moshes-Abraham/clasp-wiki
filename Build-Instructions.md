@@ -6,19 +6,19 @@ You may want to look at [the Dockerfiles](https://github.com/clasp-developers/cl
 
 ## Linux
 
-1. Debian/Ubuntu: `apt install gcc g++ llvm clang-5.0 libclang-5.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev`
-2. `git clone -b dev https://github.com/clasp-developers/clasp`
+1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-5.0 libclang-5.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev`
+2. `git clone -b dev https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
-4. `cp --interactive wscript.config.template wscript.config && echo "LLVM5_ORC_NOTIFIER_PATCH = False" >> wscript.config`
-5. `./waf distclean configure build_cboehm`
+4. `./waf configure`
+5. `./waf build_cboehm`
 
-A more detailed log of the build is available in `build/boehm/build.log`.
+A detailed log of the build is available in `build/boehm/build.log`.
 
 ### Limit resource usage
 
 The build needs a lot of resources (at least 8G RAM), so you may want to build as follows.
 
-Compile in paralel, with low priority, and limit parallelism to the number of actual cores your CPU has (as opposed to hyperthreading that adds relatively little extra performance but the extra memory load of a full build thread):
+Compile in parallel, with low priority, and limit parallelism to the number of actual cores your CPU has (as opposed to hyperthreading that adds relatively little extra performance but the extra memory load of a full build thread):
 
 1. `nice -n 19 ionice --class 3 ./waf --jobs 2 build_fboehm`
 
