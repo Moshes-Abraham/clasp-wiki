@@ -33,8 +33,8 @@ You'll need Xcode and Homebrew for some of the extra packages that are needed to
 
 ### Build Clasp 
 1. `brew install cmake llvm@5 libffi bdw-gc gmp boost libunwind-headers`
-2. `git clone https://github.com/clasp-developers/clasp ~/clasp`
-3. `cd ~/clasp`
+2. `git clone https://github.com/clasp-developers/clasp.git`
+3. `cd clasp`
 4. `./waf configure`
 5. `./waf build_cboehm`
 6. To build the MPS version:  `./waf build_cmps`
