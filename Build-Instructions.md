@@ -32,6 +32,7 @@ If you don't have any swap space, then your machine will very suddenly become un
 You'll need Xcode and Homebrew for some of the extra packages that are needed to build everything. Clasp requires a specific release of llvm and does not use the Xcode version although it does use Xcode files. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
 
 ### Build Clasp 
+0. Install homebrew from https://brew.sh/
 1. `brew install cmake llvm@5 libffi bdw-gc gmp boost libunwind-headers`
 2. `git clone https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
