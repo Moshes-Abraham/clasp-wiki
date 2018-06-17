@@ -1,6 +1,7 @@
 # Bootstrap Stages
   1. `iclasp` is a CL interpreter written in C++
   2. `aclasp` is iclasp after loading a minimal CL system
+
   3. `bclasp` is a CLOS capable CL system, good enough to run [Cleavir](http://metamodular.com/cleavir.pdf)
   4. `cclasp` is created by loading Cleavir into `bclasp` and recompiling everything
 
