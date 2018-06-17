@@ -1,5 +1,7 @@
 # Bootstrap Stages
 
+Until the two are merged, see also: [docs/bootstrap.rst](https://github.com/clasp-developers/clasp/blob/dev/docs/bootstrap.rst)
+
 ## `iclasp`
 is an interpreter for a subset of CL written in C++.
 
