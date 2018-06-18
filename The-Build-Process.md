@@ -16,7 +16,7 @@ is iclasp after loading a minimal CL system that is capable of `compile-file`-in
 
 `./waf build_rboehm` starts iclasp and has it load the aclasp Common Lisp source code as interpreted code; i.e. absolutely no Common Lisp compilation happens up to this point.
 
-At this point aclasp is used to compile itself (i.e. calling `compile-file` on the CL source files that are implementing aclasp), and when a file is compiled, it is loaded into the running image, which leads to a gradual speedup of this process of compilation.
+At this point aclasp is used to compile itself (i.e. calling `compile-file` on the CL source files that are implementing aclasp). When a file is successfully compiled, it is loaded into the running image, which leads to a gradual speedup of this process of compilation.
 
 `./waf build_aboehm` then links the `compile-file`'d code into a fasl called `aclasp-boehm-image.fasl`. Run `iclasp-boehm` with this image and you get what you get when you run `./waf build_rboehm`, but everything is compiled now (i.e. faster).
 
