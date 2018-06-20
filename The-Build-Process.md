@@ -10,9 +10,7 @@ iclasp is already capable of calling the LLVM functions (see the `llvm-sys` pack
 iclasp expands macros repeatedly, every time they are reached. This makes it rather slow with `loop` and friends.
 
 ## `aclasp`
-is iclasp after loading a minimal CL system that is capable of `compile-file`-ing a subset of CL.
-
-`compile-file` happens by calling the LLVM machinery at runtime.
+is iclasp after loading a minimal CL system that is capable of `compile-file`-ing a subset of CL. aclasp is written in  this subset of CL, i.e. aclasp is just smart enough to self-compile. `compile-file` happens by calling the LLVM machinery at runtime.
 
 `./waf build_rboehm` starts iclasp and has it load the aclasp Common Lisp source code as interpreted code; i.e. absolutely no Common Lisp compilation happens up to this point.
 
@@ -21,10 +19,10 @@ At this point aclasp is used to compile itself (i.e. calling `compile-file` on t
 `./waf build_aboehm` then links the `compile-file`'d code into a fasl called `aclasp-boehm-image.fasl`. Run `iclasp-boehm` with this image and you get what you get when you run `./waf build_rboehm`, but everything is compiled now (i.e. faster).
 
 ## `bclasp`
-is a complete CL system that is now able to run [Cleavir](http://metamodular.com/cleavir.pdf), which is a modern full-blown CL compiler that requires full CL support to run, CLOS included.
+is aclasp compiling and loading a few more files that turn aclasp into a complete CL system that is now able to run [Cleavir](http://metamodular.com/cleavir.pdf), which is a modern full-blown CL compiler that requires full CL support to run, CLOS included.
 
 ## `cclasp`
-is created by loading Cleavir into `bclasp` and recompiling everything.
+is the self-compilation of/with Cleavir, i.e. it's created by loading Cleavir into `bclasp` and recompiling everything.
 
 # Building with extensions
 ## Requiremens for the build infrastructure
