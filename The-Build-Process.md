@@ -65,9 +65,12 @@ Examples for new stages:
 * We want to introduce a new generic method caching machinery that also requires support in the runtime (extra complexity in the C++ code).
 * We want to write a new GC in CL.
 
+In effect each stage will be similar to a cross compilation from one arch to a completely different arch; i.e. ideally, properly set up algorithms should catch the situations when anything in stage-n is referred to while producing the link artifacts for stage-n+1.
+
 ## Open questions
 
 * Would it be possible to eliminate the SBCL dependency by not running the scraper when building the earlier stages (or checking in the scraper output into the repo), and then running the scraper for a later stage using an earlier stage instead of SBCL?
+* The stage-n naming convention doesn't accommodate for multiple "ground floors". 
 
 # Building with extensions
 
