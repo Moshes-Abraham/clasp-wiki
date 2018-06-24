@@ -69,7 +69,7 @@ In effect each stage will be similar to a cross compilation from one arch to a c
 
 ## Open questions
 
-* Would it be possible to eliminate the SBCL dependency by not running the scraper when building the earlier stages (or checking in the scraper output into the repo), and then running the scraper for a later stage using an earlier stage instead of SBCL?
+* Would it be possible to eliminate the SBCL dependency by not running the scraper when building the earlier stages (or checking in the scraper output into the repo), and then running the scraper for a later stage using an earlier stage instead of SBCL? -- not really possible, because without the scraper aclasp cannot call into LLVM.
 * The stage-n naming convention doesn't accommodate for multiple "ground floors". 
 
 # Building with extensions
