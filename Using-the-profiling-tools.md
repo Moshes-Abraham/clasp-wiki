@@ -14,4 +14,4 @@ Generates backtraces that start with the frame <PART-OF-FUNCTION-NAME>.
 
 ```./flame /tmp/out-pruned.user_stacks```
 
-Generates /tmp/out.svg - view this in chrome
+Generates /tmp/out-flame.svg - view this in chrome
