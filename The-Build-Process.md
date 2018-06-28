@@ -22,7 +22,7 @@ At this point aclasp is used to compile itself (i.e. calling `compile-file` on t
 is aclasp compiling and loading a few more files that turn aclasp into a complete CL system that is now able to run [Cleavir](http://metamodular.com/cleavir.pdf), which is a modern full-blown CL compiler that requires full CL support to run, CLOS included.
 
 ## `cclasp`
-is the self-compilation of/with Cleavir, i.e. it's created by loading Cleavir into `bclasp` and recompiling everything.
+is the self-compilation of/with Cleavir, i.e. it's created by loading Cleavir into `bclasp` and using it to recompile everything.
 
 # Plans for a bootstrap refactor
 
