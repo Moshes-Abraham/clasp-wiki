@@ -80,3 +80,7 @@ The build script of extensions must be able to do at least the following:
 * register .cc/.h files for inclusion
 * register .lisp files for inclusion
 * register link artifacts for the linking of the final exe
+
+# Notes
+## Relevant IRC discussions
+* [here](https://irclog.tymoon.eu/freenode/clasp?around=1531339773#1531339773) drmeister is talking about plans on how to refactor the current startup into saving images
