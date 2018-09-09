@@ -6,11 +6,17 @@ You may want to look at [the Dockerfiles](https://github.com/clasp-developers/cl
 
 ## Linux
 
-1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-5.0 libclang-5.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev`
+1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev`
 2. `git clone https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
 4. `./waf configure`
 5. `./waf build_cboehm`
+
+If `./waf configure` fails it is because clasp can't find the llvm-config executable or some other dependency.
+Try:
+
+1. `cp wscript.config.template wscript.config`
+2. Edit the wscript.config file and change the LLVM_CONFIG_BINARY to point to the llvm-config binary (eg: LLVM_CONFIG_BINARY = '/usr/local/opt/llvm/bin/llvm-config').
 
 A detailed log of the build is available in `build/boehm/build.log`.
 
