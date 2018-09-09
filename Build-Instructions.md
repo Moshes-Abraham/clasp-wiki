@@ -39,7 +39,7 @@ You'll need Xcode and Homebrew for some of the extra packages that are needed to
 
 ### Build Clasp 
 0. Install homebrew from https://brew.sh/
-1. `brew install cmake llvm@5 libffi bdw-gc gmp boost libunwind-headers`
+1. `brew install cmake llvm@6 libffi bdw-gc gmp boost libunwind-headers`
 2. `git clone https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
 4. `./waf configure`
