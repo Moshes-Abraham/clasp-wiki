@@ -6,7 +6,7 @@ You may want to look at [the Dockerfiles](https://github.com/clasp-developers/cl
 
 ## Linux
 
-1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev`
+1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev sbcl`
 2. `git clone https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
 4. `./waf configure`
@@ -39,12 +39,12 @@ You'll need Xcode and Homebrew for some of the extra packages that are needed to
 
 ### Build Clasp 
 0. Install homebrew from https://brew.sh/
-1. `brew install cmake llvm@6 libffi bdw-gc gmp boost libunwind-headers`
+1. `brew install cmake llvm@6 libffi bdw-gc gmp boost libunwind-headers sbcl`
 2. `git clone https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
 4. `./waf configure`
 5. `./waf build_cboehm`
-6. To build the MPS version:  `./waf build_cmps`
+6. If you know that the MPS version is supported then build the MPS version:  `./waf build_cmps`
 
 The executables will be in clasp/build/boehm/cclasp-boehm and clasp/build/mps/cclasp-mps
 
