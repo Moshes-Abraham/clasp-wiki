@@ -27,7 +27,7 @@ is the self-compilation of/with Cleavir, i.e. it's created by loading Cleavir in
 # Plans for a bootstrap refactor
 
 ## Current issues and rationale for a refactor
-* The same codebase is used to build all the different stages of the bootstrap. Because of this the code has many `#+(or bclasp cclasp)` like reader conditionals, and parts of the codebase is written with compromises that are needed to be made only to able to execute it an early (dumb) stage of the bootstrap.
+* The same codebase is used to build all the different stages of the bootstrap. Because of this the code has many `#+(or bclasp cclasp)` like reader conditionals, and parts of the codebase includes compromises only to be able to execute it an early (dumb) stage of the bootstrap.
 * Changing the runtime (e.g. memory layout, GC kind/operation, supported object types, etc) must be done so that it works throughout all the stages of the bootstrap, even though they are often unnecessary complexity for the earlier stages that are only used as an intermediate jumping stone to bring the later stages to life.
 * The codebase is harder to understand/approach because of the lost clarity and the sheer size that is there even in the early stages.
 * When the stages are properly isolated, i.e. stage-n only uses a well defined artifact of stage-n-1, and only to produce link artifacts for stage-n, then rebuilding earlier stages should be needed much less frequently, and opens up more freedom to change the runtime in later stages.
