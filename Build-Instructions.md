@@ -41,10 +41,13 @@ You'll need Xcode and Homebrew for some of the extra packages that are needed to
 0. Install homebrew from https://brew.sh/
 1. `brew install cmake llvm@6 libffi bdw-gc gmp boost libunwind-headers sbcl`
 2. `git clone https://github.com/clasp-developers/clasp.git`
-3. `cd clasp`
-4. `./waf configure`
-5. `./waf build_cboehm`
-6. If you know that the MPS version is supported then build the MPS version:  `./waf build_cmps`
+3. If on mojave, after reinstalling xcode execute `/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg`, to get the usual headers
+4. `cd clasp`
+5. `./waf configure`
+6. `./waf build_cboehm`
+7. If you know that the MPS version is supported then build the MPS version:  `./waf build_cmps`
+
+If ./waf configure fails, see hint in linux instructions.
 
 The executables will be in clasp/build/boehm/cclasp-boehm and clasp/build/mps/cclasp-mps
 
