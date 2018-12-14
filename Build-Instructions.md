@@ -6,7 +6,7 @@ You may want to look at [the Dockerfiles](https://github.com/clasp-developers/cl
 
 ## Linux
 
-1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev sbcl`
+1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 sbcl`
 2. `git clone https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
 4. `./waf configure`
