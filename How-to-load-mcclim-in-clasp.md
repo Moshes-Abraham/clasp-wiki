@@ -17,3 +17,18 @@
   * (clim:run-frame-top-level (clim:make-application-frame 'clim-demo::logic-cube))
   * (clim:run-frame-top-level (clim:make-application-frame 'calculator-demo::calculator-app))
   * (clim:run-frame-top-level (clim:make-application-frame 'clim-demo::address-book))
+### IR Visualizer (cleavir-ir-visualizer)
+* make the asd files known:
+  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;Visualizer;cleavir-ir-visualizer.asd"))
+  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;cleavir-ir.asd"))
+  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Meter;cleavir-meter.asd"))
+  * (asdf:load-asd (pathname "~/quicklisp/software/mcclim-git/Apps/Inspector/clouseau.asd")) (adapt directory)
+  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;Hir;cleavir-hir.asd"))
+* (asdf:load-system "cleavir-ir-visualizer") i assume ql:quickload also works
+* to test
+  * (cl:in-package #:cleavir-ir-visualizer)
+  * (defvar *ast*) Sorry, don't know how to  earmuff in this wiki
+  * (defvar *hir*)
+  * (setq *ast* (cleavir-generate-ast:generate-ast '(lambda(a) (+ a 1)) clasp-cleavir:*clasp-env* clasp-cleavir:*clasp-system*))
+  * (setq *hir* (cleavir-ast-to-hir:compile-toplevel-unhoisted *ast*))
+  * (cleavir-ir-visualizer:visualize *hir*)
