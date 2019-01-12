@@ -4,6 +4,7 @@
   * bordeaux-threads (https://github.com/sionescu/bordeaux-threads.git , master)  
   * clx (https://github.com/sharplispers/clx.git, master)
   * mcclim (https://github.com/McCLIM/McCLIM.git, master)
+  * probably also usocket (https://github.com/clasp-developers/usocket.git)
 
 ### To compile & load (takes 4 hours on my machine)
 * (load "~/quicklisp/setup.lisp")
