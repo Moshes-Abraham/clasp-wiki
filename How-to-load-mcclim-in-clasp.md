@@ -9,7 +9,6 @@
   (declaim (declaration xlib::arglist)))
 ````
   * mcclim (https://github.com/McCLIM/McCLIM.git, master)
-  * probably also usocket (https://github.com/clasp-developers/usocket.git)
 
 ### To compile & load (takes 4 hours on my machine)
 * (load "~/quicklisp/setup.lisp")
