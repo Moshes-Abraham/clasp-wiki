@@ -2,7 +2,12 @@
 * clasp from dev as of 2019-01-12
 * Put the following in ~/quicklisp/local-projects/
   * bordeaux-threads (https://github.com/sionescu/bordeaux-threads.git , master)  
-  * clx (https://github.com/sharplispers/clx.git, master)
+  * clx (https://github.com/sharplispers/clx.git, master) Currently there is a package problem with the symbol arglist, you need to add the following add the end of clx/package.lisp
+```common-lisp
+#+clasp
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (declaim (declaration xlib::arglist)))
+````
   * mcclim (https://github.com/McCLIM/McCLIM.git, master)
   * probably also usocket (https://github.com/clasp-developers/usocket.git)
 
