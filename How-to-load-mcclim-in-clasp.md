@@ -26,9 +26,9 @@
   * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;Visualizer;cleavir-ir-visualizer.asd"))
   * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;cleavir-ir.asd"))
   * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Meter;cleavir-meter.asd"))
-  * (asdf:load-asd (pathname "~/quicklisp/software/mcclim-git/Apps/Inspector/clouseau.asd")) (adapt directory)
+  * (asdf:load-asd (pathname "~/quicklisp/software/mcclim-git/Apps/Inspector/clouseau.asd")) adapt to your directory-structure
   * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;Hir;cleavir-hir.asd"))
-* (asdf:load-system "cleavir-ir-visualizer") i assume ql:quickload also works
+* (ql:quickload "cleavir-ir-visualizer" :verbose t)
 * to test
   * ````(cl:in-package #:cleavir-ir-visualizer)````
   * ````(defvar *ast*)````
