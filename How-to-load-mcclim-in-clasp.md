@@ -11,10 +11,11 @@
   * mcclim (https://github.com/McCLIM/McCLIM.git, master)
 
 ### To compile & load (takes 4 hours on my machine)
-* (load "~/quicklisp/setup.lisp")
-* (ql:quickload "clim-examples" :verbose t)
-* (mcclim-truetype::autoconfigure-fonts)
-
+```common-lisp
+(load "~/quicklisp/setup.lisp")
+(ql:quickload "clim-examples" :verbose t)
+(mcclim-truetype::autoconfigure-fonts)
+````
 ### To test
 * (clim-demo:demodemo) 
 * or e.g. 
@@ -30,9 +31,11 @@
   * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;Hir;cleavir-hir.asd"))
 * (ql:quickload "cleavir-ir-visualizer" :verbose t)
 * to test
-  * ````(cl:in-package #:cleavir-ir-visualizer)````
-  * ````(defvar *ast*)````
-  * ````(defvar *hir*)````
-  * ````(setq *ast* (cleavir-generate-ast:generate-ast '(lambda(a) (+ a 1)) clasp-cleavir:*clasp-env* clasp-cleavir:*clasp-system*))````
-  * ````(setq *hir* (cleavir-ast-to-hir:compile-toplevel-unhoisted *ast*))````
-  * ````(cleavir-ir-visualizer:visualize *hir*)````
+```common-lisp
+(cl:in-package #:cleavir-ir-visualizer)
+(defvar *ast*)
+(defvar *hir*)
+(setq *ast* (cleavir-generate-ast:generate-ast '(lambda(a) (+ a 1)) clasp-cleavir:*clasp-env* clasp-cleavir:*clasp-system*))
+(setq *hir* (cleavir-ast-to-hir:compile-toplevel-unhoisted *ast*))
+(cleavir-ir-visualizer:visualize *hir*)
+````
