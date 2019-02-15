@@ -8,6 +8,7 @@ You need same changes not yet in quicklisp, so
 * To load:
   * (load "~/quicklisp/setup.lisp")
   * (asdf:register-immutable-system :eclector)
+  * (pushnew :hunchentoot-no-ssl *features*)
   * (ql:quickload "staple-server" :verbose t)
 
 * To start (staple-server:start) 
