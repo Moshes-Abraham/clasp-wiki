@@ -6,10 +6,13 @@ You need same changes not yet in quicklisp, so
   * hunchentoot from https://github.com/kpoeck/hunchentoot.git
 
 * To load:
-  * (load "~/quicklisp/setup.lisp")
-  * (asdf:register-immutable-system :eclector)
-  * (pushnew :hunchentoot-no-ssl *features*)
-  * (ql:quickload "staple-server" :verbose t)
+```LISP
+(load "~/quicklisp/setup.lisp")
+(asdf:register-immutable-system :eclector)
+(pushnew :hunchentoot-no-ssl *features*)
+(ql:quickload "staple-server" :verbose t)
+````
+
 
 * To start (staple-server:start) 
 * To stop (staple-server:stop) 
