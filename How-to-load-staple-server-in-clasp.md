@@ -2,6 +2,7 @@ You need same changes not yet in quicklisp, so
 * Put the following in ~/quicklisp/local-projects/
   * bordeaux-threads (https://github.com/sionescu/bordeaux-threads.git , master). Does not seem to be updated in quicklisp, unless a new release of bordeaux-threads is made
   * usocket from https://github.com/clasp-developers/usocket (pull request to uscoket has been made)
+  * plump from https://github.com/kpoeck/plump.git (works around a bug in clasp clos, see issue #698)
   * hunchentoot-v1.2.38 with the following change in set-timeouts.lisp
 ```lisp
 (defun set-timeouts (usocket read-timeout write-timeout)
@@ -16,11 +17,7 @@ You need same changes not yet in quicklisp, so
   * (load "~/quicklisp/setup.lisp")
   * (asdf:register-immutable-system :eclector)
   * (ql:quickload "staple-server" :verbose t)
-* after loading Staple, apply the following hotfix until #698 is fixed:
-```common-lisp
-(defmethod plump-dom:serialize-object ((nodes array))
-  (loop for index from 0 below (length nodes)
-        do (plump-dom:serialize-object (aref nodes index))))
+
 ```
 * To start (staple-server:start) 
 * To stop (staple-server:stop) 
