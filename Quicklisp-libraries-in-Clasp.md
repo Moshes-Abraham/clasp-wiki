@@ -28,3 +28,13 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cl-base64" :verbose t)|Yes|||
 |(ql:quickload "esrap" :verbose t)|Yes|||
 |(ql:quickload "chipz" :verbose t)|Yes|||
+|(ql:quickload "named-readtables" :verbose t)|Yes|||
+|(ql:quickload "drakma" :verbose t)|Yes|||
+|(ql:quickload "local-time" :verbose t)|Yes|||
+|(ql:quickload "ironclad" :verbose t)|Compiling forever|||
+|(ql:quickload "parse-number" :verbose t)|Yes|||
+|(ql:quickload "fiveam" :verbose t)|Yes|||
+|(ql:quickload "closure-common" :verbose t)|Yes|||
+|(ql:quickload "cxml" :verbose t)|Yes|||
+|(ql:quickload "log4cl" :verbose t)|No|||
+|(ql:quickload "optima" :verbose t)|Yes|||
