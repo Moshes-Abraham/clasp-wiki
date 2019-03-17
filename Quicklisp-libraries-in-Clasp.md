@@ -17,7 +17,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cffi" :verbose t)|Yes|||
 |(ql:quickload "trivial-garbage" :verbose t)|Yes|||
 |(ql:quickload "flexi-streams" :verbose t)|Yes|||
-|(ql:quickload "nibbles" :verbose t)|No|||
+|(ql:quickload "nibbles" :verbose t)|Yes||`(setq cmp::*compile-file-parallel* nil)`|
 |(ql:quickload "puri" :verbose t)|Yes|||
 |(ql:quickload "usocket" :verbose t)|Yes|||
 |(ql:quickload "trivial-backtrace" :verbose t)|Yes|||
