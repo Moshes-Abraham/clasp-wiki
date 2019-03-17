@@ -11,7 +11,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "trivial-features" :verbose t)|Yes|||
 |(ql:quickload "iterate" :verbose t)|Yes|||
 |(ql:quickload "trivial-gray-streams" :verbose t)|Yes|||
-|(ql:quickload "bordeaux-threads" :verbose t)|Yes|||
+|(ql:quickload "bordeaux-threads" :verbose t)|Yes||Need (https://github.com/sionescu/bordeaux-threads.git , master)|
 |(ql:quickload "anaphora" :verbose t)|Yes|||
 |(ql:quickload "let-plus" :verbose t)|Yes|||
 |(ql:quickload "cffi" :verbose t)|Yes|||
