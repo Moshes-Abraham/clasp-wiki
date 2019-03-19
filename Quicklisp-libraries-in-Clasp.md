@@ -83,3 +83,12 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "metatilities-base" :verbose t)|No||| 
 |(ql:quickload "cl-containers" :verbose t)|No|||
 |(ql:quickload "rfc2388" :verbose t)|Yes|||
+|(ql:quickload "postmodern" :verbose t)|No|||
+|(ql:quickload "fast-http" :verbose t)|No|||
+|(ql:quickload "trivial-mimes" :verbose t)|Yes|||
+|(ql:quickload "salza2" :verbose t)|Yes|||
+|(ql:quickload "cl-colors" :verbose t)|Yes|||
+|(ql:quickload "jonathan" :verbose t)|No|||
+|(ql:quickload "proc-parse" :verbose t)|Yes|||
+|(ql:quickload "xsubseq" :verbose t)|Yes|||
+|(ql:quickload "cl-ansi-text" :verbose t)|Yes|||
