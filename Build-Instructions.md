@@ -9,7 +9,7 @@ You may want to look at [the Dockerfiles](https://github.com/clasp-developers/cl
 Note: For Arch linux you probably have llvm7 or llvm8 and clasp requires llvm6 at the moment.
 Build https://github.com/clasp-developers/externals-clasp first and then ```cp clasp/wscript.config.template clasp/wscript.config``` and edit wscript.config and change LLVM_CONFIG_BINARY = '/path/to/externals-clasp/llvm-config'
 
-1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev sbcl`
+1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl`
 2. `git clone https://github.com/clasp-developers/clasp.git`
 3. `cd clasp`
 4. `./waf configure` Should that fail with "TabError: inconsistent use of tabs and spaces in indentation", you need python2 waf configure (for all following ./waf instructions as well)
