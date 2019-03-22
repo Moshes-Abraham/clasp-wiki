@@ -11,5 +11,15 @@ Available restarts:
 * (load "~/quicklisp/local-projects/fork-cl-python/runtime/metaclass.lisp")
 * :r1
 * cl-python should be loaded
+* test 
+```lisp
+COMMON-LISP-USER> (clpython:run "2 + 3")
+5
+COMMON-LISP-USER> (clpython:run "for i in range(4): print i")
+0
+1
+2
+3
+NIL
+````
 * optionally (ASDF/OPERATE:TEST-SYSTEM "clpython")
-* This errors pretty fast, but shows some passed tests
