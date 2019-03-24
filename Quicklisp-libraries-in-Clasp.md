@@ -10,7 +10,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "split-sequence" :verbose t)|Yes|(ql:quickload :split-sequence/tests) (split-sequence/tests::run! :split-sequence)| Pass: 7 (100%)||
 |(ql:quickload "trivial-features" :verbose t)|Yes|(ql:quickload :trivial-features-tests) (trivial-features-tests::do-tests)|No tests failed.||
 |(ql:quickload "iterate" :verbose t)|Yes|(ql:quickload :iterate/tests) (REGRESSION-TEST:do-tests)| 9 out of 268 total tests failed:||
-|(ql:quickload "trivial-gray-streams" :verbose t)|Yes|||
+|(ql:quickload "trivial-gray-streams" :verbose t)|Yes|(ql:quickload :trivial-gray-streams-test) (trivial-gray-streams-test::run-tests)|4 failed tests||
 |(ql:quickload "bordeaux-threads" :verbose t)|Yes|||Need (https://github.com/sionescu/bordeaux-threads.git , master)|
 |(ql:quickload "anaphora" :verbose t)|Yes||||
 |(ql:quickload "let-plus" :verbose t)|Yes||||
