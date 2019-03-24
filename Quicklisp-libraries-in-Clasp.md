@@ -5,7 +5,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 | ------ | ------ | ------ | ------ |
 |(ql:quickload "alexandria" :verbose t)|Yes||| 
 |(ql:quickload "closer-mop" :verbose t)|Yes|||
-|(ql:quickload "babel" :verbose t)|Yes|||
+|(ql:quickload "babel" :verbose t)|Yes|(ql:quickload "babel-tests")(babel-tests:run)||
 |(ql:quickload "cl-ppcre" :verbose t)|Yes|||
 |(ql:quickload "split-sequence" :verbose t)|Yes|||
 |(ql:quickload "trivial-features" :verbose t)|Yes|||
