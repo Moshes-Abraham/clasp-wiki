@@ -3,10 +3,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 
 | System | Compiles | Testsuite | Tweaks |
 | ------ | ------ | ------ | ------ |
-|(ql:quickload "alexandria" :verbose t)|Yes|(ql:quickload "alexandria-tests" :verbose t) (alexandria-tests::run-tests :compiled nil) (alexandria-tests::run-tests :compiled t)|#-clasp
-(deftest circular-tree-p.2
-    (alexandria:circular-tree-p '#1=(#1#))
-  t)| 
+|(ql:quickload "alexandria" :verbose t)|Yes|(ql:quickload "alexandria-tests" :verbose t) (alexandria-tests::run-tests :compiled nil) (alexandria-tests::run-tests :compiled t) 226 tests ok|circular-tree-p.2 crashes to the os| 
 |(ql:quickload "closer-mop" :verbose t)|Yes|||
 |(ql:quickload "babel" :verbose t)|Yes|(ql:quickload "babel-tests")(babel-tests:run) #<test-run: 56 tests, 473 assertions, 0 failures in 52.81187 sec>|Needs https://github.com/clasp-developers/clasp/pull/714, Needs to fix test so that "?" is not a string of base-char|
 |(ql:quickload "cl-ppcre" :verbose t)|Yes|||
