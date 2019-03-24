@@ -56,7 +56,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "trivial-utf-8" :verbose t)|Yes||||
 |(ql:quickload "static-vectors" :verbose t)|No||||
 |(ql:quickload "fare-mop" :verbose t)|Yes||||
-|(ql:quickload "inferior-shell" :verbose t)|No|||#\cr not defined|  
+|(ql:quickload "inferior-shell" :verbose t)|Yes|(ql:quickload "inferior-shell/test") (inferior-shell-test::test-suite)|#<test-run: 2 tests, 1 assertion, 1 failure in 24.73289 sec (0 failed assertions, 1 error, none expected)>|Need to define #\cr|  
 |(ql:quickload "quri" :verbose t)|Yes||||
 |(ql:quickload "metabang-bind" :verbose t)|Yes||||
 |(ql:quickload "trivial-indent" :verbose t)|Yes||||
