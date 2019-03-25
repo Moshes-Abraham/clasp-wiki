@@ -14,7 +14,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "bordeaux-threads" :verbose t)|Yes|(ql:quickload :bordeaux-threads/test)(bordeaux-threads/test::run! :bordeaux-threads)| Did 25 checks Pass: 23 (92%) Skip: 0 ( 0%) Fail: 2 ( 8%)|Need (https://github.com/sionescu/bordeaux-threads.git , master). Loops in DEFAULT-SPECIAL-BINDINGS, probably wrong test (thread-alive-p is used as if returns true if the thread terminates, thread-join would be better)|
 |(ql:quickload "anaphora" :verbose t)|Yes|(ql:quickload :anaphora/test :verbose t)(rt:do-tests)|No tests failed.||
 |(ql:quickload "let-plus" :verbose t)|Yes|(ql:quickload :let-plus/tests)(let-plus-tests::run)|#<Results for LET-PLUS-TESTS [24 Successful tests]>|requires lift fix, see above|
-|(ql:quickload "cffi" :verbose t)|Yes||||
+|(ql:quickload "cffi" :verbose t)|Yes|(ql:quickload "cffi-tests" :verbose t) (cffi-tests::run-all-cffi-tests)|16 out of 323 total tests failed: (interpreted) hangs with compiled tests||
 |(ql:quickload "trivial-garbage" :verbose t)|Yes||||
 |(ql:quickload "flexi-streams" :verbose t)|Yes||||
 |(ql:quickload "nibbles" :verbose t)|Yes|||`(setq cmp::*compile-file-parallel* nil)`|
