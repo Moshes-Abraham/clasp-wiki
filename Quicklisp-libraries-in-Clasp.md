@@ -12,8 +12,8 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "iterate" :verbose t)|Yes|(ql:quickload :iterate/tests) (REGRESSION-TEST:do-tests)| 9 out of 268 total tests failed:||
 |(ql:quickload "trivial-gray-streams" :verbose t)|Yes|(ql:quickload :trivial-gray-streams-test) (trivial-gray-streams-test::run-tests)|4 failed tests||
 |(ql:quickload "bordeaux-threads" :verbose t)|Yes|(ql:quickload :bordeaux-threads/test)(bordeaux-threads/test::run! :bordeaux-threads)| Did 25 checks Pass: 23 (92%) Skip: 0 ( 0%) Fail: 2 ( 8%)|Need (https://github.com/sionescu/bordeaux-threads.git , master). Loops in DEFAULT-SPECIAL-BINDINGS, probably wrong test (thread-alive-p is used as if returns true if the thread terminates, thread-join would be better)|
-|(ql:quickload "anaphora" :verbose t)|Yes||||
-|(ql:quickload "let-plus" :verbose t)|Yes||||
+|(ql:quickload "anaphora" :verbose t)|Yes|(ql:quickload :anaphora/test :verbose t)(rt:do-tests)|No tests failed.||
+|(ql:quickload "let-plus" :verbose t)|Yes|(ql:quickload :let-plus/tests)(let-plus-tests::run)|#<Results for LET-PLUS-TESTS [24 Successful tests]>|requires lift fix, see above|
 |(ql:quickload "cffi" :verbose t)|Yes||||
 |(ql:quickload "trivial-garbage" :verbose t)|Yes||||
 |(ql:quickload "flexi-streams" :verbose t)|Yes||||
@@ -42,7 +42,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cl-unicode" :verbose t)|Yes||||
 |(ql:quickload "cl-interpol" :verbose t)|Yes||||
 |(ql:quickload :lparallel-test) |Yes|(lparallel-test:execute)| -> Success: 171 tests, 119190 checks.||
-|(ql:quickload "lift" :verbose t)|No||||
+|(ql:quickload "lift" :verbose t)|Yes|||in /dev/packages.lisp need to add  #+clasp #:clos after #+ecl :clos|
 |(ql:quickload "cl-dot" :verbose t)|Yes||||
 |(ql:quickload "cl-syntax" :verbose t)|Yes||||
 |(ql:quickload "cl-annot" :verbose t)|Yes||||
