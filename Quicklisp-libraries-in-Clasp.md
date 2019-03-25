@@ -42,7 +42,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cl-unicode" :verbose t)|Yes||||
 |(ql:quickload "cl-interpol" :verbose t)|Yes||||
 |(ql:quickload :lparallel-test) |Yes|(lparallel-test:execute)| -> Success: 171 tests, 119190 checks.||
-|(ql:quickload "lift" :verbose t)|Yes|||in /dev/packages.lisp need to add  #+clasp #:clos after #+ecl :clos|
+|(ql:quickload "lift" :verbose t)|Yes|(ql:quickload :lift-test)(lift:run-tests :suite 'lift-test::lift-test)|#<Results for LIFT-TEST 107 Tests, 2 Failures>|use version from https://github.com/kpoeck/lift.git (master) until pr is acceted upstream|
 |(ql:quickload "cl-dot" :verbose t)|Yes||||
 |(ql:quickload "cl-syntax" :verbose t)|Yes||||
 |(ql:quickload "cl-annot" :verbose t)|Yes||||
