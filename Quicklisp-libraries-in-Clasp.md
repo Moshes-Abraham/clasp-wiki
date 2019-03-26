@@ -11,7 +11,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "trivial-features" :verbose t)|Yes|(ql:quickload :trivial-features-tests) (trivial-features-tests::do-tests)|No tests failed.||
 |(ql:quickload "iterate" :verbose t)|Yes|(ql:quickload :iterate/tests) (REGRESSION-TEST:do-tests)| 9 out of 268 total tests failed:||
 |(ql:quickload "trivial-gray-streams" :verbose t)|Yes|(ql:quickload :trivial-gray-streams-test) (trivial-gray-streams-test::run-tests)|4 failed tests||
-|(ql:quickload "bordeaux-threads" :verbose t)|Yes|(ql:quickload :bordeaux-threads/test)(bordeaux-threads/test::run! :bordeaux-threads)| Did 25 checks Pass: 23 (92%) Skip: 0 ( 0%) Fail: 2 ( 8%)|Need (https://github.com/sionescu/bordeaux-threads.git , master). Loops in DEFAULT-SPECIAL-BINDINGS, Implementation of thread-alive-p is probably wrong, fixed in https://github.com/clasp-developers/clasp/pull/715|
+|(ql:quickload "bordeaux-threads" :verbose t)|Yes|(ql:quickload :bordeaux-threads/test)(bordeaux-threads/test::run! :bordeaux-threads)| Did 25 checks Pass: 23 (92%) Skip: 0 ( 0%) Fail: 2 ( 8%)|Need (https://github.com/sionescu/bordeaux-threads.git , master).|
 |(ql:quickload "anaphora" :verbose t)|Yes|(ql:quickload :anaphora/test :verbose t)(rt:do-tests)|No tests failed.||
 |(ql:quickload "let-plus" :verbose t)|Yes|(ql:quickload :let-plus/tests)(let-plus-tests::run)|#<Results for LET-PLUS-TESTS [24 Successful tests]>|requires lift fix, see above|
 |(ql:quickload "cffi" :verbose t)|Yes|(ql:quickload "cffi-tests" :verbose t) (cffi-tests::run-all-cffi-tests)|16 out of 323 total tests failed: (interpreted) EXC_BAD_ACCESS with compiled tests in SUMPAIR^CFFI-TEST||
