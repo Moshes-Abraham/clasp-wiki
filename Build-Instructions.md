@@ -48,7 +48,6 @@ You'll need Xcode and Homebrew for some of the extra packages that are needed to
 4. `cd clasp`
 5. `./waf configure`
 6. `./waf build_cboehm`
-7. If you know that the MPS version is supported then build the MPS version:  `./waf build_cmps`
 
 If ./waf configure fails, see hint in linux instructions.
 
