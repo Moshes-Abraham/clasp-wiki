@@ -54,7 +54,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cl-utilities" :verbose t)|Yes||||
 |(ql:quickload "utilities.print-tree" :verbose t)|No||||
 |(ql:quickload "trivial-utf-8" :verbose t)|Yes||||
-|(ql:quickload "static-vectors" :verbose t)|No||||
+|(ql:quickload :static-vectors :verbose t)|Yes|(ql:quickload :static-vectors/test :verbose t) (5am:run! :static-vectors)| Did 24 checks. Pass: 22 (91%) Skip: 0 ( 0%) Fail: 2 ( 8%)|Version from https://github.com/sionescu/static-vectors.git|
 |(ql:quickload "fare-mop" :verbose t)|Yes||||
 |(ql:quickload "inferior-shell" :verbose t)|Yes|(ql:quickload "inferior-shell/test") (inferior-shell-test::test-suite)|#<test-run: 2 tests, 1 assertion, 1 failure in 24.73289 sec (0 failed assertions, 1 error, none expected)>|Need to define #\cr|  
 |(ql:quickload "quri" :verbose t)|Yes||||
@@ -92,6 +92,5 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "proc-parse" :verbose t)|Yes||||
 |(ql:quickload "xsubseq" :verbose t)|Yes||||
 |(ql:quickload "cl-ansi-text" :verbose t)|Yes||||
-|(ql:quickload :static-vectors :verbose t)|Yes|(ql:quickload :static-vectors/test :verbose t) (5am:run! :static-vectors)| Did 24 checks. Pass: 22 (91%) Skip: 0 ( 0%) Fail: 2 ( 8%)|Version from https://github.com/sionescu/static-vectors.git|
 |(ql:quickload "clx" :verbose t)|Yes|||https://github.com/sharplispers/clx.git, branch master|
 |(ql::quickload :cl-jpeg :verbose t)|Yes|||(setq clasp-cleavir::*use-ast-interpreter* nil)|
