@@ -23,9 +23,9 @@ Try:
 
 A detailed log of the build is available in `build/boehm/build.log`.
 
-### Limit resource usage
+### Building on machines with limited resources.
 
-The build needs a lot of resources (at least 8G RAM), so you may want to build as follows.
+If you have a machine without a lot of memory (<16 GB), you may want to build as follows.
 
 Compile in parallel, with low priority, and limit parallelism to the number of actual cores your CPU has (as opposed to hyperthreading that adds relatively little extra performance but the extra memory load of a full build thread):
 
