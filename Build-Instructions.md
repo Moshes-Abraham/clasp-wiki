@@ -4,7 +4,7 @@ If something fails while building the `dev` branch, then try the `testing` branc
 
 You may want to look at [the Dockerfiles](https://github.com/clasp-developers/clasp/blob/dev/tools/dockerfiles/). They describe how to build in various environments and configurations.
 
-## Linux
+## Linux installation of dependencies
 
 Note: For Arch linux you probably have llvm7 or llvm8 and clasp requires llvm6 at the moment.
 Build https://github.com/clasp-developers/externals-clasp first and then ```cp clasp/wscript.config.template clasp/wscript.config``` and edit wscript.config and change LLVM_CONFIG_BINARY = '/path/to/externals-clasp/llvm-config'
@@ -37,8 +37,8 @@ Then link on a single thread to limit peak memory usage:
 
 If you don't have any swap space, then your machine will very suddenly become unresponsive when the memory gets full. I suggest to do have swap, but configure linux to `vm.swappiness=1`. This way you'll have more time to intervene when it happens.
 
-## macOS
-You'll need Xcode and Homebrew for some of the extra packages that are needed to build everything. Clasp requires a specific release of llvm and does not use the Xcode version although it does use Xcode files. Otherwise things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
+## MacOS installation of dependencies
+You'll need Xcode and Homebrew for some of the extra packages that are needed to build everything. Clasp requires a specific release of llvm and does not use the Xcode version, although it does use Xcode files. Otherwise, things are much the same as on the Linux side -- hopefully. Adapt paths as necessary.
 
 ### Build Clasp 
 0. Install homebrew from https://brew.sh/
