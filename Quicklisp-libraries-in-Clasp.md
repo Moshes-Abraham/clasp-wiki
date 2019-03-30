@@ -83,7 +83,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "metatilities-base" :verbose t)|No||||
 |(ql:quickload "cl-containers" :verbose t)|No||||
 |(ql:quickload "rfc2388" :verbose t)|Yes||||
-|(ql:quickload "postmodern" :verbose t)|Changes needed|(ql:quickload "postmodern/tests" :verbose t) ||in postmodern.asd add #clasp to the eval-when. Error in query.lisp, where (defvar *class-finalize-lock* (bt:make-lock)) is not preceeded by #+:postmodern-thread-safe|
+|(ql:quickload "postmodern" :verbose t)|Changes needed|(ql:quickload "postmodern/tests" :verbose t) (cl-postgres-tests::prompt-connection) (fiveam::run! :postmodern) And you need a database||in postmodern.asd add #clasp to the eval-when. Error in query.lisp, where (defvar *class-finalize-lock* (bt:make-lock)) is not preceeded by #+:postmodern-thread-safe|
 |(ql:quickload "fast-http" :verbose t)|No thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGSTOP ||||
 |(ql:quickload "trivial-mimes" :verbose t)|Yes||||
 |(ql:quickload "salza2" :verbose t)|Yes||||
