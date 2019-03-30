@@ -84,7 +84,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cl-containers" :verbose t)|No||||
 |(ql:quickload "rfc2388" :verbose t)|Yes||||
 |(ql:quickload "postmodern" :verbose t)|No||||
-|(ql:quickload "fast-http" :verbose t)|No||||
+|(ql:quickload "fast-http" :verbose t)|No thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGSTOP ||||
 |(ql:quickload "trivial-mimes" :verbose t)|Yes||||
 |(ql:quickload "salza2" :verbose t)|Yes||||
 |(ql:quickload "cl-colors" :verbose t)|Yes||||
