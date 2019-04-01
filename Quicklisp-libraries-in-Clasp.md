@@ -93,4 +93,4 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "xsubseq" :verbose t)|Yes||||
 |(ql:quickload "cl-ansi-text" :verbose t)|Yes||||
 |(ql:quickload "clx" :verbose t)|Yes|||https://github.com/sharplispers/clx.git, branch master|
-|(ql::quickload :cl-jpeg :verbose t)|Yes|||(setq clasp-cleavir::*use-ast-interpreter* nil)|
+|(ql::quickload :cl-jpeg :verbose t)|Yes|||`(setq clasp-cleavir::*use-ast-interpreter* nil)`|
