@@ -7,6 +7,7 @@
 
 ### To compile & load (takes 4 hours on my machine)
 ```common-lisp
+(setq clasp-cleavir::*use-ast-interpreter* nil)
 (load "~/quicklisp/setup.lisp")
 (ql:quickload "clim-examples" :verbose t)
 (mcclim-truetype::autoconfigure-fonts)
