@@ -36,7 +36,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "fiveam" :verbose t)|Yes||||
 |(ql:quickload "closure-common" :verbose t)|Yes||||
 |(ql:quickload "cxml" :verbose t)|Yes||||
-|(ql:quickload "log4cl" :verbose t)|No||||
+|(ql:quickload "log4cl" :verbose t)|No|||Condition of type: PATTERN-LAYOUT-ERROR|
 |(ql:quickload "optima" :verbose t)|Yes||||
 |(ql:quickload "parser.common-rules" :verbose t)|Yes||||
 |(ql:quickload "cl-unicode" :verbose t)|Yes||||
