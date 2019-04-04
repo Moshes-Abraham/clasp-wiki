@@ -46,7 +46,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cl-dot" :verbose t)|Yes||||
 |(ql:quickload "cl-syntax" :verbose t)|Yes||||
 |(ql:quickload "cl-annot" :verbose t)|Yes||||
-|(ql:quickload "cxml-stp" :verbose t)|No||||
+|(ql:quickload "cxml-stp" :verbose t)|No|||XPATH) Condition of type: PPCRE-SYNTAX-ERROR |
 |(ql:quickload "cl-store" :verbose t)|No||||
 |(ql:quickload "fare-utils" :verbose t)|Yes||||
 |(ql:quickload "fare-quasiquote" :verbose t)|Yes||||
