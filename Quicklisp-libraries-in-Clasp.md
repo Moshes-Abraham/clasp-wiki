@@ -78,7 +78,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "simple-date-time" :verbose t)|Yes||||
 |(ql:quickload "ieee-floats" :verbose t)|Yes||||
 |(ql:quickload "prove" :verbose t)|Yes||||
-|(ql:quickload "yason" :verbose t)|No||||
+|(ql:quickload "yason" :verbose t)|No|||Condition of type: MALFORMED-LAMBDA-LIST-PATTERN|
 |(ql:quickload "asdf-system-connections" :verbose t)|Yes||||
 |(ql:quickload "metatilities-base" :verbose t)|No||||
 |(ql:quickload "cl-containers" :verbose t)|No||||
