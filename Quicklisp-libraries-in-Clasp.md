@@ -52,7 +52,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "fare-quasiquote" :verbose t)|Yes||||
 |(ql:quickload "xml.location" :verbose t)|No|||XPATH: Condition of type: PPCRE-SYNTAX-ERROR |
 |(ql:quickload "cl-utilities" :verbose t)|Yes||||
-|(ql:quickload "utilities.print-tree" :verbose t)|No||||
+|(ql:quickload "utilities.print-tree" :verbose t)|No|||Error in clasp, unicode strings don't survive compile-file, see https://github.com/clasp-developers/clasp/issues/723|
 |(ql:quickload "trivial-utf-8" :verbose t)|Yes||||
 |(ql:quickload :static-vectors :verbose t)|Yes|(ql:quickload :static-vectors/test :verbose t) (5am:run! :static-vectors)| Did 24 checks. Pass: 22 (91%) Skip: 0 ( 0%) Fail: 2 ( 8%)|Version from https://github.com/sionescu/static-vectors.git|
 |(ql:quickload "fare-mop" :verbose t)|Yes||||
