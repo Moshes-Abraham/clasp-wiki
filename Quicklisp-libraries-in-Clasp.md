@@ -80,8 +80,8 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "prove" :verbose t)|Yes||||
 |(ql:quickload "yason" :verbose t)|No|||Condition of type: MALFORMED-LAMBDA-LIST-PATTERN|
 |(ql:quickload "asdf-system-connections" :verbose t)|Yes||||
-|(ql:quickload "metatilities-base" :verbose t)|Yes|(ql:quickload "metatilities-base-test" :verbose t)(let ((LIFT:*CURRENT-ASDF-SYSTEM-NAME* (asdf:find-system "metatilities-base-test")))(lift:run-tests :config :generic))|Test Report for /Users/karstenpoeck/quicklisp/local-projects/fork-metatilities-base/lift-standard.config: 9 tests run, all passed!||
-|(ql:quickload "cl-containers" :verbose t)|No||||
+|(ql:quickload "metatilities-base" :verbose t)|Yes|`(ql:quickload "metatilities-base-test" :verbose t)(let ((LIFT:*CURRENT-ASDF-SYSTEM-NAME* (asdf:find-system "metatilities-base-test")))(lift:run-tests :config :generic))`|Test Report for /Users/karstenpoeck/quicklisp/local-projects/fork-metatilities-base/lift-standard.config: 9 tests run, all passed!||
+|(ql:quickload "cl-containers" :verbose t)|Yes|`(ql:quickload "cl-containers-test" :verbose t)(let ((LIFT:*CURRENT-ASDF-SYSTEM-NAME* (asdf:find-system "cl-containers-test")))(lift:run-tests :config :generic))`|Test Report for /Users/karstenpoeck/quicklisp/dists/quicklisp/software/cl-containers-20170403-git/lift-standard.config: 9 tests run, all passed!||
 |(ql:quickload "rfc2388" :verbose t)|Yes||||
 |(ql:quickload "postmodern" :verbose t)|Changes needed|(ql:quickload "postmodern/tests" :verbose t) (cl-postgres-tests::prompt-connection) (fiveam::run! :postmodern) And you need a database| Did 317 checks. Pass: 314 (99%) Skip: 0 ( 0%) Fail: 3 ( 0%)|in postmodern.asd add #clasp to the eval-when. Error in query.lisp, where (defvar *class-finalize-lock* (bt:make-lock)) is not preceeded by #+:postmodern-thread-safe|
 |(ql:quickload "fast-http" :verbose t)|No thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGSTOP ||||
