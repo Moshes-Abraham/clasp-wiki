@@ -47,7 +47,7 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "cl-syntax" :verbose t)|Yes||||
 |(ql:quickload "cl-annot" :verbose t)|Yes||||
 |(ql:quickload "cxml-stp" :verbose t)|No|||XPATH: Condition of type: PPCRE-SYNTAX-ERROR |
-|(ql:quickload "cl-store" :verbose t)|Yes|||Use https://github.com/kpoeck/cl-store.git|
+|(ql:quickload "cl-store" :verbose t)|Yes|(oos 'load-op :cl-store-tests)|6 out of 114 total tests failed: CIRC.5, CIRC.6, CIRC.9, CIRC.12, CIRC.13, CORRECT.LIST.1.|CIRC.16 fails in printing, Use https://github.com/kpoeck/cl-store.git|
 |(ql:quickload "fare-utils" :verbose t)|Yes||||
 |(ql:quickload "fare-quasiquote" :verbose t)|Yes||||
 |(ql:quickload "xml.location" :verbose t)|No|||XPATH: Condition of type: PPCRE-SYNTAX-ERROR |
