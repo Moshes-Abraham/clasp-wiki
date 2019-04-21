@@ -1,3 +1,4 @@
+* get newest clasp and build
 * fork https://github.com/kpoeck/trial.git into ~/quicklisp/local-projects/
 * fork https://github.com/kpoeck/3d-vectors.git in ~/quicklisp/local-projects/
 * compile cl-jpeg with the serial compiler
