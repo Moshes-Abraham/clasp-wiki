@@ -12,7 +12,7 @@
   #-clasp \. #+clasp |.|
   ? \: \,)
 ````
-* compile cl-jpeg with the serial compiler
+* compile cl-jpeg without the ast interpreter (see https://github.com/clasp-developers/clasp/issues/727)
 ```lisp
 build/clasp
 (load "~/quicklisp/setup.lisp")
