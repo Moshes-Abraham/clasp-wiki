@@ -1,6 +1,17 @@
 * get newest clasp and build
 * fork https://github.com/kpoeck/trial.git into ~/quicklisp/local-projects/
 * fork https://github.com/kpoeck/3d-vectors.git in ~/quicklisp/local-projects/
+* fork https://github.com/Shirakumo/glsl-toolkit.git in ~/quicklisp/local-projects/
+* in glsl-toolkit do the following change in grammar.lisp(I fixed that locally in clasp, pr pending)
+```lisp
+(define-operator-objects
+  == != = += -= *= /= %= <<= >>= &= ^= \|=
+  ++ -- << >>  ^^ \|\| && <= >= < >
+  + - * / % & ^ ! \|
+  \( \) \[ \] \{ \} \; 
+  #-clasp \. #+clasp |.|
+  ? \: \,)
+````
 * compile cl-jpeg with the serial compiler
 ```lisp
 build/clasp
