@@ -24,7 +24,7 @@ build/clasp
 ```lisp
 build/clasp
 ;;; be very patient
-(ql:quickload :cl-jpeg)
+(ql:quickload :trial)
 ````
 * try it out
 ```lisp
