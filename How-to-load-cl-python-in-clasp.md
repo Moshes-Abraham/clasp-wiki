@@ -16,7 +16,11 @@ NIL
 * optionally (ASDF/OPERATE:TEST-SYSTEM "clpython") completes now having some tests disabled 
 ```lisp
 End CLPython test
-Errors detected in this test: 27 UNEXPECTED: 25
-Successes this test:582
-Return values of RUN-TESTS: (NIL 582 27 25)
+Errors detected in this test: 33 UNEXPECTED: 31
+Successes this test:831
+
+Return values of RUN-TESTS: (NIL 831 33 31)
+Top level in: #<PROCESS TOP-LEVEL @0x11dbb4cd9>.
+COMMON-LISP-USER> 
 ````
+There are a lot of SyntaxErrors in ' (run-pretty-printer-test)' that I caught with (handler-case ..) since they caused the test to abort
