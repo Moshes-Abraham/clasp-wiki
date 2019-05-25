@@ -1,4 +1,4 @@
-* `git clone https://git.code.sf.net/u/kpoeck2018/maxima u-kpoeck2018-maxima`
+* `git clone https://git.code.sf.net/u/kpoeck2018/maxima u-kpoeck2018-maxima` Original in https://sourceforge.net/p/maxima/code/ci/master/tree/
 * `clasp`
 * `(load "configure.lisp")`
 * `(configure)`
