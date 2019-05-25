@@ -23,6 +23,6 @@
 * Test suites
    * Standard `run_testsuite();` (I fixed a bug in clasp regarding log of big numbers. Might crash w/o the fix)
    * Extended `run_testsuite(share_tests='only);`
-   * Both `run_testsuite(share_tests=true);`
+   * Both `run_testsuite(share_tests=true);` This takes 40GB and 2 hours on my machine
 * to lisp `to_lisp();`
 * To quit to os `quit();` 
