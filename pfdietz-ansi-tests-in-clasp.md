@@ -1,1 +1,1 @@
-[Summary of results for clasp on other lisps that run on macos](https://gitlab.common-lisp.net/kpoeck/ansi-test/wikis/home)
+[Summary of results for clasp and on other lisps that run on macos](https://gitlab.common-lisp.net/kpoeck/ansi-test/wikis/home)
