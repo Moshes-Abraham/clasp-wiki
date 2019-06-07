@@ -6,8 +6,8 @@ Libraries selected according to http://blog.quicklisp.org/2018/03/download-stats
 |(ql:quickload "alexandria" :verbose t)|Yes|(ql:quickload "alexandria-tests" :verbose t) (alexandria-tests::run-tests :compiled nil) (alexandria-tests::run-tests :compiled t)| 226 tests ok|circular-tree-p.2 crashes to the os| 
 |(ql:quickload "closer-mop" :verbose t)|Yes|No tests available|||
 |(ql:quickload "babel" :verbose t)|Yes|(ql:quickload "babel-tests")(babel-tests:run)| #<test-run: 56 tests, 473 assertions, 0 failures in 52.81187 sec>|Needs to fix the tests so that "?" is not a string of base-char (might be a clasp bug, not sure)|
-|(ql:quickload "cl-ppcre" :verbose t)|Yes|(ql:quickload :cl-ppcre-test) (cl-ppcre-test::run-all-tests)|Some tests failed.||
-|(ql:quickload "split-sequence" :verbose t)|Yes|(ql:quickload :split-sequence/tests) (split-sequence/tests::run! :split-sequence)| Pass: 7 (100%)||
+|(ql:quickload "cl-ppcre" :verbose t)|Yes|(ql:quickload :cl-ppcre-test) (cl-ppcre-test::run-all-tests)|Some tests failed. (probably 1||
+|(ql:quickload "split-sequence" :verbose t)|Yes|(ql:quickload :split-sequence/tests) (split-sequence/tests::run! :split-sequence)| Pass: 60 (100%)||
 |(ql:quickload "trivial-features" :verbose t)|Yes|(ql:quickload :trivial-features-tests) (trivial-features-tests::do-tests)|No tests failed.||
 |(ql:quickload "iterate" :verbose t)|Yes|(ql:quickload :iterate/tests) (REGRESSION-TEST:do-tests)| 9 out of 268 total tests failed:||
 |(ql:quickload "trivial-gray-streams" :verbose t)|Yes|(ql:quickload :trivial-gray-streams-test) (trivial-gray-streams-test::run-tests)|4 failed tests||
