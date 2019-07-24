@@ -44,7 +44,7 @@ You'll need Xcode and Homebrew for some of the extra packages that are needed to
 0. Install homebrew from https://brew.sh/
 1. `brew install cmake llvm@6 libffi bdw-gc gmp boost libunwind-headers sbcl`
 2. `git clone https://github.com/clasp-developers/clasp.git`
-3. If on mojave, after reinstalling xcode execute `/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg`, to get the usual headers
+3. If on mojave, after reinstalling xcode execute (from the gui)`/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg`, to get the headers in /usr/include/
 4. `cd clasp`
 5. `./waf configure`
 6. `./waf build_cboehm`
