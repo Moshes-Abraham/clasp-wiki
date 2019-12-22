@@ -12,8 +12,8 @@ make -j<pids>
 Maybe better to build llvm with this...
 all:
 	(cd build; cmake -G "Unix Makefiles" \
-	-DLIBOMP_ARCH=x86_64
-	-DLINK_POLLY_INTO_TOOLS=ON
+	-DLIBOMP_ARCH=x86_64 \
+	-DLINK_POLLY_INTO_TOOLS=ON \
 	-DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
 	-DLLVM_BUILD_LLVM_DYLIB=ON \
 	-DLLVM_ENABLE_EH=ON \
@@ -24,6 +24,7 @@ all:
 	-DLLVM_INSTALL_UTILS=ON \
 	-DLLVM_OPTIMIZED_TABLEGEN=ON \
 	-DLLVM_TARGETS_TO_BUILD=all \
+         -DLLVM_ENABLE_PROJECTS=clang \
 	-DWITH_POLLY=ON \
 	-DFFI_INCLUDE_DIR=/usr/local/Cellar/libffi/3.2.1/lib/libffi-3.2.1/include \
 	-DFFI_LIBRARY_DIR=/usr/local/Cellar/libffi/3.2.1/lib \
