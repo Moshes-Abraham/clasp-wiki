@@ -8,6 +8,8 @@ cd build
 cmake -DLLVM_BUILD_LLVM_DYLIB=true -DLLVM_ENABLE_PROJECTS=clang -G "Unix Makefiles" ../llvm 
 make -j<pids>
 
+Lots of stuff is missing when linking ...
+
 
 Maybe better to build llvm with this...
 all:
