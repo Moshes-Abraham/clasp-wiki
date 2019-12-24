@@ -70,3 +70,32 @@ cmake -G "Unix Makefiles" ../llvm \
 -DLLVM_ENABLE_PROJECTS=clang
 
 ```
+
+Then edit wscript.config and add these options...
+
+
+```
+LLVM_CONFIG_BINARY = '/Users/meister/Development/llvm-project/build/bin/llvm-config'
+CPPFLAGS = [ "-isystem", "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1", "-I", "/Users/meister/Development/llvm-project/build/include", "-I", "/Users/meister/Development/llvm-project/build/tools/clang/include", "-I", "/Users/meister/Development/llvm-project/clang/include", "-Wno-nullability-completeness", "-Wno-nonnull"]
+
+#"--sysroot", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+```
+
+NOTE: DO NOT USE THE --sysroot option - that messes up math includes - I don't know why.
+I put it here so that we might figure out why it messes things up.
+
+
+Then build with:
+
+./waf build_iboehm
+
+Then:
+
+export DYLD_LIBRARY_PATH=$HOME/Development/llvm-project/build/lib
+
+Then:
+
+./waf build_aboehm -v
+
+Then copy the command line for building aclasp and edit it and run it from the command line.
+
