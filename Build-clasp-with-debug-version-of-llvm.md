@@ -89,13 +89,12 @@ Then build with:
 
 ./waf build_iboehm
 
-Then:
+### Then:
 
-export DYLD_LIBRARY_PATH=$HOME/Development/llvm-project/build/lib
+```
+install_name_tool -add_rpath $HOME/Development/llvm-project/build/lib build/boehm/iclasp-boehm 
+```
 
-Then:
+### Then:
 
 ./waf build_aboehm -v
-
-Then copy the command line for building aclasp and edit it and run it from the command line.
-
