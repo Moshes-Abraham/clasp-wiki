@@ -4,8 +4,8 @@ With Xcode 11 apple no longer provides the standard headers in /usr/include and
 To use the standard headers I believe the following has to be done:
 In https://github.com/clasp-developers/clasp/blob/dev/wscript#L1040
 replace 
-```
-    c++cfg.env.append_value('INCLUDES', ['/usr/include'] )
+```c++
+cfg.env.append_value('INCLUDES', ['/usr/include'] )
 ````
 with
 ```c++
