@@ -66,3 +66,7 @@ Now you need to update to llvm@9
 * `chmod +x wscript`
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
+# Known errors
+* Disassemble no longer works
+* cl:format no longer works correctly (pr being done)
+* Backtrace in slime or with (core:btcl) or with (core:safe-backtrace) are slightly broken
