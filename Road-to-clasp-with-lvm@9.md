@@ -59,3 +59,10 @@ Now you need to update to llvm@9
 `apt-get install libc++-9-dev libc++abi-9-dev`
   * OpenMP
 `sudo apt-get install libomp-9-dev`
+* `git clone https://github.com/clasp-developers/clasp.git`
+* `git checkout dev`
+* `cp wscript.config.debian10 wscript.config`
+* edit in wscript.config setting LLVM_CONFIG_BINARY = '/path/to/llvm-config-4.0' to the corrrect path, in my case /usr/bin/llvm-config-9
+* `chmod +x wscript`
+* `./waf distclean configure build_cboehm` (can take 1-2 hours)
+* Start with `build/clasp`
