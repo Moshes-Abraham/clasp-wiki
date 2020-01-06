@@ -4,6 +4,8 @@ If something fails while building the `dev` branch, then try the `testing` branc
 
 You may want to look at [the Dockerfiles](https://github.com/clasp-developers/clasp/blob/dev/tools/dockerfiles/). They describe how to build in various environments and configurations.
 
+for llvm@9, see https://github.com/clasp-developers/clasp/wiki/Road-to-clasp-with-lvm@9
+
 ## Linux installation of dependencies
 
 Note: For Arch linux you probably have llvm7 or llvm8 and clasp requires llvm6 at the moment.
