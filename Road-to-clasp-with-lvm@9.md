@@ -41,8 +41,8 @@ INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
 ````
 # Linux
 In Linux I installed from scratch on top of Ubuntu 18.04 LTS
-* (I needed sudo) `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl`
-* sudo apt install git
+* (I needed sudo) `sudo apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl`
+* sudo apt install git curl
 Now you need to update to llvm@9
 * Taken from http://apt.llvm.org/ Install (stable branch)
   * LLVM
@@ -63,10 +63,10 @@ Now you need to update to llvm@9
 * `git checkout dev`
 * `cp wscript.config.debian10 wscript.config`
 * edit in wscript.config setting LLVM_CONFIG_BINARY = '/path/to/llvm-config-4.0' to the corrrect path, in my case /usr/bin/llvm-config-9
-* `chmod +x wscript`
+* `chmod +x wscript` (no longer sure this is needed)
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
 # Known errors
 * Disassemble no longer works
-* cl:format no longer works correctly (pr being done)
-* Backtrace in slime or with (core:btcl) or with (core:safe-backtrace) are slightly broken
+* ~~cl:format no longer works correctly~~ (pr merged, should be solved)
+* Backtraces in slime or in terminal with (core:btcl) or with (core:safe-backtrace) are slightly broken
