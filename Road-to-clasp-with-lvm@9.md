@@ -70,3 +70,6 @@ Now you need to update to llvm@9
 * Disassemble no longer works
 * ~~cl:format no longer works correctly~~ (pr merged, should be solved)
 * Backtraces in slime or in terminal with (core:btcl) or with (core:safe-backtrace) are slightly broken
+# what you want to do on top
+* update sbcl (remember you need a valid common lisp (e.g. sbcl) to update sbcl, see see http://www.sbcl.org/platform-table.html
+* install quicklisp, see https://www.quicklisp.org/beta/#installation
