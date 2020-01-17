@@ -1,4 +1,10 @@
-# On Linux
+# On Linux/Debian
+
+Install binutils-dev
+```
+sudo apt-get install binutils-dev
+```
+
 Clone llvm-project from github.
 
 Build llvm with this in a makefile in llvm-projects ...
@@ -8,6 +14,7 @@ Build llvm with this in a makefile in llvm-projects ...
 all:
         (cd build; cmake -G "Unix Makefiles" \
         -DLIBOMP_ARCH=x86_64 \
+        -DLLVM_BINUTILS_INCDIR=/usr/include \
         -DLLVM_ABI_BREAKING_CHECKS=FORCE_OFF \
         -DLINK_POLLY_INTO_TOOLS=ON \
         -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
