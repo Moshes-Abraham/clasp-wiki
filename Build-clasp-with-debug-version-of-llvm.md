@@ -1,3 +1,50 @@
+# On Linux
+Clone llvm-project from github.
+
+Build llvm with this in a makefile in llvm-projects ...
+
+
+```
+all:
+        (cd build; cmake -G "Unix Makefiles" \
+        -DLIBOMP_ARCH=x86_64 \
+        -DLLVM_ABI_BREAKING_CHECKS=FORCE_OFF \
+        -DLINK_POLLY_INTO_TOOLS=ON \
+        -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -DLLVM_BUILD_LLVM_DYLIB=ON \
+        -DLLVM_ENABLE_ASSERTIONS=ON \
+        -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_FFI=ON \
+        -DLLVM_ENABLE_LIBCXX=ON \
+        -DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_INCLUDE_DOCS=OFF \
+        -DLLVM_INSTALL_UTILS=ON \
+        -DLLVM_OPTIMIZED_TABLEGEN=ON \
+        -DLLVM_TARGETS_TO_BUILD=all \
+        -DLLVM_ENABLE_PROJECTS=clang \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DWITH_POLLY=ON \
+        -DLLDB_USE_SYSTEM_DEBUGSERVER=ON \
+        -DLLDB_DISABLE_PYTHON=1 \
+        -DLIBOMP_INSTALL_ALIASES=OFF ../llvm )
+
+```
+```
+cd llvm-project
+mkdir build
+make
+```
+Add this to the wscript.config
+
+```
+LLVM_CONFIG_BINARY = '<path-to-llvm-project>/build/bin/llvm-config'
+INCLUDES = ["<path-to-llvm-project>/clang/include", "<path-to-llvm-project>/build/tools/clang/include"]
+```
+
+
+
+# On MacOS
+
 Clone llvm-project from github.
 
 Build llvm with this...
