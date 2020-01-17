@@ -1,5 +1,7 @@
 # On Linux/Debian
 
+The ld.gold linker needs to be available.  I don't know if /bin/ld.gold is all you need so I moved /bin/ld to /bin/ld.orig and created a symlink from /bin/ld.gold to /bin/ld
+
 Install binutils-dev
 ```
 sudo apt-get install binutils-dev
