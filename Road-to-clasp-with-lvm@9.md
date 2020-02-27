@@ -18,6 +18,7 @@ LLVM_CONFIG_BINARY = '/usr/local/opt/llvm@9/bin/llvm-config'
 USE_PARALLEL_BUILD = True
 USE_BUILD_FORK_REDIRECT_OUTPUT = False
 CLASP_BUILD_MODE = 'object'
+USE_COMPILE_FILE_PARALLEL=True
 DEBUG_OPTIONS = [  "DEBUG_RELEASE"
                   ,"DEBUG_BCLASP_LISP"
                   ,"DEBUG_CCLASP_LISP"
@@ -67,9 +68,9 @@ Now you need to update to llvm@9
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
 # Known errors
-* Disassemble no longer works
-* ~~cl:format no longer works correctly~~ (pr merged, should be solved)
-* Backtraces in slime or in terminal with (core:btcl) or with (core:safe-backtrace) are slightly broken
+* ~~cDisassemble no longer works~~c just disassemble function :type :ir is broken
+* ~~cl:format no longer works correctly~~
+* ~~Backtraces in slime or in terminal with (core:btcl) or with (core:safe-backtrace) are slightly broken~~
 # what you want to do on top
 * update sbcl (remember you need a valid common lisp (e.g. sbcl) to update sbcl, see see http://www.sbcl.org/platform-table.html
 * install quicklisp, see https://www.quicklisp.org/beta/#installation
