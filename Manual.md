@@ -20,7 +20,7 @@ TODO
 
 The developers welcome bug reports and patches. Both should ideally be mediated through the GitHub interface at https://github.com/clasp-developers/clasp.
 
-Development for Clasp is mostly carried out on Freenode's #clasp channel.
+Discussions of Clasp development are mostly carried out on Freenode's #clasp channel.
 
 ## Credits
 
