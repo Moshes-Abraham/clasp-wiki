@@ -68,7 +68,7 @@ Now you need to update to llvm@9
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
 # Known errors
-* ~~cDisassemble no longer works~~c just disassemble function :type :ir is broken
+* ~~Disassemble no longer works~~
 * ~~cl:format no longer works correctly~~
 * ~~Backtraces in slime or in terminal with (core:btcl) or with (core:safe-backtrace) are slightly broken~~
 # what you want to do on top
