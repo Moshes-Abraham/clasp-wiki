@@ -26,6 +26,8 @@ Now you need to update to llvm@9
 * `git checkout dev`
 * `cp wscript.config.debian10 wscript.config`
 * edit in wscript.config setting LLVM_CONFIG_BINARY = '/path/to/llvm-config-4.0' to the corrrect path, in my case /usr/bin/llvm-config-9
+* add `INCLUDES = [ "-I", "/lib/llvm-9/include/c++/v1"]`to wscript.conf
+* i had trouble with a boehm header, so I added `BOEHM_GC_ENUMERATE_REACHABLE_OBJECTS_INNER_AVAILABLE = False` to wscript.config . That might not be the right thing to do, perhaps another include is missing  
 * `chmod +x wscript` (no longer sure this is needed)
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
