@@ -42,10 +42,10 @@ INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
 ````
 # Linux
 In Linux I installed from scratch on top of Ubuntu 18.04 LTS
-* Install these packages.
-
+* Install the following packages.
 ```
-sudo apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl
+sudo apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev<br>
+libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl
 ```
 
 * sudo apt install git curl
