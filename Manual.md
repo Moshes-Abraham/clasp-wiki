@@ -170,7 +170,9 @@ TODO
 
 # Debugger
 
-TODO
+Debugging works within a dynamic environment with the following dynamic variables defined:
+`sys:*backtrace*` - A list of backtrace frames.
+
 
 # Multiprocessing
 
