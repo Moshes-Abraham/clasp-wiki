@@ -169,6 +169,12 @@ Clasp can interact with C programs and libraries through its Foreign Function In
 TODO
 
 # Debugger
+When an error occurred, the current backtrace can be shown with `(ext:btcl)`just showing lisp entries or `(ext:btcl :all t)`also showing the c++ frames. The complete lambda-list is: `(&key all (args t) (stream *standard-output*))`
+
+The arguments in a frame can be accessed via `(ext:ihs-argument <variable-index>)` in the current frame or with `(ext:ihs-argument <variable-index> <frame-index>)` for any valid frame.
+
+While in the debugger `:u`allows to navigate one frame up (to the next lisp frame) and `:d` allows to navigate one lisp frame down.
+`:r<number>` invokes the restart <number>, e.g. `r1` 
 
 # Multiprocessing
 
