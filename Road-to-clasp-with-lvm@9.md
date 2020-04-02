@@ -3,7 +3,7 @@ In Linux I installed from scratch on top of Ubuntu 18.04 LTS
 * Install the following packages.
 
 `
-sudo apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl git curl`
+sudo apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake ~~libgc-dev~~ libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl git curl`
 
 * sudo apt install git curl
 Now you need to update to llvm@9
@@ -22,6 +22,7 @@ Now you need to update to llvm@9
 `apt-get install libc++-9-dev libc++abi-9-dev`
   * OpenMP
 `sudo apt-get install libomp-9-dev`
+* install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
 * `git clone https://github.com/clasp-developers/clasp.git`
 * `git checkout dev`
 * `cp wscript.config.debian10 wscript.config`
