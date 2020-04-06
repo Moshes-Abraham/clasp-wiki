@@ -90,6 +90,10 @@ A consequence of the dispatch method described above is that obsolete instances 
 
 ## Conditions
 
+In addition to `cl:restart-name`, Clasp provides some readers to introspect about restarts, for advanced users (e.g. writing your own debugger): `ext:restart-function` returns the function called by `cl:invoke-restart`, and `ext:report-function`, `ext:interactive-function`, and `ext:interactive-function` return the corresponding arguments in `cl:restart-bind`. These will always be appropriate functions, so for example `ext:report-function` will always return a function of one stream argument, but if no `:report-function` was provided it will report the restart in Clasp's default way. The identities of these returned functions cannot be relied on, i.e. they may not be identical to those provided to `cl:restart-bind`.
+
+There is also `ext:restart-associated-conditions`, which returns a list of conditions associated (by `cl:with-condition-restarts`) with the restart in the current dynamic environment.
+
 ## Symbols
 
 ## Packages
