@@ -172,13 +172,29 @@ Clasp can interact with C programs and libraries through its Foreign Function In
 
 TODO
 
-# Debugger
-When an error occurred, the current backtrace can be shown with `(ext:btcl)`just showing lisp entries or `(ext:btcl :all t)`also showing the c++ frames. The complete lambda-list is: `(&key all (args t) (stream *standard-output*))`
+# REPL
 
-The arguments in a frame can be accessed via `(ext:ihs-argument <variable-index>)` in the current frame or with `(ext:ihs-argument <variable-index> <frame-index>)` for any valid frame.
+Clasp's built in read-eval-print loop supports various commands in addition to evaluating Lisp forms. These commands consist of lines beginning with a Lisp keyword, followed possibly by additional arguments. The most up to date documentation for this interface is the on-line help system, obtainable with the command `:help`.
 
-While in the debugger `:u`allows to navigate one frame up (to the next lisp frame) and `:d` allows to navigate one lisp frame down.
-`:r<number>` invokes the restart <number>, e.g. `r1` 
+When an error occurs in Clasp's REPL, the debugger will be entered. `:help` can describe the debugger commands as well. Some basic commands are `:b` to print a backtrace, `:rN` to invoke the Nth restart, `:v` to print local variables in the frame, and `:up`, `:down`, and `:go` for navigating frames.
+
+In the debugger, the function `ext:tpl-frame` can be used to return a representation of the current frame suitable for the programmatic debug interface described below, and `ext:tpl-argument` and `ext:tpl-arguments` can be used to retrieve arguments.
+
+# Debug interface
+
+For advanced users, such as those developing development tools such as debuggers to use with Clasp, a programmatic interface to debug information is provided by the `CLASP-DEBUG` package.
+
+The `with-stack` and `call-with-stack` operators allow `frame` objects, representing part of the current control stack, to be interrogated. These frame objects have several readers: `frame-function`, `frame-arguments`, `frame-locals`, `frame-source-position`, and `frame-language`. More specific information about the function can be obtained with `frame-function-name`, `frame-function-lambda-list`, `frame-function-source-position`, `frame-function-form`, `frame-function-documentation`, and `disassemble-frame`.
+
+Note that frames necessarily have dynamic extent, because the local variables, arguments, and functions they refer to may be dynamic-extent themselves.
+
+To navigate frames smoothly, a notion of "visibility" exists. Frames can be "invisible" if they aren't of interest to users. This includes things like internal system code. Of course, the concept of visiblity can change. Frame visibility is controlled by the `*frame-filters*` variable, which holds a list of function designators: a frame is visible if none of the functions return a true value when given the frame as an argument. As such, all frames are considered visible if `*frame-filters*` is bound to `nil`.
+
+`up` and `down` can be used to navigate visible frames, while `frame-up` and `frame-down` ignore visibility. `map-stack`, `list-stack`, and `map-indexed-stack` can be used to perform manipulations on all frames at once.
+
+`with-truncated-stack` and `with-capped-stack` can be used as hints to `with-stack` (and therefore debuggers) that only a portion of the control stack is of interest. For example, a function that signals an error can use `with-truncated-stack` to ensure that lower debugger frames are not included in backtraces.
+
+`print-backtrace` is provided as a simple way to print a current backtrace, without needing to use `with-stack` or anything.
 
 # Multiprocessing
 
