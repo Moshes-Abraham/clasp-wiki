@@ -40,6 +40,8 @@ As mentioned, Clasp is an implementation of ANSI Common Lisp. The following subs
 
 Clasp expands compiler macros essentially unconditionally. That is, provided the operator is not declared `notinline`, the compiler will attempt to expand compiler macros. If compiler macroexpansion signals, this signal will be recorded and reported by the compiler. If compiler macroexpansion errors out, the compiler will abandon expansion and use the unexpanded form, while noting the error for display.
 
+`ext:with-current-source-form` is a useful macro to allow error messages from macroexpanders and compiler-macro-expanders to have more specific source information. See its docstring for more information.
+
 [We have a symbol macro function accessor, but I don't think it will work for non-global symbol macros, so it can't exactly be documented]
 
 ## Types and Classes
