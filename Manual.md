@@ -30,7 +30,20 @@ Clasp's source code is derived substantially from that of Embeddable Common Lisp
 
 # Starting and Stopping
 
-TODO
+The Clasp executable accepts many different command line arguments. You can get the most up to date summary by passing `--help`. Here are some important ones:
+
+- `--noinform`: Skip messages at startup.
+- `--noprint`: Start a read-eval loop instead of a read-eval-print loop, and don't prompt. This is intended for scripts (e.g. piping a list of forms to Clasp).
+- `--disable-debugger`: Set things up so that if the default debugger would be entered, Clasp quits with a backtrace and nonzero exit status instead. `*debugger-hook*` and `ext:*invoke-debugger-hook*` (below) work as usual, i.e. this setting does not affect them.
+- `--non-interactive`: Rather than starting a REPL, quit. This is intended to be used with `--eval` and `--load`. Implies `--disable-debugger`.
+- `--feature feature`: Intern "feature" as a keyword and push it to `*features*`.
+- `--eval form`: Evaluate the given form. `--eval` and `--load` options are processed in order from left to right.
+- `--load filename`: `cl:load` the given file. Intended for convenience, since `--eval (load ...)` could involve annoying quotation issues.
+- `--norc`: Do not load `~/.clasprc` (see below).
+
+If the file `~/.clasprc` exists, Clasp will `cl:load` it before processing `--eval` and `--load` options and starting the REPL.
+
+To exit Clasp, the `ext:quit` function can be used. If provided an integer argument, it's used as the exit status; the default is zero.
 
 # Lisp
 
