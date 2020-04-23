@@ -106,6 +106,8 @@ Local nicknames may be specified in `defpackage` through the `(:local-nicknames 
 
 ## Numbers
 
+There are two types of floats, `single-float` and `double-float`. `short-float` is synonymous with the former and `long-float` is synonymous with the latter, per the standard's requirements. `single-float` is in the IEEE754 binary32 (single) format, and `double-float` in binary64 (double) format. The representation of a float as bits can be interconverted with a float using the functions `ext:single-float-to-bits`, `bits-to-single-float`, `double-float-to-bits`, and `bits-to-double-float`. These functions take or return nonnegative integers; for example `(logbitp 31 (ext:single-floats-to-bit float))` returns whether the sign bit is set.
+
 ## Characters
 
 Clasp supports Unicode by default. `code-char` and `char-code` work with Unicode codepoints.
