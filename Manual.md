@@ -193,9 +193,13 @@ TODO
 
 Clasp's built in read-eval-print loop supports various commands in addition to evaluating Lisp forms. These commands consist of lines beginning with a Lisp keyword, followed possibly by additional arguments. The most up to date documentation for this interface is the on-line help system, obtainable with the command `:help`.
 
-When an error occurs in Clasp's REPL, the debugger will be entered. `:help` can describe the debugger commands as well. Some basic commands are `:b` to print a backtrace, `:rN` to invoke the Nth restart, `:v` to print local variables in the frame, and `:up`, `:down`, and `:go` for navigating frames.
+Clasp has a built in debugger, which will be entered by `invoke-debugger` by default. `:help` can describe the debugger commands as well. Some basic commands are `:b` to print a backtrace, `:rN` to invoke the Nth restart, `:v` to print local variables in the frame, and `:up`, `:down`, and `:go` for navigating frames.
+
+In addition to the standard `*debugger-hook*`, Clasp has `ext:*invoke-debugger-hook*`. This is a similar hook function, but it will be tried before `*debugger-hook*`, and importantly, will be called even for `break` (which binds `*debugger-hook*` to `nil` per the standard). This can be used to set up your own debugger in an IDE.
 
 In the debugger, the function `ext:tpl-frame` can be used to return a representation of the current frame suitable for the programmatic debug interface described below, and `ext:tpl-argument` and `ext:tpl-arguments` can be used to retrieve arguments.
+
+In some applications, it's useful for the program to exit rather than exit a debugger. The functions `ext:disable-debugger` and `ext:enable-debugger` can be used to set whether the debugger will be entered. These only affect the **built in** debugger, and they do not affect `*debugger-hook*` or `ext:*invoke-debugger-hook*`.
 
 # Debug interface
 
