@@ -270,12 +270,6 @@ The function `garbage-collect` forces a garbage collection.
 
 `finalize` registers a finalizer function for an object. When the object is collected, the function will be called with no arguments. Note that this function should not close over the object, because then the closure will keep that object alive indefinitely.
 
-# Posix interfaces
+# POSIX
 ## Signal Handling
-Handler for standard posix signal can be defined in Clasp
-
-`ext:enable-interrupt`allows to:
-* ignore the signal (also via `ext:ignore-interrupt`
-* set the default signal handler (also via `ext:default-interrupt`)
-* define a lisp handler for a signal, e.g. `(ext:enable-interrupt :sigpipe :lisp #'(lambda(signal) ..)`
-* the current lisp handler -if any - can be inquired with `ext:get-signal-handler`
+Handlers for standard POSIX signals can be defined in Clasp using the `ext:enable-interrupt` function, which excepts a keyword to identify the type of signal (e.g. `:sigpipe` for `SIGPIPE`). If a Lisp function is used as the handler, it must be a function of one argument, the signal number. `ext:enable-interrupt`, or `ext:ignore-interrupt` and `ext:default-interrupt`, can be used to set the handler to the ignore-signal handler or the default handler respectively, analogous to `SIG_IGN` and `SIG_DFL`. The current handler function, if there is one, can be retrieved with `ext:get-signal-handler`.
