@@ -269,3 +269,13 @@ Symbols related to garbage collection are exported from the "GCTOOLS" package.
 The function `garbage-collect` forces a garbage collection.
 
 `finalize` registers a finalizer function for an object. When the object is collected, the function will be called with no arguments. Note that this function should not close over the object, because then the closure will keep that object alive indefinitely.
+
+# Posix interfaces
+## Signal Handling
+Handler for standard posix signal can be defined in Clasp
+
+`ext:enable-interrupt`allows to:
+* ignore the signal (also via `ext:ignore-interrupt`
+* set the default signal handler (also via `ext:default-interrupt`)
+* define a lisp handler for a signal, e.g. `(ext:enable-interrupt :sigpipe :lisp #'(lambda(signal) ..)`
+* the current lisp handler -if any - can be inquired with `ext:get-signal-handler`
