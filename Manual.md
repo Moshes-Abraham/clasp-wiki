@@ -123,7 +123,7 @@ There are two types of floats, `single-float` and `double-float`. `short-float` 
 
 ## Characters
 
-Clasp supports Unicode by default. `code-char` and `char-code` work with Unicode codepoints.
+Clasp supports Unicode by default. `code-char` and `char-code` work with Unicode codepoints. Unicode character names are also supported, e.g. `(princ #\GREEK_SMALL_LETTER_LAMDA) -> λ`. `(defun λ(n)(* 2 n)) (λ 32) -> 62`is also possible.
 
 Type `character` includes all characters in Unicode. Type `base-char` includes only single byte characters, i.e. Basic Latin and Latin-1 Supplement.
 
@@ -292,3 +292,5 @@ The function `garbage-collect` forces a garbage collection.
 # POSIX
 ## Signal Handling
 Handlers for standard POSIX signals can be defined in Clasp using the `ext:enable-interrupt` function, which excepts a keyword to identify the type of signal (e.g. `:sigpipe` for `SIGPIPE`). If a Lisp function is used as the handler, it must be a function of one argument, the signal number. `ext:enable-interrupt`, or `ext:ignore-interrupt` and `ext:default-interrupt`, can be used to set the handler to the ignore-signal handler or the default handler respectively, analogous to `SIG_IGN` and `SIG_DFL`. The current handler function, if there is one, can be retrieved with `ext:get-signal-handler`.
+## Further posix interfaces
+`ext:stat` and `ext:fstat` wrap the corresponding posix-interfaces. Use `ext:file-stream-file-descriptor` to get the file-descriptor for a stream.
