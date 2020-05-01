@@ -294,3 +294,11 @@ The function `garbage-collect` forces a garbage collection.
 Handlers for standard POSIX signals can be defined in Clasp using the `ext:enable-interrupt` function, which excepts a keyword to identify the type of signal (e.g. `:sigpipe` for `SIGPIPE`). If a Lisp function is used as the handler, it must be a function of one argument, the signal number. `ext:enable-interrupt`, or `ext:ignore-interrupt` and `ext:default-interrupt`, can be used to set the handler to the ignore-signal handler or the default handler respectively, analogous to `SIG_IGN` and `SIG_DFL`. The current handler function, if there is one, can be retrieved with `ext:get-signal-handler`.
 ## Further posix interfaces
 `ext:stat` and `ext:fstat` wrap the corresponding posix-interfaces. Use `ext:file-stream-file-descriptor` to get the file-descriptor for a stream.
+The environment can be accessed with `EXT:SETENV`and `EXT:GETENV`
+Working directories can be accessed with `EXT:GETCWD`and `EXT:CHDIR`.  
+
+# Interfaces outside of POSIX
+## File System
+`EXT:RMTREE` allows to remove a whole directory tree
+## Other interfaces
+`ext:quit` to leave clasp
