@@ -34,7 +34,14 @@ Now you need to update to llvm@9
 * Start with `build/clasp`
 
 # MacOSX Mojave
+* install xcode
+* install xcode command line tools
+* install sbcl
 * brew install llvm@9
+* install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
+* `git clone https://github.com/clasp-developers/clasp.git`
+* `git checkout dev`
+* `cp wscript.config.osx-brew wscript.config`
 * adapt wscript.config
   * change LLVM_CONFIG_BINARY to the correct path, in my case
 `LLVM_CONFIG_BINARY = '/usr/local/opt/llvm@9/bin/llvm-config'`
@@ -74,7 +81,10 @@ INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
              "-I", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
 ]
 ````
-
+* to build from scratch  `./waf distclean configure build_cboehm`, can take 1 hour
+* to verify build `./waf test`
+* Start with `build/clasp`
+* to install `./waf install_cboehm`
 # Known errors
 * ~~Disassemble no longer works~~
 * ~~cl:format no longer works correctly~~
