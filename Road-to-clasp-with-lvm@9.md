@@ -33,7 +33,7 @@ Now you need to update to llvm@9
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
 
-# MacOSX Mojave
+# MacOSX Catalina/Mojave
 * install xcode
 * install xcode command line tools
 * install sbcl
@@ -52,6 +52,10 @@ CPPFLAGS = [ "-Wno-nullability-completeness"]
 INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
              "-I", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
 ]
+````
+* for catalina add additionally
+```c++
+CPPFLAGS = [ "-isystem", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"]
 ````
   * My complete wscript.config is the following
 ```c++
