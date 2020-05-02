@@ -38,6 +38,7 @@ Now you need to update to llvm@9
 * install xcode command line tools
 * install sbcl
 * brew install llvm@9
+* brew install cmake libffi gmp boost libunwind-headers
 * install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
 * `git clone https://github.com/clasp-developers/clasp.git`
 * `git checkout dev`
