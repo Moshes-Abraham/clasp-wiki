@@ -4,8 +4,8 @@ Profiling tools are in clasp/src/profile
 * `git clone https://github.com/brendangregg/FlameGraph` in `<path-to-flamegraph>`
 * `export FLAME_GRAPH_HOME=<path-to-flamegraph>/FlameGraph`
 # short form
-* find out the <pid> of the clasp you wan't to meter with e.g. : `ps`
-* Execute `./do-flame <pid>` That leaves a .svg file in /tmp/<something>
+* find out the <pid> of the clasp you want to meter with `ps` on the command line or `(sys:getpid)` within clasp.
+* Execute `./do-flame <pid>` That leaves a .svg file in /tmp/out-<pid>.svg
 * View with your browser
 # long form
 ```./do-dtrace <pid>```
@@ -22,4 +22,4 @@ Generates backtraces that start with the frame <PART-OF-FUNCTION-NAME>.
 
 ```./flame /tmp/out-pruned.user_stacks```
 
-Generates /tmp/out-flame.svg - view this in chrome
+Generates /tmp/out-<pid>.svg - view this in chrome
