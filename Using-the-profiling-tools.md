@@ -1,5 +1,13 @@
 Profiling tools are in clasp/src/profile
 
+# Prerequisite:
+* `git clone https://github.com/brendangregg/FlameGraph` in `<path-to-flamegraph>`
+* `export FLAME_GRAPH_HOME=<path-to-flamegraph>/FlameGraph`
+# short form
+* find out the <pid> of the clasp you wan't to meter with e.g. : `ps`
+* Execute `./do-flame <pid>` That leaves a .svg file in /tmp/<something>
+* View with your browser
+# long form
 ```./do-dtrace <pid>```
 
 Generates the file /tmp/out-symbol-<pid>.user_stacks
