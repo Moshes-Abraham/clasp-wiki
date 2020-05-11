@@ -23,3 +23,5 @@ Generates backtraces that start with the frame <PART-OF-FUNCTION-NAME>.
 ```./flame /tmp/out-pruned.user_stacks```
 
 Generates /tmp/out-<pid>.svg - view this in chrome
+# Use for other compilers:
+The profiling code has some specifics to filter clasp frames, but works for other compilers as well (tested with ecl)
