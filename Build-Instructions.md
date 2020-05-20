@@ -1,6 +1,6 @@
 # Clasp latest
 
-If something fails while building the `dev` branch, then try the `testing` branch. It's lagging behind somewhat, but it should be more stable.
+If something fails while building the `master` branch, then try the `testing` branch. It's lagging behind somewhat, but it should be more stable.
 
 You may want to look at [the Dockerfiles](https://github.com/clasp-developers/clasp/blob/dev/tools/dockerfiles/). They describe how to build in various environments and configurations.
 
