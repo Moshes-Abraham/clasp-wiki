@@ -19,6 +19,7 @@ Install the following packages:
 * `cp wscript.config.debian10 wscript.config`
 * edit in wscript.config setting LLVM_CONFIG_BINARY = '/path/to/llvm-config-4.0' to the corrrect path, in my case /usr/bin/llvm-config-9
 * add `INCLUDES = [ "-I", "/lib/llvm-9/include/c++/v1"]`to wscript.conf
+* install emacs `sudo snap install emacs --classic`
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
 
@@ -80,4 +81,5 @@ INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
 * ~~Backtraces in slime or in terminal with (core:btcl) or with (core:safe-backtrace) are slightly broken~~
 # what you want to do on top
 * update sbcl (remember you need a valid common lisp (e.g. sbcl) to update sbcl, see see http://www.sbcl.org/platform-table.html
+* install slime
 * install quicklisp, see https://www.quicklisp.org/beta/#installation
