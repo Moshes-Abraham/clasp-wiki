@@ -11,7 +11,7 @@ Install the following packages:
 `sudo apt-get install lldb-9`
   * lld (linker)
 `sudo apt-get install lld-9`
-  * libc++ `apt-get install libc++-9-dev libc++abi-9-dev`
+  * libc++ `sudo apt-get install libc++-9-dev libc++abi-9-dev`
 * `sudo apt install libgmp-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl git curl`
 * `sudo apt install python2`
 * install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
