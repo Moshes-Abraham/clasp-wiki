@@ -60,14 +60,9 @@ DEBUG_OPTIONS = [  "DEBUG_RELEASE"
                   ,"DEBUG_COMPILER"
                   ,"DEBUG_GUARD"
                   ,"DEBUG_GUARD_VALIDATE"
-#                 ,"DEBUG_JIT_LOG_SYMBOLS"
-#                 ,"DEBUG_SLOW"
-#                 ,"DEBUG_DTRACE_LOCK_PROBE"
                   ,"DEBUG_ASSERT_TYPE_CAST"
-#                 ,"USE_HUMAN_READABLE_BITCODE"
+                  ,"DEBUG_VERIFY_MODULES"
                   ,"CST"
-#                 ,"DISABLE_CST"
-#	              ,"DEBUG_LLVM_OPTIMIZATION_LEVEL_0"
                   ]
 REQUIRE_LIBFFI = True
 CPPFLAGS = [ "-Wno-nullability-completeness"]
