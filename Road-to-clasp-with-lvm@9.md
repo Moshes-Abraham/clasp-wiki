@@ -15,12 +15,10 @@ Install the following packages:
 * `sudo apt install libgmp-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl git curl`
 * install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
 * `git clone https://github.com/clasp-developers/clasp.git`
-* `git checkout dev`
+* `git checkout master`
 * `cp wscript.config.debian10 wscript.config`
 * edit in wscript.config setting LLVM_CONFIG_BINARY = '/path/to/llvm-config-4.0' to the corrrect path, in my case /usr/bin/llvm-config-9
 * add `INCLUDES = [ "-I", "/lib/llvm-9/include/c++/v1"]`to wscript.conf
-* i had trouble with a boehm header, so I added `BOEHM_GC_ENUMERATE_REACHABLE_OBJECTS_INNER_AVAILABLE = False` to wscript.config . That might not be the right thing to do, perhaps another include is missing  
-* `chmod +x wscript` (no longer sure this is needed)
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
 * Start with `build/clasp`
 
