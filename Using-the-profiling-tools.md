@@ -1,7 +1,8 @@
 Profiling tools are in clasp/src/profile
 
 # Prerequisite:
-* `git clone https://github.com/brendangregg/FlameGraph` in `<path-to-flamegraph>`
+* ~~`git clone https://github.com/brendangregg/FlameGraph` in `<path-to-flamegraph>`~~
+* `git clone https://github.com/clasp-developers/FlameGraph.git` in `<path-to-flamegraph>`
 * `export FLAME_GRAPH_HOME=<path-to-flamegraph>/FlameGraph`
 # short form
 * find out the `<pid>` of the clasp you want to meter with `ps` on the command line or `(sys:getpid)` within clasp.
