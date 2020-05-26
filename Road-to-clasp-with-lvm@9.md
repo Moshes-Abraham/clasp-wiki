@@ -15,7 +15,7 @@ Install the following packages:
 
 or minimal:
 * `sudo apt-get install libllvm9 llvm-9 llvm-9-dev llvm-9-runtime`
-* `sudo apt-get install clang-9 clang-tools-9 libclang-common-9-dev libclang-9-dev libclang1-9 clang-format-9 langd-9`
+* `sudo apt-get install clang-9 clang-tools-9 libclang-common-9-dev libclang-9-dev libclang1-9 clang-format-9 clangd-9`
 * `sudo apt-get install lldb-9`
 * `sudo apt-get install lld-9`
 * `sudo apt-get install libc++-9-dev libc++abi-9-dev`
