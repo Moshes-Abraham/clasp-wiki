@@ -22,10 +22,10 @@ or minimal:
 
 and 
 * `sudo apt-get -y install curl git gpg libboost-date-time-dev` 
-* `sudo libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev`
-* `sudo libboost-program-options-dev libboost-regex-dev libboost-system-dev`
-* `sudo libbsd-dev libelf-dev libexpat-dev libgmp-dev`
-* `sudo libzmq3-dev nano npm python3-pip sbcl wget zlib1g-dev libunwind-dev`
+* `sudo apt-get install libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev`
+* `sudo apt-get install libboost-program-options-dev libboost-regex-dev libboost-system-dev`
+* `sudo apt-get install libbsd-dev libelf-dev libexpat-dev libgmp-dev`
+* `sudo apt-get install libzmq3-dev nano npm python3-pip sbcl wget zlib1g-dev libunwind-dev`
 
 * perhaps `sudo apt install libncurses-dev libelf1 python2`
 * install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
