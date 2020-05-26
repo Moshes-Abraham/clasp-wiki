@@ -12,8 +12,22 @@ Install the following packages:
   * lld (linker)
 `sudo apt-get install lld-9`
   * libc++ `sudo apt-get install libc++-9-dev libc++abi-9-dev`
-* `sudo apt install libgmp-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl git curl`
-* `sudo apt install python2`
+
+or minimal:
+* `sudo apt-get install libllvm9 llvm-9 llvm-9-dev llvm-9-runtime`
+* `sudo apt-get install clang-9 clang-tools-9 libclang-common-9-dev libclang-9-dev libclang1-9 clang-format-9 langd-9`
+* `sudo apt-get install lldb-9`
+* `sudo apt-get install lld-9`
+* `sudo apt-get install libc++-9-dev libc++abi-9-dev`
+
+and 
+* `sudo apt-get -y install curl git gpg libboost-date-time-dev` 
+* `sudo libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev`
+* `sudo libboost-program-options-dev libboost-regex-dev libboost-system-dev`
+* `sudo libbsd-dev libelf-dev libexpat-dev libgc-dev libgmp-dev`
+* `sudo libzmq3-dev nano npm python3-pip sbcl wget zlib1g-dev libunwind-dev`
+
+* perhaps `sudo apt install libncurses-dev libelf1 python2`
 * install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
 * `git clone https://github.com/clasp-developers/clasp.git`
 * `git checkout master`
