@@ -24,7 +24,7 @@ and
 * `sudo apt-get -y install curl git gpg libboost-date-time-dev` 
 * `sudo libboost-filesystem-dev libboost-graph-dev libboost-iostreams-dev`
 * `sudo libboost-program-options-dev libboost-regex-dev libboost-system-dev`
-* `sudo libbsd-dev libelf-dev libexpat-dev libgc-dev libgmp-dev`
+* `sudo libbsd-dev libelf-dev libexpat-dev libgmp-dev`
 * `sudo libzmq3-dev nano npm python3-pip sbcl wget zlib1g-dev libunwind-dev`
 
 * perhaps `sudo apt install libncurses-dev libelf1 python2`
