@@ -2,7 +2,7 @@ In the following table one can find relative performance of clasp for some tasks
 
 Timings for version `cclasp-boehm-0.4.2-2692-g00d68d383-cst`on `macosx 10.14.6 (mojave)` `CLASP_BUILD_MODE = 'faso'` `USE_COMPILE_FILE_PARALLEL=True`
 
-| Compile Task (real)| clasp | sbcl | factor |
+| Compile Task (real)| clasp(s) | sbcl(s) | factor |
 | ----------------- | ------- | ---------------- | ---------------- |
 | cl-bench gabriel |35.0|0.711|49.23|
 | cl-jpeg |119.012|1.531|77.73|
