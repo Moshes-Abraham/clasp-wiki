@@ -5,8 +5,8 @@ Timings for version `cclasp-boehm-0.4.2-2692-g00d68d383-cst`on `macosx 10.14.6 (
 | Compile Task (real)| clasp(s) | sbcl(s) | factor |
 | ----------------- | ------- | ---------------- | ---------------- |
 | cl-bench gabriel |35.0|0.711|49.23|
-| cl-jpeg |119.012|1.531|77.73|
 | asdf  |123.399|5.872|21.01|
+| cl-jpeg |119.012|1.531|77.73|
 | ironclad |5355.203|53.792|99.55| 
 | clx |1241.959|14.933|83.17|
 | mcclim | |66.045| |
