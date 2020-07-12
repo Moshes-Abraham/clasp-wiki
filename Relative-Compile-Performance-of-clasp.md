@@ -14,7 +14,7 @@ Timings for version `cclasp-boehm-0.4.2-2692-g00d68d383-cst`on `macosx 10.14.6 (
 Note that e.g. :mcclim depends on :clx and :cl-jpeg, so that order of timings is important
 
 Commands used (in the same session in this order):
-* `(time (compile-file "/Users/karstenpoeck/lisp/compiler/clasp-karsten/src/lisp/modules/asdf/build/asdf.lisp"))`
+* `(time (compile-file "source-dir:src;lisp;modules;asdf;build;asdf.lisp"))`
 * `(time (ql:quickload :cl-jpeg))`
 * `(time (ql:quickload :ironclad :verbose t))`
 * `(time (ql:quickload :clx))`
