@@ -60,7 +60,7 @@ INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
 ````
 * for catalina add additionally
 ```c++
-CPPFLAGS = [ "-isystem", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"]
+CPPFLAGS = [ "-isysroot", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk"]
 ````
   * My complete wscript.config is the following
 ```c++
