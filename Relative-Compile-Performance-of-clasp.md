@@ -16,6 +16,6 @@ Note that e.g. :mcclim depends on :clx and :cl-jpeg, so that order of timings is
 Commands used (in the same session in this order):
 * `(time (compile-file "source-dir:src;lisp;modules;asdf;build;asdf.lisp"))`
 * `(time (ql:quickload :cl-jpeg))`
-* `(time (ql:quickload :ironclad :verbose t))`
+* `(time (ql:quickload :ironclad))`
 * `(time (ql:quickload :clx))`
 * `(time (ql:quickload :mcclim))`
