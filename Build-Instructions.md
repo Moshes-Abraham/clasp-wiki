@@ -8,7 +8,7 @@ for llvm@9, see https://github.com/clasp-developers/clasp/wiki/Road-to-clasp-wit
 
 ## Linux installation of dependencies
 
-Note: For Arch linux you probably have llvm7 or llvm8 and clasp requires llvm6 at the moment.
+Note: For Arch linux you probably have llvm10 and clasp requires llvm9 at the moment.
 Build https://github.com/clasp-developers/externals-clasp first and then ```cp clasp/wscript.config.template clasp/wscript.config``` and edit wscript.config and change LLVM_CONFIG_BINARY = '/path/to/externals-clasp/llvm-config'
 
 1. Debian/Ubuntu: `apt install -y gcc g++ llvm clang-6.0 libclang-6.0-dev cmake libgc-dev libgmp-dev binutils-gold binutils-dev zlib1g-dev libncurses-dev libboost-filesystem-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev libunwind-dev liblzma-dev libelf1 libelf-dev libbsd-dev sbcl`
@@ -26,6 +26,21 @@ Try:
 2. Edit the wscript.config file and change the LLVM_CONFIG_BINARY to point to the llvm-config binary (eg: LLVM_CONFIG_BINARY = '/usr/local/opt/llvm/bin/llvm-config').
 
 A detailed log of the build is available in `build/boehm/build.log`.
+
+### Building on Arch using a AUR helper
+
+Building clasp on Arch can be done using an AUR helper such as [yay](https://github.com/Jguer/yay). Building in this manner using
+the [clasp-cl-git](https://aur.archlinux.org/packages/clasp-cl-git/) package will build both clasp and cando and will install all
+dependencies as needed. The installation depends upon [llvm90](https://aur.archlinux.org/packages/llvm90/) which adds `/etc/ld.so.conf.d/70-llvm90.conf` in order to update the search path for shared libraries. This means that the initial install will need to include a
+call of `ldconfig` in order to update the search path list. Using yay the initial install will then be:
+
+```
+yay llvm90
+sudo ldconfig
+yay clasp-cl-git
+```
+
+After the initial installation the clasp/cando installation can be updated using `yay clasp-cl-git`.
 
 ### Building on machines with limited resources.
 
