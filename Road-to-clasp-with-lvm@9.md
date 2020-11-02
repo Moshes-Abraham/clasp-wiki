@@ -33,6 +33,8 @@ and
 * `git checkout master`
 * `cp wscript.config.debian10 wscript.config`
 * edit in wscript.config setting LLVM_CONFIG_BINARY = '/path/to/llvm-config-4.0' to the corrrect path, in my case /usr/bin/llvm-config-9
+* add in wscript.config `BOEHM_GC_ENUMERATE_REACHABLE_OBJECTS_INNER_AVAILABLE = False` Failure to do so might result in `../../src/gctools/gcFunctions.cc:629:3: error: use of undeclared identifier 'GC_enumerate_reachable_objects_inner'
+  GC_enumerate_reachable_objects_inner(boehm_callback_reachable_object, NULL);`
 * add `INCLUDES = [ "-I", "/lib/llvm-9/include/c++/v1"]`to wscript.conf
 * install emacs `sudo snap install emacs --classic`
 * `./waf distclean configure build_cboehm` (can take 1-2 hours)
