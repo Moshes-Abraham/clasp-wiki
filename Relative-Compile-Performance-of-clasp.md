@@ -42,7 +42,6 @@ Benchmarked on: x86_64 Darwin Kernel Version 18.7.0: Fri Oct 30 12:37:06 PDT 202
 |DDERIV|      0,11|      0,24|      0,57|      0,11|      1,78|
 |DERIV|      0,11|      0,25|      0,64|      0,11|      1,99|
 |DESTRUCTIVE|      0,09|      0,24|      0,41|      0,09|      0,63|
-/Users/karstenpoeck/lisp/fork-cl-bench/output/report.markdown
 |DIV2-TEST-1|      0,18|      0,38|      0,73|      0,18|      1,93|
 |DIV2-TEST-2|      0,25|      0,51|      1,04|      0,25|      2,38|
 |FFT|      0,01|      0,06|      1,43|      0,01|      0,78|
