@@ -1,7 +1,7 @@
 # Quicklisp performance tests
 In the following table one can find relative performance of clasp for some tasks:
 
-Timings for version `"cclasp-boehm-0.4.2-3434-g3f70b6373-cst"`on `macosx 10.14.6 (mojave)` `CLASP_BUILD_MODE = 'faso'` `USE_COMPILE_FILE_PARALLEL=False`
+Timings for version `"cclasp-boehm-0.4.2-3434-g3f70b6373-cst"`on `macosx 10.14.6 (mojave)` `CLASP_BUILD_MODE = <default>` `USE_COMPILE_FILE_PARALLEL=<default>`
 
 | Compile Task (real)| clasp(s) | ccl(s) | ecl(s) | sbcl(s) | factor clasp/sbcl | factor clasp/ecl |factor ecl/sbcl |
 | ------------------ | -------- | ------ | -------| --------| ----------------- | ---------------- | ---------------| 
