@@ -66,12 +66,8 @@ CPPFLAGS = [ "-isysroot", "/Applications/Xcode.app/Contents/Developer/Platforms/
 ````
   * My complete wscript.config is the following
 ```c++
-#LLVM_CONFIG_BINARY = '/usr/local/opt/llvm@6/bin/llvm-config'
 LLVM_CONFIG_BINARY = '/usr/local/opt/llvm@9/bin/llvm-config'
 USE_PARALLEL_BUILD = True
-USE_BUILD_FORK_REDIRECT_OUTPUT = False
-CLASP_BUILD_MODE = 'object'
-USE_COMPILE_FILE_PARALLEL = False
 DEBUG_OPTIONS = [  "DEBUG_RELEASE"
                   ,"DEBUG_BCLASP_LISP"
                   ,"DEBUG_CCLASP_LISP"
@@ -80,7 +76,8 @@ DEBUG_OPTIONS = [  "DEBUG_RELEASE"
                   ,"DEBUG_GUARD_VALIDATE"
                   ,"DEBUG_ASSERT_TYPE_CAST"
                   ,"DEBUG_VERIFY_MODULES"
-                  ,"CST"
+                  ,"DEBUG_JIT_LOG_SYMBOLS"
+                  ,"DEBUG_ASSERT_TYPE_CAST"
                   ]
 REQUIRE_LIBFFI = True
 CPPFLAGS = [ "-Wno-nullability-completeness"]
