@@ -15,10 +15,7 @@ Build https://github.com/clasp-developers/externals-clasp first and then ```cp c
 
    Arch: `pacman -S gcc gc llvm clang cmake binutils zlib ncurses boost-libs libunwind xz libelf libbsd sbcl`
 
-   Fedora 32 : `dnf install -y gcc g++ llvm9.0 llvm9.0-devel llvm9.0-libs llvm9.0-static clang9.0-devel clang9.0-libs cmake gc-devel gmp-devel \
-     binutils-gold binutils-devel zlib-devel ncurses-devel boost-devel \
-     boost-filesystem boost-regex boost-date-time boost-program-options boost-system \
-     boost-iostreams libunwind-devel xz-devel elfutils-libelf-devel libbsd-devel sbcl`
+   Fedora 32 : `dnf install -y gcc g++ llvm9.0 llvm9.0-devel llvm9.0-libs llvm9.0-static clang9.0-devel clang9.0-libs cmake gc-devel gmp-devel binutils-gold binutils-devel zlib-devel ncurses-devel boost-devel boost-filesystem boost-regex boost-date-time boost-program-options boost-system boost-iostreams libunwind-devel xz-devel elfutils-libelf-devel libbsd-devel sbcl`
 
 2. `git clone https://github.com/clasp-developers/clasp.git`
 
