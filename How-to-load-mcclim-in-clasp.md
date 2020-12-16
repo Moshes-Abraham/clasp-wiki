@@ -16,11 +16,11 @@
   * (clim:run-frame-top-level (clim:make-application-frame 'clim-demo::address-book))
 ### IR Visualizer (cleavir-ir-visualizer)
 * make the asd files known:
-  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;Visualizer;cleavir-ir-visualizer.asd"))
-  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;cleavir-ir.asd"))
-  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Meter;cleavir-meter.asd"))
+  * (asdf:load-asd (pathname "sys:kernel;contrib;Cleavir;Intermediate-representation;Visualizer;cleavir-ir-visualizer.asd"))
+  * (asdf:load-asd (pathname "sys:kernel;contrib;Cleavir;Intermediate-representation;cleavir-ir.asd"))
+  * (asdf:load-asd (pathname "sys:kernel;contrib;Cleavir;Meter;cleavir-meter.asd"))
   * (asdf:load-asd (pathname "~/quicklisp/software/mcclim-git/Apps/Inspector/clouseau.asd")) adapt to your directory-structure
-  * (asdf:load-asd (pathname "sys:kernel;contrib;sicl;Code;Cleavir;Intermediate-representation;Hir;cleavir-hir.asd"))
+  * (asdf:load-asd (pathname "sys:kernel;contrib;Cleavir;Intermediate-representation;Hir;cleavir-hir.asd"))
 * (ql:quickload "cleavir-ir-visualizer" :verbose t)
 * to test
 ```common-lisp
