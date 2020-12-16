@@ -1,11 +1,7 @@
 ### Prerequisites
-* clasp from dev as of 2019-01-12
-* Put the following in ~/quicklisp/local-projects/
-  * bordeaux-threads (quicklisp not updated, need https://github.com/sionescu/bordeaux-threads.git , master)  
-  * clx (from quicklisp or https://github.com/sharplispers/clx.git, master)
-  * mcclim (from quicklisp or https://github.com/McCLIM/McCLIM.git, master)
+* clasp from master as of 2020-12-16
 
-### To compile & load (takes 4 hours on my machine)
+### To compile & load (takes now less than 30 min on my machine)
 ```common-lisp
 (require :asdf)
 (load "~/quicklisp/setup.lisp")
