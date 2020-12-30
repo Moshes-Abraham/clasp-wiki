@@ -48,7 +48,7 @@ and
 * brew install cmake libffi gmp boost libunwind-headers
 * install bdw-gc from https://github.com/clasp-developers/clasp-boehm (should the process complain that it can't find a makefile, put `make -C $(GC) -f Makefile install` instead of `make -C $(GC) -f makefile install` in the makefile
 * `git clone https://github.com/clasp-developers/clasp.git`
-* `git checkout dev`
+* `git checkout master`
 * `cp wscript.config.osx-brew wscript.config`
 * adapt wscript.config
   * change LLVM_CONFIG_BINARY to the correct path, in my case
