@@ -1,13 +1,13 @@
 # Quicklisp performance tests
 In the following table one can find relative performance of clasp for some tasks:
 
-Timings for version `"cclasp-boehm-0.4.2-3434-g3f70b6373-cst"`on `macosx 10.14.6 (mojave)` `CLASP_BUILD_MODE = <default>` `USE_COMPILE_FILE_PARALLEL=<default>`
+Timings for version `"cclasp-boehm-0.4.2-3630-ge045444b6-cst"`on `macosx 10.14.6 (mojave) on 2021-01-19`
 
 | Compile Task (real)| clasp(s) | ccl(s) | ecl(s) | sbcl(s) | factor clasp/sbcl | factor clasp/ecl |factor ecl/sbcl |
 | ------------------ | -------- | ------ | -------| --------| ----------------- | ---------------- | ---------------| 
-| cl-bench compiler|18.141|0.820|1.320|0.72|25.20|13.74|22.12|
-| asdf |66.119|5.302|20.121|5.31|12.46|3.29|12.47|
-| cl-jpeg  |27.875|1.127|139.247|1.46|19.07|0.20|24.73|
+| cl-bench compiler|14.114|0.820|1.320|0.72|25.20|13.74|22.12|
+| asdf |57.170|5.302|20.121|5.31|12.46|3.29|12.47|
+| cl-jpeg  |22.864|1.127|139.247|1.46|19.07|0.20|24.73|
 | ironclad |359.528|26.820|447.353|50.98|7.05|0.80|13.41|
 | clx  |373.247|9.717|186.107|13.26|28.15|2.01|38.41|
 | mcclim|1433.720|57.449|59.703|65.64|21.84|2.56|24.96|
@@ -15,11 +15,12 @@ Timings for version `"cclasp-boehm-0.4.2-3434-g3f70b6373-cst"`on `macosx 10.14.6
 Note that e.g. :mcclim depends on :clx and :cl-jpeg, so that order of timings is important
 
 Commands used (fresh start after each compile in this order):
+* quicklisp already 
 * `(time (compile-file "source-dir:src;lisp;modules;asdf;build;asdf.lisp"))`
 * `(time (ql:quickload :cl-jpeg))`
 * `(time (ql:quickload :ironclad))`
 * `(time (ql:quickload :clx))`
-* `(time (ql:quickload :mcclim))` and this include lots of other asdf systems
+* `(time (ql:quickload :mcclim))` and this include lots of other asdf systems including cl-jpeg and clx
 
 # Cl-Bench tests
 To reproduce:
