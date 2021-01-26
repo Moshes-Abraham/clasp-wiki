@@ -89,6 +89,9 @@ INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
 * to verify build `./waf test`
 * Start with `build/clasp`
 * to install `./waf install_cboehm`
+# MacosX BIG SUR
+* from frgo:
+`I had to change mp::Mutex global_flow_tracker_mutex; in file gcFunctions.cc (line 52) to mp::Mutex global_flow_tracker_mutex( DEBGINFO_NAMEWORD ); ` 
 # Known errors
 * ~~Disassemble no longer works~~
 * ~~cl:format no longer works correctly~~
