@@ -157,6 +157,8 @@ As a small extension to the extension, if a custom sequence object does not impl
 
 `:thread-safe` can be used to make hash table access safe across multiple threads. If a thread-safe argument is not passed, or `nil` is passed, the hash table cannot safely be written to or read from multiple threads simultaneously (see "Memory Model", below, for a brief explanation of terminology). If the thread-safe argument is true, the implementation will ensure that accesses can be carried out from multiple threads simultaneously safely. This does impose a small performance penalty, which is why it is not the default.
 
+If a `:test` other than a standard equality predicate is passed, `:hash-function` must be specified as well. The hash function should be a designator for a function of one argument that is analogous to `sxhash`, i.e. `(funcall test x y)` implies `(= (funcall hash-function x) (funcall hash-function y))` and so on. This will create a "custom" hash table that can be used with the standard hash table functions like `gethash`, with the exception that at the moment, attempting to dump a custom hash table has undefined consequences.
+
 ## Filenames
 
 ## Files
