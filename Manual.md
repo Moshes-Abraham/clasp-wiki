@@ -225,9 +225,9 @@ Multiprocessing is supported. Symbols relating to multiprocessing are exported f
 
 ## Processes
 
-A process is a Lisp object representing a distinct thread of execution. Each process evaluates a call to a Lisp function, and exits when that call would finally return values. Processes have names for debugging purposes. Processes are "enabled" if they have begun evaluating, "suspended" if that evaluation has been paused by `process-suspend`, and otherwise "active".
+A process is a Lisp object representing a distinct thread of execution. Each process evaluates a call to a Lisp function, and exits when that call would finally return values. Processes have names for debugging purposes. Processes are "nascent" or "not yet started" if they haven't yet begun evaluating, "active" if they have begun evaluating, "suspended" if that evaluation has been paused by `process-suspend`, and "exited" if they have finished evaluation (normally or by aborting).
 
-Processes have type `process`. `make-process` creates a new process but does not enable it. `process-enable` enables a process, and `process-run-function` both creates and enables a process. The name of a process can be retrieved with `process-name`. `process-active-p` can be used to query whether a process is active. `process-suspend`, `process-resume`, `interrupt-process`, and `process-kill` interfere with a process's evaluation. `process-join` waits until a process until it completes, and then returns the values its function returned. `all-processes` gets a list of all enabled processes. The variable `*current-process*` is bound in any process to that process. Consult the docstrings of these functions for more information.
+Processes have type `process`. `make-process` creates a new process but does not start it. `process-start` enables a process, and `process-run-function` both creates and enables a process. The name of a process can be retrieved with `process-name`. `process-active-p` can be used to query whether a process is active. `process-suspend`, `process-resume`, `interrupt-process`, and `process-kill` interfere with a process's evaluation. `process-join` waits until a process until it completes, and then returns the values its function returned, or signals an error of type `process-join-error` if the process ended abnormally. Within a process, `exit-process` can be used to end the process's evaluation immediately, and `abort-process` to do so abnormally; in either case the dynamic environment is properly unwound. `all-processes` gets a list of all enabled processes. The variable `*current-process*` is bound in any process to that process. Consult the docstrings of these functions for more information.
 
 ## Special variables
 
@@ -249,21 +249,29 @@ TODO
 
 ## Memory Model
 
-Clasp does not have a formal memory model. Here is a sketch of one: Two accesses of a place are `concurrent` if they take place in different threads and are not excluded from running simultaneously by locks. Two concurrent accesses `conflict` if at least one is a write. If a conflicting access is `not atomic` the program has undefined behavior (e.g. tearing).
+Clasp does not have a formal memory model. Here is a sketch of one: Two accesses of a place are `concurrent` if they take place in different threads and are not excluded from running simultaneously by locks. Two concurrent accesses `conflict` if at least one is a write. If a conflicting access is not _atomic_ the program has undefined behavior (e.g. tearing).
 
-Some accesses are atomic but `unordered`, meaning that there is not necessarily a modification order to the place that is observed by all threads, e.g. one thread may see writes occur in a different order from another thread. Some accesses are `sequentially consistent`, meaning that there is such a globally observable modification order, and furthermore that all sequentially consistent accesses have a globally observable order.
+Some accesses are atomic but _unordered_, meaning that there is not necessarily a modification order to the place that is observed by all threads, e.g. one thread may see writes occur in a different order from another thread. Some accesses are _sequentially consistent_, meaning that there is such a globally observable modification order, and furthermore that all sequentially consistent accesses have a globally observable order.
 
 Places may be complex, indeed completely custom. Clasp defines atomicity of some simple places; other places, and more complex modification operations, should hopefully be understandable from those. For example, to setf the `second` of a list, one `cdr` must be read before a `car` is written, and each of these individual accesses is atomic while the overall access is not.
 
-In general Clasp tries to guarantee unordered atomicity, but does not always succeed.
+In general Clasp tries to guarantee unordered atomicity, but does not always succeed, and in some cases it's probably not possible.
 
-Note that in this context "atomic" does not mean "lock-free".
+Note that in this context "atomic" does not necessarily mean "lock-free".
 
-Places that can be accessed unorderedly are: `car`, `cdr`, `symbol-value`, `symbol-plist`, `symbol-function`/`fdefinition`, `compiler-macro-function`, `ext:setf-expander`, `ext:type-expander`. Access to the elements of simple one-dimensional arrays should be unordered, except for integer element types smaller than `(unsigned-byte 8)`. Access to `standard-object` and `structure-object` slots (regardless of allocation) should also be unordered.
+Places that can be accessed unorderedly are: `car`, `cdr`, `symbol-value`, `symbol-plist`, `symbol-function`/`fdefinition`, `compiler-macro-function`, `ext:setf-expander`, `ext:type-expander`. Access to the elements of simple one-dimensional arrays should be unordered, except for integer element types smaller than `(unsigned-byte 8)`. Access to `standard-object` and `structure-object` slots (of `:instance` or `:class` allocation) should also be unordered.
+
+## Atomics
+
+Access can be guaranteed atomic by using the `atomic` macro. That is, `(atomic place)` is a place that can be accessed atomically, or else an error will be signaled. Clasp defines `car`, `cdr`, `first`, `rest`, `symbol-value`, special variables, `symbol-plist`, `standard-instance-access`, `slot-value`, `clos:slot-value-using-class`, and `svref` as atomically accessible, as well as `the` place or macro places that expand to these places. Additional atomically accessible places can be defined with the `define-atomic-expansion` macro. See its documentation string for more information. Additionally, documentation on atomic access may be available with kind `atomic`; e.g. try `(documentation 'symbol-value 'mp:atomic)`.
 
 ## Compare-and-swap
 
-The `mp:cas` macro can be used to execute an atomic, sequentially consistent compare-and-swap of certain places. See its docstring for more information. `define-cas-expander` and `get-cas-expansion` are available to expand this mechanism analogously to `setf`. Uses of this operator as `atomic-update`, `atomic-incf`, and `atomic-decf` are also defined. Documentation strings for individual places' CAS properties can be obtained as having doctype `mp:cas`, so e.g. `(documentation 'symbol-value 'mp:cas)`.
+The `mp:cas` macro can be used to execute an atomic compare-and-swap of atomically accessible places. See its docstring for more information. `cas` is used to define higher order atomic read-modify-write operations provided by Clasp: `atomic-update`, `atomic-incf`, `atomic-decf`, `atomic-push`, `atomic-pop`, and `atomic-pushnew`. The first is a general operator analogous to what `define-modify-macro` operators do, while the others are analogous to their standard versions. `-explicit` variants can be used to explicitly specify the order of the operation.
+
+## Fences
+
+The `mp:fence` macro can be used to establish memory fences of a specified order.
 
 # Introspection
 
