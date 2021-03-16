@@ -1,1 +1,0 @@
-Eclector is now properly integrated, nothing to be done
