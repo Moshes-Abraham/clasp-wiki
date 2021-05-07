@@ -309,6 +309,6 @@ Working directories can be accessed with `EXT:GETCWD`and `EXT:CHDIR`.
 
 # Interfaces outside of POSIX
 ## File System
-`EXT:RMTREE` allows to remove a whole directory tree
+`ext:rmdir` to delete a directory, `EXT:RMTREE` allows to remove a whole directory tree
 ## Other interfaces
 `ext:quit` to leave clasp
