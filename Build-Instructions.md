@@ -37,7 +37,7 @@ A detailed log of the build is available in `build/boehm/build.log`.
 
 Building clasp on Arch can be done using an AUR helper such as [yay](https://github.com/Jguer/yay). Building in this manner using
 the [clasp-cl-git](https://aur.archlinux.org/packages/clasp-cl-git/) package will build both clasp and cando and will install all
-dependencies as needed. The installation depends upon [llvm90](https://aur.archlinux.org/packages/llvm90/) which adds `/etc/ld.so.conf.d/70-llvm90.conf` in order to update the search path for shared libraries. This means that the initial install will need to include a
+dependencies as needed. The installation depends upon [llvm13](https://aur.archlinux.org/packages/llvm13/) which adds `/etc/ld.so.conf.d/70-llvm13.conf` in order to update the search path for shared libraries. This means that the initial install will need to include a
 call of `ldconfig` in order to update the search path list. Using yay the initial install will then be:
 
 ```
