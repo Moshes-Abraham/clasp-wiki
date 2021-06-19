@@ -41,7 +41,7 @@ dependencies as needed. The installation depends upon [llvm90](https://aur.archl
 call of `ldconfig` in order to update the search path list. Using yay the initial install will then be:
 
 ```
-yay llvm90
+yay llvm13
 sudo ldconfig
 yay clasp-cl-git
 ```
