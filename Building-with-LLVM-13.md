@@ -13,3 +13,7 @@
   * Fix the error in the Makefile (in rule build Makefile instead of makefile
   * sudo make
   * goes to `opt/clasp-support`
+* Clasp
+  * git clone https://github.com/clasp-developers/clasp.git
+  * cp wscript.config.debian10 wscript.config
+  * edit llvm_config_binary to `/opt/llvm13/bin/llvm-config`
