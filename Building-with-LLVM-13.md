@@ -22,3 +22,6 @@
   * For Boehmgc self compiled add `INCLUDES = ["/opt/clasp-support/include"]` and `LINKFLAGS = ["-L/opt/clasp-support/lib"]`
 * assure python version 3.7.x or earlier installed
   * if python 3.8.x installed, follow http://codingadventures.org/2020/08/30/how-to-install-pyenv-in-ubuntu/ and install and set python 3.7.x
+  * to compie python 3.7.x, I needed `sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev`
