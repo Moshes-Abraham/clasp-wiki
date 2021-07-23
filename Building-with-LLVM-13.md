@@ -9,6 +9,7 @@
   * download https://github.com/yitzchak/mpr/releases/tag/llvm13_13.r5140.g972b6a3a3471-1
   * sudo apt-get install <the download from above>
   * is installed in `/opt/llvm13`
+* or use a packaged boehm
 * GC
   * git clone https://github.com/clasp-developers/clasp-boehm
   * Fix the error in the Makefile (in rule build Makefile instead of makefile
@@ -17,5 +18,7 @@
 * Clasp
   * git clone https://github.com/clasp-developers/clasp.git
   * cp wscript.config.debian10 wscript.config
-  * edit llvm_config_binary to `/opt/llvm13/bin/llvm-config`
-  * For Boehmgc add ``
+  * in wscript edit llvm_config_binary to `/opt/llvm13/bin/llvm-config`
+  * For Boehmgc self compiled add `INCLUDES = ["/opt/clasp-support/include"]` and `LINKFLAGS = ["-L/opt/clasp-support/lib"]`
+* assure python version 3.7.x or earlier installed
+  * if python 3.8.x installed, follow http://codingadventures.org/2020/08/30/how-to-install-pyenv-in-ubuntu/ and install and set python 3.7.x
