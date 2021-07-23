@@ -7,7 +7,7 @@
   * sudo apt-get install emacs
 * Get llvm 13 by
   * download https://github.com/yitzchak/mpr/releases/tag/llvm13_13.r5140.g972b6a3a3471-1
-  * sudo apt-get install <the download from above>
+  * sudo apt-get install 'the download from above´
   * is installed in `/opt/llvm13`
 * or use a packaged boehm
 * GC
