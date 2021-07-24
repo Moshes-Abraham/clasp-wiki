@@ -77,7 +77,6 @@ DEBUG_OPTIONS = [  "DEBUG_RELEASE"
                   ,"DEBUG_ASSERT_TYPE_CAST"
                   ,"DEBUG_VERIFY_MODULES"
                   ,"DEBUG_JIT_LOG_SYMBOLS"
-                  ,"DEBUG_ASSERT_TYPE_CAST"
                   ]
 REQUIRE_LIBFFI = True
 CPPFLAGS = [ "-Wno-nullability-completeness"]
