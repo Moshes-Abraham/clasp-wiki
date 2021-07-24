@@ -1,4 +1,4 @@
-* Install ubuntu 20.10
+* Install ubuntu 20.10 (should work the same with ubuntu 20.04). I even used the same instructions on WSL2.0 
 * sudo apt install sbcl
 * sudo apt-get install git make build-essential curl
 * sudo apt install libboost-filesystem-dev libboost-graph-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev
