@@ -1,4 +1,4 @@
-* Install ubuntu 20.10 (should work the same with ubuntu 20.04). I even used the same instructions on WSL2.0 
+* Install ubuntu 20.10 (should work the same with ubuntu 20.04). I even used the same instructions on WSL2.0. Does also work for an azure image of ubuntu 20.04. I used a system with 8 Cpus and 32 GB of memory
 * sudo apt-get install sbcl
 * sudo apt-get install git make build-essential curl
 * sudo apt-get install libboost-filesystem-dev libboost-graph-dev libboost-regex-dev libboost-date-time-dev libboost-program-options-dev libboost-system-dev libboost-iostreams-dev
