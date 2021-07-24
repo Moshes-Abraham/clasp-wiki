@@ -26,7 +26,7 @@
   * to compile python 3.7.x, I needed `sudo apt-get install make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev`
-  * not sure if the above llvm really is needed,installs llvm 13
+  * not sure if the above llvm really is needed,installs llvm 11
 
 * build clasp
    * `./waf distclean`
