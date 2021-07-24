@@ -6,7 +6,7 @@
 * convenience
   * sudo apt-get install emacs
 * Get llvm 13 by
-  * download https://github.com/yitzchak/mpr/releases/tag/llvm13_13.r5140.g972b6a3a3471-1
+  * wget https://github.com/yitzchak/mpr/releases/tag/llvm13_13.r5140.g972b6a3a3471-1
   * sudo apt-get install 'the download from above´
   * is installed in `/opt/llvm13`
 * GC
@@ -37,3 +37,4 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 SBCL_VERSION = (2, 0)
 SBCL_VERSION_STRING = "2.0"
 ````
+* to start `build/boehm/iclasp_boehmprecise`
