@@ -6,9 +6,10 @@
 * convenience
   * sudo apt-get install emacs
 * Get llvm 13 by
-  * wget https://github.com/yitzchak/mpr/releases/tag/llvm13_13.r5140.g972b6a3a3471-1
+  * for ubuntu 20.04 `wget https://github.com/yitzchak/mpr/releases/download/llvm13_13.r5140.g972b6a3a3471-1/llvm13_13.r5140.g972b6a3a3471-1_amd64_ubuntu_focal.deb`
+  * for ubuntu 20.10 `wget https://github.com/yitzchak/mpr/releases/download/llvm13_13.r5140.g972b6a3a3471-1/llvm13_13.r5140.g972b6a3a3471-1_amd64_ubuntu_groovy.deb`
   * sudo apt-get install 'the download from above´
-  * is installed in `/opt/llvm13`
+  * Note, this is installed in `/opt/llvm13`
 * GC
   * git clone https://github.com/clasp-developers/clasp-boehm
   * Fix the error in the Makefile (in rule build Makefile instead of makefile
