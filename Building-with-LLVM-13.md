@@ -37,4 +37,4 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
 SBCL_VERSION = (2, 0)
 SBCL_VERSION_STRING = "2.0"
 ````
-* to start `build/boehm/iclasp_boehmprecise`
+* to start `build/boehmprecise/iclasp_boehmprecise`
