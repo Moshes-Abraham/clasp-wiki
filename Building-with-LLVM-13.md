@@ -33,7 +33,7 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
    * `./waf configure`
    * `./waf build_dboehmprecise` might take hours
 
-* if configure complains about an sbcl not recent enough, put the following in wscript (instead of 2.1)
+* if configure complains about an sbcl not recent enough, put the following in wscript (instead of 2.1). But this seems already to be fixed in latest wscript
 ````
 SBCL_VERSION = (2, 0)
 SBCL_VERSION_STRING = "2.0"
