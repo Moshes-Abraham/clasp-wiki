@@ -80,8 +80,8 @@ DEBUG_OPTIONS = [  "DEBUG_RELEASE"
                   ]
 REQUIRE_LIBFFI = True
 CPPFLAGS = [ "-Wno-nullability-completeness"]
-INCLUDES = [ "-I", "/Library/Developer/CommandLineTools/usr/include/c++/v1",
-             "-I", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
+INCLUDES = [ "/Library/Developer/CommandLineTools/usr/include/c++/v1",
+           , "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
 ]
 ````
 * to build from scratch  `./waf distclean configure build_cboehm`, can take 1 hour
