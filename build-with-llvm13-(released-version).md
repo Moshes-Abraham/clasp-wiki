@@ -1,6 +1,7 @@
+* Alternatively you might get llvm13 from your package manager, e.g. `brew` on macos
 * `git clone https://github.com/llvm/llvm-project.git`
 * `cd llvm-project`
-* `git checkout 972b6a3a3471c2a742c5c5d8ec004ff640d544c4`
+* `git checkout tags/llvmorg-13.0.0`
 * `mkdir -p build`
 * `cd build`
 * after each line, there should be a  ´\´
