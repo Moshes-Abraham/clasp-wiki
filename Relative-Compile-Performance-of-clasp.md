@@ -1,28 +1,27 @@
-# Quicklisp performance tests
-In the following table one can find relative performance of clasp for some tasks:
+# Compiler performance tests (not speed of compiled code)
+In the following table one can find compiler performance of clasp for some tasks compared with ecl, sbcl and clozurecl
 
-Timings for version `"cclasp-boehm-0.4.2-3630-ge045444b6-cst"`on `macosx 10.14.6 (mojave) on 2021-01-19`
-
-| Compile Task (real)| clasp(s) | ccl(s) | ecl(s) | sbcl(s) | factor clasp/sbcl | factor clasp/ecl |factor ecl/sbcl |
-| ------------------ | -------- | ------ | -------| --------| ----------------- | ---------------- | ---------------| 
-| cl-bench compiler|14.114|0.820|1.320|0.72|25.20|13.74|22.12|
-| asdf |57.170|5.302|20.121|5.31|12.46|3.29|12.47|
-| cl-jpeg  |22.864|1.127|139.247|1.46|19.07|0.20|24.73|
-| ironclad |359.528|26.820|447.353|50.98|7.05|0.80|13.41|
-| clx  |373.247|9.717|186.107|13.26|28.15|2.01|38.41|
-| mcclim|1433.720|57.449|59.703|65.64|21.84|2.56|24.96|
+| Date | Version | asdf | cl-jpeg | ironclad | clx |  babel | cl-unicode | flexi-streams | opticl | mcclim | total |
+| --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+|2002-02-13|1195e54d7|93.95|42.60|523.68|597.14|92.49|295.30|121.14|193.13|763.79|2723.22|
+|2002-02-13|ECL 21.2.1|26.42|108.71|339.59|183.74|18.90|104.89|59.60|127.55|311.71|1281.11|
+|2002-02-13|SBCL 2.2.1|3.16|1.04|40.58|8.84|2.11|2.70|3.08|11.12|21.02|93.65|
+|2002-02-13|ccl 1.12.dev|3.49|0.78|17.99|6.60|1.59|4.27|2.19|8.33|21.39|66.64|
 
 Note that e.g. :mcclim depends on :clx and :cl-jpeg, so that order of timings is important
 
 Commands used (fresh start after each compile in this order):
-* quicklisp already 
 * `(time (compile-file "source-dir:src;lisp;modules;asdf;build;asdf.lisp"))`
 * `(time (ql:quickload :cl-jpeg))`
 * `(time (ql:quickload :ironclad))`
 * `(time (ql:quickload :clx))`
-* `(time (ql:quickload :mcclim))` and this include lots of other asdf systems including cl-jpeg and clx
+* `(time (ql:quickload :babel))`
+* `(time (ql:quickload :cl-unicode))`
+* `(time (ql:quickload :flexi-streams))`
+* `(time (ql:quickload :opticl))`
+* `(time (ql:quickload :mcclim))`
 
-# Cl-Bench tests
+# Cl-Bench tests (speed of compiled code (apart from test compiler)
 To reproduce:
 
 * Sources in https://gitlab.common-lisp.net/kpoeck/cl-bench.git, branch feature-clasp-clbench
