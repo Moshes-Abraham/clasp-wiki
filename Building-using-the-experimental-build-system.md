@@ -4,8 +4,8 @@ This page documents the steps needed to build using the experimental build syste
 
 The build requirements of clasp must be installed before beginning the build. For each OS listed below installed the packages as listed.
 
-* Arch - `pacman -S binutils boost clang gc gmp libbsd libffi libunwind llvm ncurses sbcl`
-* Debian - `apt install -y binutils-gold clang-13 libboost-dev libbsd-dev libclang-cpp13-dev libelf-dev libgc-dev libgmp-dev libncurses-dev libunwind-dev llvm-13 sbcl zlib1g-dev`
+* Arch - `pacman -S binutils boost clang gc gmp libbsd libffi libunwind llvm ncurses ninja sbcl`
+* Debian - `apt install -y binutils-gold clang-13 libboost-dev libbsd-dev libclang-cpp13-dev libelf-dev libgc-dev libgmp-dev libncurses-dev libunwind-dev llvm-13 ninja-build sbcl zlib1g-dev`
 
 # Building
 
