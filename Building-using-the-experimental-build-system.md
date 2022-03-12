@@ -2,7 +2,7 @@ This page documents the steps needed to build using the experimental build syste
 
 # Requirements
 
-The build requirements of clasp must be installed before beginning the build. For each OS listed below installed the packages as listed.
+The build requirements of clasp must be installed before beginning the build. For each OS listed below install the packages as listed.
 
 * Arch - `pacman -S binutils boost clang gc gmp libbsd libffi libunwind llvm ncurses ninja sbcl`
 * Debian - `apt install -y binutils-gold clang-13 libboost-dev libbsd-dev libclang-cpp13-dev libelf-dev libgc-dev libgmp-dev libncurses-dev libunwind-dev llvm-13 ninja-build sbcl zlib1g-dev`
@@ -14,4 +14,12 @@ Start with a clean Clasp clone on the `ninja` branch. If you have run the waf ba
 1. Configure the system with `sbcl --script configure.lisp`
 2. Build the system with `ninja -C build`
 
-The experimental build system does not yet build extensions, nor does it install Clasp. If the build is successful then there will be a Clasp executable named `build/boehm/iclasp-boehm`.
+This build system does not install Clasp yet. If the build is successful then there will be a Clasp executable named `build/boehm/iclasp-boehm`.
+
+# Extensions
+
+The only extension that is currently compatible with this build system is [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/). To enable this extension create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
+
+```lisp
+(:extensions (:seqan-clasp))
+```
