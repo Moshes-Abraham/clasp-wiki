@@ -17,10 +17,25 @@ Start with a clean Clasp clone on the `ninja` branch. If you have run the waf ba
 
 This build system does not install Clasp yet. If the build is successful then there will be a Clasp executable named `build/boehm/iclasp-boehm`.
 
+# Variants
+
+The default build target is `cclasp-boehm`. This builds iclasp, then aclasp, then bclasp, then cclasp using the Boehm garbage collector. If you wanted to stop after the aclasp step you would do `ninja -C build aclasp-boehm`. There are many available targets, but following are the only ones known to work.
+
+* `cclasp-boehm` - build the clasp Boehm variant
+* `cclasp-boehm-d` - build the clasp Boehm variant with debugging
+* `cclasp-boehmprecise` - build the clasp Boehm precise variant
+* `cclasp-boehmprecise-d` - build the clasp Boehm precise variant with debugging
+
 # Extensions
 
-The only extension that is currently compatible with this build system is [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/). To enable this extension create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
+The only extensions that are currently compatible with this build system are [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](https://github.com/cando-developers/cando/). To enable these extensions create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
 
 ```lisp
-(:extensions (:seqan-clasp))
+(:extensions (:cando :seqan-clasp))
+```
+
+Cando currently only builds using the Boehm precise variant. To build this variant execute the following.
+
+```
+ninja -C build cclasp-boehmprecise
 ```
