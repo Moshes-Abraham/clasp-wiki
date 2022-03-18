@@ -19,12 +19,12 @@ This build system does not install Clasp yet. If the build is successful then th
 
 # Variants
 
-The default build target is `cclasp-boehm`. This builds iclasp, then aclasp, then bclasp, then cclasp using the Boehm garbage collector. If you wanted to stop after the aclasp step you would do `ninja -C build aclasp-boehm`. There are many available targets, but following are the only ones known to work.
+The default build target is `cclasp-boehm`. This builds iclasp, then aclasp, then bclasp, then cclasp using the Boehm garbage collector. If you wanted to stop after the aclasp step you would do `ninja -C build aclasp-boehm`. There are many available targets, but the following are the only ones known to work.
 
-* `cclasp-boehm` - build the clasp Boehm variant
-* `cclasp-boehm-d` - build the clasp Boehm variant with debugging
-* `cclasp-boehmprecise` - build the clasp Boehm precise variant
-* `cclasp-boehmprecise-d` - build the clasp Boehm precise variant with debugging
+* Boehm gc - `iclasp-boehm`, `aclasp-boehm`, `bclasp-boehm`, `cclasp-boehm`, `cclasp-boehm-tests`
+* Boehm gc with debugging - `iclasp-boehm-d`, `aclasp-boehm-d`, `bclasp-boehm-d`, `cclasp-boehm-d`, `cclasp-boehm-d-tests`
+* Boehm precise gc - `iclasp-boehmprecise`, `aclasp-boehmprecise`, `bclasp-boehmprecise`, `cclasp-boehmprecise`, `cclasp-boehmprecise-tests`
+* Boehm precisegc with debugging - `iclasp-boehmprecise-d`, `aclasp-boehmprecise-d`, `bclasp-boehmprecise-d`, `cclasp-boehmprecise-d`, `cclasp-boehmprecise-d-tests`
 
 # Extensions
 
