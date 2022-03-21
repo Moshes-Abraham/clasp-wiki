@@ -40,3 +40,130 @@ Cando currently only builds using the Boehm precise variant. To build this varia
 ```
 ninja -C build cclasp-boehmprecise
 ```
+
+# Configuration
+
+If the configure script does succeed in configuring the build or if you want to adjust the settings you use a plist in `config.sexp`
+with the following values.
+
+
+* `:build-mode` — Define how clasp is built. [default :faso]
+  - `:bitcode` compiles to bitcode and thinLTO is used to link everything.
+    This gives the fastest product but linking takes a long time.
+  - `:object` produces object files and regular linking is used.
+    This is probably not as fast as bitcode (maybe a few percent slower)
+    but it links fast.
+  - `:faso` generates faso files. This is good for development.
+  - `:fasobc` generates fasobc files.
+  - `:fasoll` generates fasoll files.
+  - `:fasl` generates fasl files.
+* `:build-path` — The path for build files such as the Ninja build file. 
+  [default #P"build/"]
+* `:parallel-build` — Build clasp in parallel. [default t]
+* `:prefix` — Where Clasp is install. [default "/usr/"]
+* `:extensions` — A list of extensions. [default nil]
+* `:cst` — [default t]
+* `:clang-cpp` — If t use clang-cpp otherwise use the individual clang 
+  libraries. [default t]
+* `:compile-file-parallel` — [default t]
+* `:force-startup-external-linkage` — Use external-linkage for startup 
+  functions. [default t]
+* `:unwinder` — [default :gcc]
+* `:jobs` — The number of jobs during build. If not specified then a value will
+  be picked based on the number of CPU cores. [default nil]
+* `:always-inline-mps-allocations)` —
+* `:address-sanitizer` — [default nil]
+* `:memory-sanitizer` — [default nil]
+* `:thread-sanitizer` — [default nil]
+* `:debug-dtree-interpreter` — Generate dtree interpreter log [default nil]
+* `:debug-dtrace-lock-probe` — Add a Dtrace probe for mutex lock acquisition
+  [default nil]
+* `:debug-stackmaps` — print messages about stackmap registration [default nil]
+* `:debug-assert` — Turn on DEBUG_ASSERT [default t]
+* `:debug-assert-type-cast` — Turn on type checking when passing arguments
+  [default nil]
+* `:source-debug` — Allow LOG messages to print - works with CLASP_DEBUG 
+  environment variable [default nil]
+* `:debug-jit-log-symbols` — Generate a log of JITted symbols in 
+  `/tmp/clasp-symbols-<pid>` [default nil]
+* `:debug-guard` — Add guards around allocated objects [default nil]
+* `:debug-guard-validate` — Add quick checking of guards [default nil]
+* `:debug-guard-backtrace` — Add allocation backtraces to guards [default nil]
+* `:debug-guard-exhaustive-validate` — Add exhaustive, slow, checks of guards
+  [default nil]
+* `:debug-trace-interpreted-closures` — [default nil]
+* `:debug-environments` — [default nil]
+* `:debug-release` — Turn off optimization for a few C++ functions; undef this 
+  to optimize everything [default nil]
+* `:debug-cache` — Debug the dispatch caches - see cache.cc [default nil]
+* `:debug-bitunit-container` — Prints debug info for bitunit containers 
+  [default nil]
+* `:debug-lexical-depth` — Generate tests for lexical closure depths 
+  [default nil]
+* `:debug-flow-tracker` — Record small backtraces to track flow [default nil]
+* `:debug-dynamic-binding-stack` — dynamic variable binding debugging
+  [default nil] 
+* `:debug-values` — turn on printing `(values x y z)` values when 
+  `core:*debug-values*` is not nil [default nil]
+* `:debug-ihs` — [default nil]
+* `:debug-track-unwinds` — Count cc_unwind calls and report in TIME 
+  [default nil]
+* `:debug-no-unwind` — Debug intrinsics that say they don't unwind but actually 
+  do. [default nil]
+* `:debug-startup` — Generate per-thread logs in `/tmp/dispatch-history/**` of 
+  the slow path of fastgf [default nil]
+* `:debug-rehash-count` — Keep track of the number of times each hash table has 
+  been rehashed [default nil]
+* `:debug-monitor` — generate logging messages to a file in /tmp for non-hot 
+  code [default nil]
+* `:debug-monitor-support` — Must be enabled with other options - do this 
+  automatically? [default nil]
+* `:debug-memory-profile` — Profile memory allocations total size and counter
+  [default nil]
+* `:debug-bclasp-lisp` — Generate debugging frames for all bclasp code - like 
+  declaim [default nil]
+* `:debug-cclasp-lisp` — Generate debugging frames for all cclasp code - like 
+  declaim [default t]
+* `:debug-count-allocations` — count per-thread allocations of instances of 
+  classes [default nil]
+* `:debug-compiler` — Turn on compiler debugging [default nil]
+* `:debug-verify-modules` — Verify LLVM modules before using them [default nil]
+* `:debug-long-call-history` — The GF call histories used to blow up - this 
+  triggers an error if they get too long [default nil]
+* `:debug-bounds-assert` — check bounds [default t]
+* `:debug-gfdispatch` — debug call history manipulation [default nil]
+* `:debug-fastgf` — generate slow gf dispatch logging and write out dispatch 
+  functions to `/tmp/dispatch-history-**` [default nil]
+* `:debug-slot-accessors` — GF accessors have extra debugging added to them
+  [default nil]
+* `:debug-threads` — [default nil]
+* `:debug-stores` — insert a call to `cc_validate_tagged_pointer` everytime 
+  something is written to memory [default nil]
+* `:debug-ensure-valid-object` — Defines `ENSURE_VALID_OBJECT(x)->x` macro - 
+  sprinkle these around to run checks on objects [default nil]
+* `:debug-quick-validate` — quick/cheap validate if on and comprehensive 
+  validate if not [default nil]
+* `:debug-mps-size` — check that the size of the MPS object will be calculated 
+  properly by obj_skip [default nil]
+* `:debug-mps-underscanning` — Very expensive - does a 
+  `mps_arena_collect`/`mps_arena_release` for each allocation [default nil]
+* `:debug-dont-optimize-bclasp` — Optimize bclasp by editing llvm-ir 
+  [default nil]
+* `:debug-recursive-allocations` — Catch allocations within allocations - MPS 
+  hates these [default nil]
+* `:debug-alloc-alignment` —
+[default nil]
+catch misaligned allocations
+* `:debug-llvm-optimization-level-0` — [default nil]
+* `:debug-slow` — Code runs slower due to checks - undefine to remove checks
+  [default nil]
+* `:human-readable-bitcode` — [default nil]
+* `:debug-compile-file-output-info` — [default nil]
+* `:config-var-cool` — mps setting [default t]
+* `:ar` — Pathname of ar binary. [default nil]
+* `:cc` — Pathname of cc binary. [default nil]
+* `:cxx` — Pathname of cxx binary. [default nil]
+* `:git` — Pathname of git binary. [default nil]
+* `:llvm-config` — Pathname of llvm-config binary. [default nil]
+* `:nm` — Pathname of nm binary. [default nil]
+* `:pkg-config` — Pathname of pkg-config binary. [default nil]
