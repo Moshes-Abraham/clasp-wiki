@@ -11,7 +11,7 @@ The build requirements of clasp must be installed before beginning the build. Fo
 
 # Building
 
-Start with a clean Clasp clone on the `ninja` branch. If you have run the waf based build in your clone before then run `./waf distclean` and remove the `build` directory. Also remove any extension clones from the extensions directory and the scraper dependencies located in `/src/scraper/dependencies/`. Then execute the following steps
+Start with a clean Clasp clone on the `ninja` branch. If you have run the waf based build in your clone before then run `./waf distclean` and remove the `build` directory. Also remove any extension clones from the extensions directory and the scraper dependencies located in `/src/scraper/dependencies/`. Koga does not currently support symbolic links in the extensions directory or clones based on `git:` protocol. Then execute the following steps
 
 1. Configure the system with `sbcl --script koga.lisp`
 2. Build the system with `ninja -C build`
