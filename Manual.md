@@ -181,6 +181,18 @@ When `format`'s control string argument is constant, the compiler will process i
 
 ## Environment
 
+### Stepper
+
+`cl:step` can be used to step through compiled code as partially described in the standard. Currently, the stepper can only stop on forms that happen to be compiled as calls, though this may be improved in the future.
+
+Code is steppable if it is compiled with `debug 3` optimization settings, or is within the `step` macro. While unsteppable code is being executed, the stepper will not stop.
+
+Clasp further defines some aspects of stepping for the sake of editor/debugger integration. When the stepper pauses execution, a condition of type `cl:step` is passed to the debugger. This condition will print with the source form for the call. Similarly to `cl:break`, `*debugger-hook*` is bound to `nil`, but `ext:*invoke-debugger-hook*` (described below) can still be used for interception. The following restarts are available from a `step` condition:
+
+- `cl:continue`: Continue without stepping. The stepper will not invoke the debugger again.
+- `clasp-debug:step-into`: Continue stepping. If the function to be called is steppable, the stepper will pause within it, and otherwise stepping will proceed after the call.
+- `clasp-debug:step-over`: Continue stepping, but not into the call the stepper is on. Stepping will proceed after the call is exited (either by normal return or a non-local exit).
+
 # C++ Interface
 
 TODO. See [this page](https://clasp-developers.github.io/clbind-doc.html) for now.
