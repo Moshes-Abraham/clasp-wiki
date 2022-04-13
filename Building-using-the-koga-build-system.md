@@ -39,16 +39,10 @@ There are many intermediate and additional targets available in the Ninja build 
 
 # Extensions
 
-The [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](https://github.com/cando-developers/cando/) extensions are compatible with kogs. To enable these extensions create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
+The [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](https://github.com/cando-developers/cando/) extensions are compatible with koga. To enable these extensions create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
 
 ```lisp
 (:extensions (:cando :seqan-clasp))
-```
-
-Cando currently only builds using the Boehm precise variant. To build this variant execute the following.
-
-```
-ninja -C build cclasp-boehmprecise
 ```
 
 # Configuration
