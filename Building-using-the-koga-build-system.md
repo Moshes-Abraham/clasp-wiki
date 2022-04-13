@@ -1,4 +1,4 @@
-This page documents the steps needed to build using the experimental build system being developed which uses a Lisp based metabuilder called koga that outputs [Ninja](https://ninja-build.org/) build files. This build system is not ready for general use. If you are trying build clasp or cando for general usage then use the waf based builder.
+This page documents the steps needed to build using the new build system which uses a Lisp based metabuilder called koga that outputs [Ninja](https://ninja-build.org/) build files.
 
 # Requirements
 
@@ -13,22 +13,33 @@ The build requirements of clasp must be installed before beginning the build. Fo
 
 Start with a clean Clasp clone on the `ninja` branch. If you have run the waf based build in your clone before then run `./waf distclean` and remove the `build` directory. Also remove any extension clones from the extensions directory and the scraper dependencies located in `/src/scraper/dependencies/`. Koga does not currently support symbolic links in the extensions directory or clones based on `git:` protocol. Then execute the following steps
 
-1. Configure the system with `sbcl --script koga.lisp`
+1. Configure the system and create the build files with `./koga`
 2. Build the system with `ninja -C build`
-3. Install the system with `sudo ninja -C build install-boehmprecise`
+3. Install the system with `sudo ninja -C build install`
 
 # Variants
 
-The default build target is `cclasp-boehm`. This builds iclasp, then aclasp, then bclasp, then cclasp using the Boehm garbage collector. If you wanted to stop after the aclasp step you would do `ninja -C build aclasp-boehm`. There are many available targets, but the following are the only ones known to work.
+The default build target is `cclasp-boehmprecise`. This builds iclasp, then aclasp, then bclasp, then cclasp using the Boehm garbage collector in precise mode. The suffix after the dash is a called a variant. The current available variants are:
 
-* Boehm gc - `iclasp-boehm`, `aclasp-boehm`, `bclasp-boehm`, `cclasp-boehm`, `cclasp-boehm-tests`
-* Boehm gc with debugging - `iclasp-boehm-d`, `aclasp-boehm-d`, `bclasp-boehm-d`, `cclasp-boehm-d`, `cclasp-boehm-d-tests`
-* Boehm precise gc - `iclasp-boehmprecise`, `aclasp-boehmprecise`, `bclasp-boehmprecise`, `cclasp-boehmprecise`, `cclasp-boehmprecise-tests`
-* Boehm precisegc with debugging - `iclasp-boehmprecise-d`, `aclasp-boehmprecise-d`, `bclasp-boehmprecise-d`, `cclasp-boehmprecise-d`, `cclasp-boehmprecise-d-tests`
+- boehm - Boehm garbage collector
+- boehmprecise - Boehm garbage collector in precise mode
+- boehm-d - Boehm garbage collector with debugging symbols
+- boehmprecise-d - Boehm garbage collector in precise mode with debugging symbols
+- preciseprep - MPS garbage collector. This is only used to analyze Clasp in preparation for the static analyzer.
+- preciseprep-d - MPS garbage collector with debugging symbols. This is only used to analyze Clasp in preparation for the static analyzer.
+
+# Targets
+
+There are many intermediate and additional targets available in the Ninja build files. The following is a list of some of the significant ones.
+
+- install: Install the default target. If Jupyter was enabled by koga then this will install Jupyter system kernels also.
+- test-[variant]: Run the Clasp regression tests on the specified variant.
+- jupyter-[variant]: Install Jupyter user kernels for the specified variant. The clasp binaries used will be the ones in the build directory. This target is primarily used for using JupyterLab in a development repository.
+- analyze-[boehm|boehm-d]: Run the static analyzer on the Boehm collector.
 
 # Extensions
 
-The only extensions that are currently compatible with this build system are [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](https://github.com/cando-developers/cando/). To enable these extensions create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
+The [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](https://github.com/cando-developers/cando/) extensions are compatible with kogs. To enable these extensions create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
 
 ```lisp
 (:extensions (:cando :seqan-clasp))
@@ -43,9 +54,9 @@ ninja -C build cclasp-boehmprecise
 # Configuration
 
 If the configure script does succeed in configuring the build or if you want to adjust the settings you use a plist in `config.sexp`
-with the following values.
+with the following values. These options can also be passed directly to koga via command line options. For example executing `./koga --debug-lexical-depth` is equivalent to adding `:debug-lexical-depth t` to the plist in `config.sexp`. Extensions can be enabled by passing the names separated with commas, i.e. `./koga --extensions cando,seqan-clasp`
 
-
+* `:no-sync` — A list of repository names to avoid syncing. This is useful if you are doing development on an extension such as Cando.
 * `:build-mode` — Define how clasp is built. [default :faso]
   - `:bitcode` compiles to bitcode and thinLTO is used to link everything.
     This gives the fastest product but linking takes a long time.
@@ -61,6 +72,7 @@ with the following values.
 * `:parallel-build` — Build clasp in parallel. [default t]
 * `:prefix` — Where Clasp is install. [default "/usr/"]
 * `:extensions` — A list of extensions. [default nil]
+* `:jupyter` — Enable installation of Jupyter kernels. [default nil]
 * `:cst` — [default t]
 * `:clang-cpp` — If t use clang-cpp otherwise use the individual clang 
   libraries. [default t]
