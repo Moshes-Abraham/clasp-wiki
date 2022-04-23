@@ -47,10 +47,10 @@ The [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](
 
 # Configuration
 
-If the configure script does succeed in configuring the build or if you want to adjust the settings you use a plist in `config.sexp`
-with the following values. These options can also be passed directly to koga via command line options. For example executing `./koga --debug-lexical-depth` is equivalent to adding `:debug-lexical-depth t` to the plist in `config.sexp`. Extensions can be enabled by passing the names separated with commas, i.e. `./koga --extensions cando,seqan-clasp`
+If the configure script does not succeed in configuring the build or if you want to adjust the settings you use a plist in `config.sexp`
+with the following values. These options can also be passed directly to koga via command line options. For example executing `./koga --debug-lexical-depth` is equivalent to adding `:debug-lexical-depth t` to the plist in `config.sexp`. Extensions can be enabled by passing the names separated with commas, i.e. `./koga --extensions=cando,seqan-clasp`
 
-* `:no-sync` — A list of repository names to avoid syncing. This is useful if you are doing development on an extension such as Cando.
+* `:skip-sync` — A list of repository names to avoid syncing. This is useful if you are doing development on an extension such as Cando.
 * `:build-mode` — Define how clasp is built. [default :faso]
   - `:bitcode` compiles to bitcode and thinLTO is used to link everything.
     This gives the fastest product but linking takes a long time.
