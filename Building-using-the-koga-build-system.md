@@ -2,7 +2,7 @@ This page documents the steps needed to build using the new build system which u
 
 # Requirements
 
-The build requirements of clasp must be installed before beginning the build. For each OS listed below install the packages as listed.
+The build requirements of clasp must be installed before beginning the build. For each OS listed below install the packages as listed. Currently, LLVM-13 is required. If your system does not provide LLVM-13 via its package manager then you will need to build it first.
 
 * Arch - `pacman -S binutils boost clang gmp libbsd libffi libunwind llvm ncurses ninja sbcl`
 * Debian/Ubuntu - `apt install -y binutils-gold clang-13 libboost-dev libbsd-dev libclang-cpp13-dev libelf-dev libgmp-dev libncurses-dev libunwind-dev llvm-13 ninja-build sbcl zlib1g-dev`
