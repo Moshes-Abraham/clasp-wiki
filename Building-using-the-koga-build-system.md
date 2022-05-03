@@ -4,10 +4,10 @@ This page documents the steps needed to build using the new build system which u
 
 The build requirements of clasp must be installed before beginning the build. For each OS listed below install the packages as listed.
 
-* Arch - `pacman -S binutils boost clang gc gmp libbsd libffi libunwind llvm ncurses ninja sbcl`
-* Debian/Ubuntu - `apt install -y binutils-gold clang-13 libboost-dev libbsd-dev libclang-cpp13-dev libelf-dev libgc-dev libgmp-dev libncurses-dev libunwind-dev llvm-13 ninja-build sbcl zlib1g-dev`
-* Fedora - `dnf install boost-devel clang elfutils-libelf-devel gc-devel gmp-devel libbsd-devel libffi-devel libunwind-devel llvm-devel ncurses-devel ninja-build sbcl zlib-devel`
-* MacOS - `brew install bdw-gc boost gmp libffi libunwind-headers llvm ninja pkg-config sbcl`
+* Arch - `pacman -S binutils boost clang gmp libbsd libffi libunwind llvm ncurses ninja sbcl`
+* Debian/Ubuntu - `apt install -y binutils-gold clang-13 libboost-dev libbsd-dev libclang-cpp13-dev libelf-dev libgmp-dev libncurses-dev libunwind-dev llvm-13 ninja-build sbcl zlib1g-dev`
+* Fedora - `dnf install boost-devel clang elfutils-libelf-devel gmp-devel libbsd-devel libffi-devel libunwind-devel llvm-devel ncurses-devel ninja-build sbcl zlib-devel`
+* MacOS - `brew install boost gmp libffi libunwind-headers llvm ninja pkg-config sbcl`
 
 # Building
 
