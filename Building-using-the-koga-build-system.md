@@ -6,7 +6,7 @@ Work is in progress to enable build Clasp/Cando from package managers such as ap
 
 Building clasp on Arch can be done using an AUR helper such as [yay](https://github.com/Jguer/yay). Building in this manner using
 the [clasp-cl-git](https://aur.archlinux.org/packages/clasp-cl-git/) package will build both clasp and cando and will install all
-dependencies as needed. If you do not have yay installed you can do the following.
+dependencies as needed. If you do not have yay installed you can install via the following commands.
 
 ```
 pacman -S --needed git base-devel
