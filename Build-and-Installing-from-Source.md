@@ -1,27 +1,6 @@
-# Building using a package manager
+This page documents the steps needed to build and install Clasp using the source build system which uses a Lisp based metabuilder called koga that outputs [Ninja](https://ninja-build.org/) build files.
 
-Work is in progress to enable build Clasp/Cando from package managers such as apt-get, brew, etc. Currently, the only supported package is the Arch AUR package. If you are using MacOS or a non-Arch based Linux distribution you will need to build Clasp/Cando from source.
-
-## Building on Arch using a AUR helper
-
-Building clasp on Arch can be done using an AUR helper such as [yay](https://github.com/Jguer/yay). Building in this manner using
-the [clasp-cl-git](https://aur.archlinux.org/packages/clasp-cl-git/) package will build both clasp and cando and will install all
-dependencies as needed. If you do not have yay installed you can install via the following commands.
-
-```
-pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
-
-Once yay is installed you can installation Clasp with `yay clasp-cl-git`.
-
-# Building from source
-
-This page documents the steps needed to build using the source build system which uses a Lisp based metabuilder called koga that outputs [Ninja](https://ninja-build.org/) build files.
-
-## Requirements
+# Requirements
 
 The build requirements of clasp must be installed before beginning the build. For each OS listed below install the packages as listed. Currently, LLVM-13 is required. If your system does not provide LLVM-13 via its package manager then you will need to build it first.
 
@@ -30,7 +9,7 @@ The build requirements of clasp must be installed before beginning the build. Fo
 * Fedora - `dnf install boost-devel clang elfutils-libelf-devel gmp-devel libbsd-devel libffi-devel libunwind-devel llvm-devel ncurses-devel ninja-build sbcl zlib-devel`
 * MacOS - `brew install boost gmp libffi libunwind-headers llvm ninja pkg-config sbcl`
 
-## Building
+# Building and Installing
 
 Start with a clean Clasp clone on the `ninja` branch. If you have run the waf based build in your clone before then run `./waf distclean` and remove the `build` directory. Also remove any extension clones from the extensions directory and the scraper dependencies located in `/src/scraper/dependencies/`. Koga does not currently support symbolic links in the extensions directory or clones based on `git:` protocol. Then execute the following steps
 
@@ -38,7 +17,7 @@ Start with a clean Clasp clone on the `ninja` branch. If you have run the waf ba
 2. Build the system with `ninja -C build`
 3. Install the system with `sudo ninja -C build install`
 
-## Variants
+# Variants
 
 The default build target is `cclasp-boehmprecise`. This builds iclasp, then aclasp, then bclasp, then cclasp using the Boehm garbage collector in precise mode. The suffix after the dash is a called a variant. The current available variants are:
 
@@ -49,7 +28,7 @@ The default build target is `cclasp-boehmprecise`. This builds iclasp, then acla
 - preciseprep - MPS garbage collector. This is only used to analyze Clasp in preparation for the static analyzer.
 - preciseprep-d - MPS garbage collector with debugging symbols. This is only used to analyze Clasp in preparation for the static analyzer.
 
-## Targets
+# Targets
 
 There are many intermediate and additional targets available in the Ninja build files. The following is a list of some of the significant ones.
 
@@ -58,7 +37,7 @@ There are many intermediate and additional targets available in the Ninja build 
 - jupyter-[variant]: Install Jupyter user kernels for the specified variant. The clasp binaries used will be the ones in the build directory. This target is primarily used for using JupyterLab in a development repository.
 - analyze-[boehm|boehm-d]: Run the static analyzer on the Boehm collector.
 
-## Extensions
+# Extensions
 
 The [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](https://github.com/cando-developers/cando/) extensions are compatible with koga. To enable these extensions create a file `config.sexp` in the root of the clasp directory with the following contents then execute the build instructions listed in the previous section.
 
@@ -66,7 +45,7 @@ The [seqan-clasp](https://github.com/clasp-developers/seqan-clasp/) and [cando](
 (:extensions (:cando :seqan-clasp))
 ```
 
-## Configuration
+# Configuration
 
 If the configure script does not succeed in configuring the build or if you want to adjust the settings you use a plist in `config.sexp`
 with the following values. These options can also be passed directly to koga via command line options. For example executing `./koga --debug-lexical-depth` is equivalent to adding `:debug-lexical-depth t` to the plist in `config.sexp`. Extensions can be enabled by passing the names separated with commas, i.e. `./koga --extensions=cando,seqan-clasp`
