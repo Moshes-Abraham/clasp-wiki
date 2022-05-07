@@ -1,3 +1,12 @@
 Welcome to the clasp wiki!
 
-You might want to read the [toplevel documentation](https://clasp-developers.github.io), the [Build instructions](https://github.com/clasp-developers/clasp/wiki/Build-Instructions) or [manual in the wiki](https://github.com/clasp-developers/clasp/wiki/Manual) or the [Low Level Manual](https://github.com/clasp-developers/clasp/wiki/LowLevelManual)
+# Building and Installing Guides
+
+- [Installing Using a Package Manager](https://github.com/clasp-developers/clasp/wiki/Installing-Using-a-Package-Manager)
+- [Building and Installing from Source](https://github.com/clasp-developers/clasp/wiki/Building-and-Installing-from-Source)
+
+# Documentation
+
+- [Clasp Documentation](https://clasp-developers.github.io)
+- [Manual](https://github.com/clasp-developers/clasp/wiki/Manual)
+- [Low Level Manual](https://github.com/clasp-developers/clasp/wiki/LowLevelManual)
